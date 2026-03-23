@@ -7,7 +7,7 @@ export default defineConfig({
   // Ustaw base URL dla GitHub Pages
   // Zmień 'conner-website' na nazwę TWOJEGO repozytorium
   // Jeśli używasz własnej domeny lub głównego repo (nazwa.github.io), ustaw base: '/'
-  base: process.env.GITHUB_PAGES ? '/conner-website/' : '/',
+  base: process.env.GITHUB_PAGES ? '/conner/' : '/',
   
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
