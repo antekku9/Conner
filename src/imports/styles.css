@@ -1,0 +1,231 @@
+:root {
+    --primary: #1a1c20;    /* Ciemny grafit */
+    --accent: #c5a059;     /* Złoty Conner */
+    --bg-light: #f9fafb;
+    --text-muted: #6b7280;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--primary);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -1px;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -1.5px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+/* Cards */
+.services {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header span {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    padding: 40px;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    transition: 0.3s;
+    background: var(--white);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.card.featured {
+    border: 2px solid var(--accent);
+}
+
+.card i {
+    color: var(--accent);
+    margin-bottom: 20px;
+    width: 32px;
+    height: 32px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Buttons */
+.btn-gold {
+    background: var(--accent);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.btn-outline {
+    border: 1px solid var(--primary);
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white) !important;
+}
+
+.trust {
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+
+}
+
+/* Sekcja Drukarki */
+.printers-section {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.text-content { flex: 1; min-width: 300px; }
+.image-placeholder { flex: 1; min-width: 300px; }
+.image-placeholder img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+.check-list { list-style: none; margin: 25px 0; }
+.check-list li { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-weight: 500; }
+.check-list i { color: var(--accent); width: 20px; }
+
+/* Liczniki */
+.stats {
+    background: var(--primary);
+    color: var(--white);
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+}
+
+.stat-item .number {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+.stat-item p { opacity: 0.8; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Kontakt */
+.contact { padding: 100px 0; background: var(--bg-light); }
+.contact-box {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 50px;
+    display: flex;
+    gap: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    flex-wrap: wrap;
+}
+
+.contact-info { flex: 1; min-width: 300px; }
+.contact-map { flex: 1.5; min-width: 300px; }
+.contact-details { margin-top: 30px; }
+.contact-details p { margin-bottom: 10px; }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 36px; }
+    .contact-box { padding: 30px; }
+}

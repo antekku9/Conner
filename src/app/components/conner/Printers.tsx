@@ -1,0 +1,55 @@
+import { CheckCircle } from 'lucide-react';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
+
+export function Printers() {
+  const features = [
+    'Sprzedaż i dzierżawa urządzeń wielofunkcyjnych',
+    'Autoryzowany serwis i materiały eksploatacyjne',
+    'Systemy zarządzania drukiem (oszczędności do 30%)',
+    'Doradztwo w doborze urządzeń do potrzeb firmy',
+  ];
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-[1200px] mx-auto px-5">
+        <div className="flex items-center gap-16 flex-wrap">
+          {/* Text Content */}
+          <div className="flex-1 min-w-[300px]">
+            <span className="text-[#c5a059] uppercase text-xs font-bold tracking-[2px]">
+              Rozwiązania drukujące
+            </span>
+            <h2 className="text-4xl font-bold mt-2 mb-4">
+              Drukarki i Kserokopiarki dla Firm
+            </h2>
+            <p className="text-[#6b7280] leading-relaxed mb-6">
+              Dostarczamy i serwisujemy profesjonalne urządzenia drukujące dostosowane do różnych obciążeń i wymagań. Od małych drukarek biurowych po wielofunkcyjne systemy dla dużych organizacji.
+            </p>
+            <ul className="list-none my-6 space-y-3">
+              {features.map((feature, index) => (
+                <li key={index} className="flex items-center gap-2.5 font-medium">
+                  <CheckCircle className="text-[#c5a059] w-5 h-5 flex-shrink-0" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <a 
+              href="tel:426319420" 
+              className="bg-[#c5a059] text-white px-7 py-3.5 rounded-lg no-underline font-semibold inline-block hover:bg-[#b39050] transition-colors"
+            >
+              Dobierz urządzenie
+            </a>
+          </div>
+
+          {/* Image */}
+          <div className="flex-1 min-w-[300px]">
+            <ImageWithFallback
+              src="https://images.unsplash.com/photo-1739826294194-9e0ceaea136f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBwcmludGVyJTIwY29waWVyJTIwbWFjaGluZXxlbnwxfHx8fDE3NzI5NjYzODR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              alt="Drukarki biurowe"
+              className="w-full rounded-[20px] shadow-[0_20px_40px_rgba(0,0,0,0.05)]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

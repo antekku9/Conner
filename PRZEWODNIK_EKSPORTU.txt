@@ -1,0 +1,209 @@
+═══════════════════════════════════════════════════════════════════
+  🚀 PRZEWODNIK EKSPORTU STRONY CONNER.PL Z FIGMA MAKE DO GITHUBA
+═══════════════════════════════════════════════════════════════════
+
+📍 JESTEŚ W FIGMA MAKE? 
+
+Masz 4 opcje w prawym górnym rogu:
+  • Publish
+  • Share  
+  • Open full screen view
+  • Make settings
+  • Copy design
+
+═══════════════════════════════════════════════════════════════════
+  METODA 1: "PUBLISH" → GITHUB (NAJPROSTSZA - 2 MINUTY!)
+═══════════════════════════════════════════════════════════════════
+
+KROK 1: Kliknij "PUBLISH" 
+        ↓
+KROK 2: Szukaj jednej z tych opcji:
+        • "Deploy to GitHub" ✅
+        • "Connect to GitHub" ✅
+        • "Export to GitHub" ✅
+        • "GitHub Pages" ✅
+        ↓
+KROK 3: Jeśli widzisz opcję GitHub:
+        • Kliknij na nią
+        • Zaloguj się do GitHub (lub załóż konto: github.com/signup)
+        • Autoryzuj Figma Make
+        • Nazwij repo: "conner-website"
+        • Wybierz: Public repository
+        • Włącz: GitHub Pages (jeśli dostępne)
+        • Kliknij: "Deploy" / "Publish"
+        ↓
+KROK 4: ✨ GOTOWE! 
+        Strona będzie online za 2-3 minuty na:
+        https://twoja-nazwa.github.io/conner-website/
+
+═══════════════════════════════════════════════════════════════════
+  METODA 2: "MAKE SETTINGS" → INTEGRACJE
+═══════════════════════════════════════════════════════════════════
+
+KROK 1: Kliknij "MAKE SETTINGS"
+        ↓
+KROK 2: Szukaj sekcji:
+        • "Integrations"
+        • "Export"
+        • "GitHub"
+        • "Deployment"
+        ↓
+KROK 3: Jeśli znajdziesz GitHub:
+        • Połącz konto GitHub
+        • Wybierz opcje eksportu
+        • Kliknij "Export" / "Deploy"
+
+═══════════════════════════════════════════════════════════════════
+  METODA 3: "SHARE" → EKSPORT
+═══════════════════════════════════════════════════════════════════
+
+KROK 1: Kliknij "SHARE"
+        ↓
+KROK 2: Szukaj opcji:
+        • "Share to GitHub"
+        • "Export code"
+        • "Generate repository"
+        • "Download as ZIP"
+        ↓
+KROK 3: Wybierz opcję eksportu
+        Postępuj według instrukcji na ekranie
+
+═══════════════════════════════════════════════════════════════════
+  METODA 4: "PUBLISH" → HOSTING FIGMA → DOWNLOAD
+═══════════════════════════════════════════════════════════════════
+
+KROK 1: Kliknij "PUBLISH"
+        ↓
+KROK 2: Opublikuj na hostingu Figma
+        ↓
+KROK 3: Po publikacji sprawdź czy jest opcja:
+        • "Download source code"
+        • "View on GitHub"
+        • "Export"
+
+═══════════════════════════════════════════════════════════════════
+  ❓ NIE WIDZISZ ŻADNEJ Z TYCH OPCJI?
+═══════════════════════════════════════════════════════════════════
+
+OPCJA A: Zrób screenshot
+  1. Zrób screenshot opcji "Publish"
+  2. Zrób screenshot opcji "Make settings"
+  3. Opisz dokładnie co widzisz
+
+OPCJA B: Kontakt z supportem Figma Make
+  "Cześć! Chcę wyeksportować projekt do GitHuba.
+   Dostępne opcje: Publish, Share, Make settings, Copy design.
+   Jak mogę pobrać kod źródłowy?"
+
+OPCJA C: Otwórz dokumentację
+  • EKSPORT_Z_FIGMA_MAKE.md - szczegółowa instrukcja
+  • START_TUTAJ.md - przewodnik po wszystkich opcjach
+
+═══════════════════════════════════════════════════════════════════
+  ✅ PO POMYŚLNYM EKSPORCIE - CO DALEJ?
+═══════════════════════════════════════════════════════════════════
+
+1. Sprawdź czy strona działa:
+   https://twoja-nazwa.github.io/conner-website/
+
+2. Jeśli widzisz 404 lub puste białe tło:
+   • Otwórz GitHub → Twoje repo
+   • Znajdź plik: vite.config.ts
+   • Kliknij Edit (ikonka ołówka)
+   • Zmień: '/conner-website/' → '/TWOJA-NAZWA-REPO/'
+   • Commit changes
+
+3. Poczekaj 2-3 minuty i odśwież stronę
+
+4. Gotowe! Masz działającą stronę z:
+   ✅ Sliderem banerów
+   ✅ Katalogiem produktów (filtry + wyszukiwanie)
+   ✅ Dedykowanymi podstronami
+   ✅ Responsywnym designem
+   ✅ Automatycznym wdrożeniem
+
+═══════════════════════════════════════════════════════════════════
+  📚 DOKUMENTACJA - CO GDZIE ZNAJDZIESZ
+═══════════════════════════════════════════════════════════════════
+
+Wszystkie pliki pobiorą się razem z kodem na GitHubie!
+
+📖 START_TUTAJ.md
+   → Przewodnik po CAŁEJ dokumentacji
+
+📖 EKSPORT_Z_FIGMA_MAKE.md
+   → Szczegółowa instrukcja eksportu (ten plik w wersji rozszerzonej)
+
+📖 GITHUB_DEPLOYMENT.md
+   → Instrukcja GitHub Pages (darmowy hosting)
+
+📖 INSTRUKCJA_EDYCJI.md
+   → Jak edytować produkty, banery, treści
+
+📖 SZYBKI_START.md
+   → 5-minutowy przegląd projektu
+
+📖 INSTRUKCJA_WDROZENIA.md
+   → Wdrożenie na własny hosting (FTP)
+
+📖 STRUKTURA_PROJEKTU.md
+   → Mapa wszystkich plików
+
+📖 README.md
+   → Główna dokumentacja
+
+═══════════════════════════════════════════════════════════════════
+  💡 NAJCZĘSTSZE PYTANIA
+═══════════════════════════════════════════════════════════════════
+
+Q: Czy to jest darmowe?
+A: TAK! GitHub Pages jest całkowicie darmowy.
+
+Q: Czy muszę znać programowanie?
+A: NIE! Eksport z Figma Make do GitHuba to 1 kliknięcie.
+
+Q: Jak później edytować produkty?
+A: Otwórz INSTRUKCJA_EDYCJI.md - wszystko tam jest.
+
+Q: Czy mogę użyć własnej domeny (conner.pl)?
+A: TAK! Instrukcja w GITHUB_DEPLOYMENT.md
+
+Q: Co jeśli nie widzę opcji GitHub?
+A: Otwórz EKSPORT_Z_FIGMA_MAKE.md - tam są wszystkie metody.
+
+Q: Jak dodać nowe produkty?
+A: Edytuj plik: src/app/data/products.ts (INSTRUKCJA_EDYCJI.md)
+
+Q: Jak zmienić banery?
+A: Edytuj: src/app/components/conner/BannerSlider.tsx
+
+Q: Czy strona ma system RMA?
+A: Nie w tej wersji. Można dodać z Supabase (backend).
+
+═══════════════════════════════════════════════════════════════════
+  🎯 PODSUMOWANIE
+═══════════════════════════════════════════════════════════════════
+
+NAJLEPSZA METODA:
+  Figma Make → "Publish" → "Deploy to GitHub" → Gotowe!
+
+CZAS: 2-5 minut
+
+KOSZT: Darmowe
+
+REZULTAT: 
+  • Strona online na GitHub Pages
+  • Automatyczne wdrożenie
+  • Możliwość podpięcia własnej domeny
+  • Pełny kod źródłowy na GitHubie
+  • Cała dokumentacja (8 plików!)
+
+═══════════════════════════════════════════════════════════════════
+
+Dane kontaktowe:
+📧 sklep@conner.pl
+📞 42 631 94 20
+
+Stworzone dla: Conner Sp. z o.o. © 2007-2026
+
+═══════════════════════════════════════════════════════════════════
