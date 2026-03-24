@@ -46,9 +46,34 @@ Kliknięcie na "Wynajem" w menu nie przewijało do sekcji.
 
 ---
 
+### 3. ❌→✅ Podstrony nie scrollowały do góry przy zmianie strony
+
+**Problem:**  
+Gdy użytkownik scrollował w dół na stronie głównej, a następnie przechodził na inną podstronę (np. Produkty), strona pozostawała w tej samej pozycji scroll zamiast wrócić na górę.
+
+**Rozwiązanie:**  
+- Stworzono komponent `ScrollToTop.tsx`
+- Komponent monitoruje zmiany ścieżki URL (useLocation)
+- Automatycznie scrolluje do góry (window.scrollTo) przy każdej zmianie strony
+- Dodano do Layout.tsx, więc działa globalnie dla wszystkich stron
+
+**Pliki dodane:**
+- `/src/app/components/conner/ScrollToTop.tsx` (NOWY!)
+
+**Pliki zmienione:**
+- `/src/app/components/conner/Layout.tsx`
+
+**Rezultat:**  
+✅ Każda zmiana strony automatycznie scrolluje do góry  
+✅ Dotyczy wszystkich podstron (Produkty, Obsługa firm, Szkoły, Instytucje)  
+✅ Natychmiastowy scroll (bez animacji) dla lepszego UX  
+✅ Nie wpływa na scroll w obrębie tej samej strony (anchor links)
+
+---
+
 ## 🆕 Nowe Funkcje
 
-### 3. ✨ Karuzela Urządzeń do Wynajmu
+### 4. ✨ Karuzela Urządzeń do Wynajmu
 
 **Co dodano:**  
 Profesjonalna karuzela z urządzeniami dostępnymi do wynajmu (inspirowana conner.pl/content/7-wynajem-sprzetu).
@@ -58,7 +83,7 @@ Profesjonalna karuzela z urządzeniami dostępnymi do wynajmu (inspirowana conne
 - ✅ **Manualne przewijanie** - strzałki lewo/prawo
 - ✅ **Responsywna** - 3 urządzenia (desktop), 2 (tablet), 1 (mobile)
 - ✅ **Pause on hover** - zatrzymuje się gdy najeżdżasz myszką
-- ✅ **Dots navigation** - kropki pod karuzelą
+- �� **Dots navigation** - kropki pod karuzelą
 - ✅ **Przycisk play/pause** - kontrola auto-play
 - ✅ **Smooth transitions** - płynne animacje
 - ✅ **Karty z hover efektem** - cienie i zoom przy najechaniu
@@ -94,7 +119,7 @@ Karuzela znajduje się zaraz po sekcji "Wynajem" (ServiceDetails), przed sekcją
 
 ---
 
-### 4. 🎨 Przygotowanie do dodania Logo
+### 5. 🎨 Przygotowanie do dodania Logo
 
 **Co przygotowano:**  
 Kompletną infrastrukturę do łatwego dodania logo firmy Conner.
@@ -135,14 +160,15 @@ Stworzono kompletny przewodnik:
 
 ## 📊 Podsumowanie Zmian
 
-### Pliki NOWE (1):
+### Pliki NOWE (2):
 - ✨ `/src/app/components/conner/RentalCarousel.tsx`
 - 📖 `/public/README_LOGO.md`
 - 📄 `/CHANGELOG_POPRAWKI.md` (ten plik)
 
-### Pliki ZMODYFIKOWANE (2):
+### Pliki ZMODYFIKOWANE (3):
 - 🔧 `/src/app/components/conner/Navbar.tsx`
 - 🔧 `/src/app/pages/HomePage.tsx`
+- 🔧 `/src/app/components/conner/Layout.tsx`
 
 ### Linie kodu:
 - **Dodane:** ~350 linii
