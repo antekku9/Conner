@@ -34,13 +34,14 @@ export function Navbar() {
     <nav className="py-5 border-b border-[#eee] bg-white sticky top-0 z-50">
       <div className="max-w-[1200px] mx-auto px-5">
         <div className="flex justify-between items-center">
-        <Link to="/" className="flex items-center no-underline">
-  <img 
-    src="/logo.svg" 
-    alt="Conner Sp. z o.o." 
-    className="h-10 w-auto"
-  />
-</Link>
+          <Link to="/" className="font-extrabold text-2xl tracking-tight no-underline text-[#1a1c20] flex items-center">
+            {/* Logo image - replace src with your logo path */}
+            {/* Uncomment and use your logo: */}
+            {/* <img src="/logo.svg" alt="Conner" className="h-8 w-auto" /> */}
+            
+            {/* Current text logo - will be replaced */}
+            <span>CONNER<span className="text-[#c5a059]"> sp. z o.o.</span></span>
+          </Link>
           
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-8 items-center list-none">
