@@ -1,5 +1,22 @@
 # 👋 START TUTAJ! - Przewodnik po dokumentacji projektu
 
+---
+
+## 🆕 NOWE! Sprawdź co zostało naprawione i dodane:
+
+### → Otwórz: `CHANGELOG_POPRAWKI.md`
+
+**Co nowego (24.03.2026):**
+- ✅ Naprawiono odnośniki "Serwis" i "Wynajem" w menu
+- ✅ Dodano karuzelę urządzeń do wynajmu (auto-play!)
+- ✅ Przygotowano miejsce na logo firmy
+- 📖 Pełna dokumentacja: `/public/README_LOGO.md`
+
+**Czas:** 5 minut czytania  
+**Status:** ✨ Gotowe do wdrożenia!
+
+---
+
 ## 🎯 Wybierz swoją ścieżkę:
 
 ---

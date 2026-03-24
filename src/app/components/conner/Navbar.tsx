@@ -1,30 +1,57 @@
-import { Link, useLocation } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const isActive = (path: string) => location.pathname === path;
+
+  // Smooth scroll handler for anchor links
+  const handleScrollTo = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <nav className="py-5 border-b border-[#eee] bg-white sticky top-0 z-50">
       <div className="max-w-[1200px] mx-auto px-5">
         <div className="flex justify-between items-center">
-          <Link to="/" className="font-extrabold text-2xl tracking-tight no-underline text-[#1a1c20]">
-            CONNER<span className="text-[#c5a059]"> sp. z o.o.</span>
+          <Link to="/" className="font-extrabold text-2xl tracking-tight no-underline text-[#1a1c20] flex items-center">
+            {/* Logo image - replace src with your logo path */}
+            {/* Uncomment and use your logo: */}
+            {/* <img src="/logo.svg" alt="Conner" className="h-8 w-auto" /> */}
+            
+            {/* Current text logo - will be replaced */}
+            <span>CONNER<span className="text-[#c5a059]"> sp. z o.o.</span></span>
           </Link>
           
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-8 items-center list-none">
             <li>
-              <a 
-                href="/#serwis" 
-                className="no-underline text-[#1a1c20] font-medium text-sm hover:text-[#c5a059] transition-colors"
+              <button 
+                onClick={() => handleScrollTo('serwis')}
+                className="no-underline text-[#1a1c20] font-medium text-sm hover:text-[#c5a059] transition-colors bg-transparent border-none cursor-pointer"
               >
                 Serwis
-              </a>
+              </button>
             </li>
             <li>
               <Link 
@@ -57,12 +84,12 @@ export function Navbar() {
               </Link>
             </li>
             <li>
-              <a 
-                href="/#wynajem" 
-                className="no-underline text-[#1a1c20] font-medium text-sm hover:text-[#c5a059] transition-colors"
+              <button 
+                onClick={() => handleScrollTo('wynajem')}
+                className="no-underline text-[#1a1c20] font-medium text-sm hover:text-[#c5a059] transition-colors bg-transparent border-none cursor-pointer"
               >
                 Wynajem
-              </a>
+              </button>
             </li>
             <li>
               <Link 
@@ -100,13 +127,12 @@ export function Navbar() {
           <div className="md:hidden mt-4 pb-4 border-t border-[#eee] pt-4">
             <ul className="flex flex-col gap-4 list-none">
               <li>
-                <a 
-                  href="/#serwis" 
-                  className="no-underline text-[#1a1c20] font-medium text-sm hover:text-[#c5a059] transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                <button 
+                  onClick={() => handleScrollTo('serwis')}
+                  className="no-underline text-[#1a1c20] font-medium text-sm hover:text-[#c5a059] transition-colors bg-transparent border-none cursor-pointer text-left w-full"
                 >
                   Serwis
-                </a>
+                </button>
               </li>
               <li>
                 <Link 
@@ -142,13 +168,12 @@ export function Navbar() {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="/#wynajem" 
-                  className="no-underline text-[#1a1c20] font-medium text-sm hover:text-[#c5a059] transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                <button 
+                  onClick={() => handleScrollTo('wynajem')}
+                  className="no-underline text-[#1a1c20] font-medium text-sm hover:text-[#c5a059] transition-colors bg-transparent border-none cursor-pointer text-left w-full"
                 >
                   Wynajem
-                </a>
+                </button>
               </li>
               <li>
                 <Link 

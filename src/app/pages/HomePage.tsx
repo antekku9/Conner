@@ -2,6 +2,7 @@ import { Hero } from '../components/conner/Hero';
 import { Services } from '../components/conner/Services';
 import { ServiceDetails } from '../components/conner/ServiceDetails';
 import { Printers } from '../components/conner/Printers';
+import { RentalCarousel } from '../components/conner/RentalCarousel';
 import { FeaturedProducts } from '../components/conner/FeaturedProducts';
 import { Stats } from '../components/conner/Stats';
 import { Contact } from '../components/conner/Contact';
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Hero />
       <Services />
       <ServiceDetails />
+      <RentalCarousel />
       <Printers />
       <FeaturedProducts />
       <Stats />

@@ -3,10 +3,12 @@
 ## 📋 Spis treści
 1. [🚀 Jak pobrać i wdrożyć stronę](#jak-pobrać-i-wdrożyć-stronę)
 2. [Jak dodać nowy baner do slidera](#jak-dodać-nowy-baner-do-slidera)
-3. [Jak dodać nowy produkt](#jak-dodać-nowy-produkt)
-4. [Jak edytować istniejący produkt](#jak-edytować-istniejący-produkt)
-5. [Kategorie produktów](#kategorie-produktów)
-6. [Wyróżnione produkty](#wyróżnione-produkty)
+3. [Jak edytować karuzelę urządzeń do wynajmu](#jak-edytować-karuzelę-urządzeń-do-wynajmu) ⭐ NOWE!
+4. [Jak dodać nowy produkt](#jak-dodać-nowy-produkt)
+5. [Jak edytować istniejący produkt](#jak-edytować-istniejący-produkt)
+6. [Kategorie produktów](#kategorie-produktów)
+7. [Wyróżnione produkty](#wyróżnione-produkty)
+8. [Jak dodać logo firmy](#jak-dodać-logo-firmy) ⭐ NOWE!
 
 ---
 
@@ -74,6 +76,55 @@ const banners = [
     ctaLink: '/produkty',
   },
   // Poprzednie banery...
+];
+```
+
+---
+
+## 🛍️ Jak edytować karuzelę urządzeń do wynajmu
+
+**Plik do edycji:** `/src/app/components/conner/RentalCarousel.tsx`
+
+### Krok 1: Znajdź tablicę urządzeń
+Otwórz plik i znajdź tablicę `devices` (około linii 9-10):
+
+```typescript
+const devices = [
+  {
+    image: 'URL_DO_OBRAZU',
+    title: 'Tytuł urządzenia',
+    description: 'Krótki opis urządzenia',
+    ctaText: 'Tekst przycisku',
+    ctaLink: 'link',
+  },
+  // ... kolejne urządzenia
+];
+```
+
+### Krok 2: Dodaj nowe urządzenie
+Dodaj nowy obiekt do tablicy:
+
+```typescript
+{
+  image: 'https://twoje-zdjecie.jpg',  // URL do Twojego zdjęcia
+  title: 'Serwer HP ProLiant DL380 Gen10',    // Główny tytuł
+  description: 'Wysokowydajny serwer dla firm',     // Opis
+  ctaText: 'Dowiedz się więcej',       // Tekst na przycisku
+  ctaLink: '#serwery',                  // Link (# dla sekcji, http dla zewnętrznych)
+},
+```
+
+### Przykład:
+```typescript
+const devices = [
+  {
+    image: 'https://images.unsplash.com/photo-server.jpg',
+    title: 'Serwer HP ProLiant DL380 Gen10',
+    description: 'Wysokowydajny serwer dla firm',
+    ctaText: 'Dowiedz się więcej',
+    ctaLink: '#serwery',
+  },
+  // Poprzednie urządzenia...
 ];
 ```
 
@@ -254,6 +305,76 @@ System automatycznie tworzy:
 
 ---
 
+## 🎨 Jak dodać logo firmy
+
+**Pliki:** 
+- `/public/logo.svg` lub `/public/logo.png` - Twoje logo
+- `/src/app/components/conner/Navbar.tsx` - Navbar do edycji
+
+### Krok 1: Przygotuj plik logo
+
+**Wymagania:**
+- Format: **SVG** (zalecane) lub PNG
+- Przezroczyste tło
+- Wysokość: minimum 200px
+- Kolory: dopasowane do palety firmowej
+
+### Krok 2: Dodaj logo do projektu
+
+Skopiuj plik logo do folderu `/public/`:
+```
+/public/
+  └── logo.svg     ← Tutaj!
+```
+
+### Krok 3: Edytuj Navbar
+
+Otwórz plik: `/src/app/components/conner/Navbar.tsx`
+
+Znajdź (około linii 38-43):
+```tsx
+<Link to="/" className="font-extrabold text-2xl tracking-tight no-underline text-[#1a1c20] flex items-center">
+  {/* Logo image - replace src with your logo path */}
+  {/* Uncomment and use your logo: */}
+  {/* <img src="/logo.svg" alt="Conner" className="h-8 w-auto" /> */}
+  
+  {/* Current text logo - will be replaced */}
+  <span>CONNER<span className="text-[#c5a059]"> sp. z o.o.</span></span>
+</Link>
+```
+
+Zamień na:
+```tsx
+<Link to="/" className="flex items-center no-underline">
+  <img 
+    src="/logo.svg" 
+    alt="Conner Sp. z o.o." 
+    className="h-10 w-auto"
+  />
+</Link>
+```
+
+### Krok 4: Dostosuj rozmiar (opcjonalnie)
+
+Zmień `h-10` na:
+- `h-8` - małe logo (32px)
+- `h-10` - średnie logo (40px) ⭐ ZALECANE
+- `h-12` - duże logo (48px)
+- `h-14` - bardzo duże logo (56px)
+
+### Responsywne logo (różne rozmiary na mobile/desktop):
+```tsx
+<img 
+  src="/logo.svg" 
+  alt="Conner" 
+  className="h-8 md:h-10 w-auto"
+/>
+```
+
+📚 **Pełna dokumentacja:** Zobacz `/public/README_LOGO.md`
+
+---
+
 ## 🆘 Pomoc
 
 Jeśli masz problemy:
@@ -265,4 +386,4 @@ Jeśli masz problemy:
 ---
 
 **Data aktualizacji:** Marzec 2026  
-**Wersja:** 1.0
+**Wersja:** 1.1

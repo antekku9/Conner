@@ -4,6 +4,20 @@ Nowoczesna strona korporacyjna dla firmy IT stworzona w React + Vite + Tailwind 
 
 ---
 
+## 🆕 OSTATNIE AKTUALIZACJE (24.03.2026)
+
+**✅ Naprawiono:**
+- Odnośnik "Serwis" w menu (smooth scroll działa!)
+- Odnośnik "Wynajem" w menu (smooth scroll działa!)
+
+**✨ Dodano:**
+- Karuzela urządzeń do wynajmu (6 urządzeń, auto-play, responsywna!)
+- Przygotowanie do logo firmy (instrukcja: `/public/README_LOGO.md`)
+
+**📖 Pełny changelog:** `CHANGELOG_POPRAWKI.md`
+
+---
+
 ## 👋 NOWY UŻYTKOWNIK? START TUTAJ!
 
 **📖 Otwórz plik: `START_TUTAJ.md`**
@@ -232,5 +246,3 @@ Projekt własnościowy - Conner Sp. z o.o. © 2007-2026
 📞 42 631 94 20
 
 Stworzone z ❤️ dla Conner Sp. z o.o.
-
-.
