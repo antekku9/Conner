@@ -20,4 +20,6 @@ export const router = createBrowserRouter([
       { path: "produkty/:slug", Component: ProductDetailPage },
     ],
   },
-]);
+], {
+  basename: "/Conner"
+});
