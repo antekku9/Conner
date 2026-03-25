@@ -11,16 +11,39 @@ export function ContactForm() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // W prawdziwej aplikacji tutaj byłoby wysyłanie do API
-    console.log('Formularz wysłany:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    }, 3000);
+    setIsSubmitting(true);
+
+    try {
+      // Wysyłanie przez FormSubmit.co
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      
+      const response = await fetch('https://formsubmit.co/sklep@conner.pl', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        }, 5000);
+      } else {
+        alert('Wystąpił błąd. Spróbuj ponownie lub zadzwoń: 42 631 94 20');
+      }
+    } catch (error) {
+      alert('Wystąpił błąd. Spróbuj ponownie lub zadzwoń: 42 631 94 20');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -28,6 +51,17 @@ export function ContactForm() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  // Mapowanie tematów na czytelne nazwy
+  const subjectLabels: Record<string, string> = {
+    'serwis': 'Serwis komputerowy',
+    'firma': 'Obsługa firm',
+    'szkola': 'Obsługa szkół',
+    'instytucja': 'Obsługa instytucji',
+    'wynajem': 'Wynajem sprzętu',
+    'zakup': 'Zakup sprzętu',
+    'inne': 'Inne'
   };
 
   return (
@@ -39,11 +73,21 @@ export function ContactForm() {
 
       {submitted ? (
         <div className="bg-green-50 border border-green-200 text-green-800 px-6 py-4 rounded-lg text-center">
-          <p className="font-semibold">Dziękujemy za wiadomość!</p>
-          <p className="text-sm mt-1">Skontaktujemy się z Tobą wkrótce.</p>
+          <p className="font-semibold">✅ Dziękujemy za wiadomość!</p>
+          <p className="text-sm mt-1">Twoja wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
+          {/* FormSubmit.co konfiguracja - ukryte pola */}
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input 
+            type="hidden" 
+            name="_subject" 
+            value={`Nowa wiadomość z conner.pl - ${subjectLabels[formData.subject] || 'Kontakt'}`} 
+          />
+          <input type="hidden" name="_autoresponse" value="Dziękujemy za kontakt! Twoja wiadomość została dostarczona do Conner Sp. z o.o. Skontaktujemy się z Tobą w ciągu 24 godzin." />
+
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-[#1a1c20] mb-2">
               Imię i nazwisko *
@@ -134,10 +178,20 @@ export function ContactForm() {
 
           <button
             type="submit"
-            className="w-full bg-[#c5a059] text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-[#b39050] transition-colors flex items-center justify-center gap-2"
+            disabled={isSubmitting}
+            className="w-full bg-[#c5a059] text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-[#b39050] transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Send className="w-5 h-5" />
-            Wyślij wiadomość
+            {isSubmitting ? (
+              <>
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                Wysyłanie...
+              </>
+            ) : (
+              <>
+                <Send className="w-5 h-5" />
+                Wyślij wiadomość
+              </>
+            )}
           </button>
 
           <p className="text-xs text-[#6b7280] text-center">

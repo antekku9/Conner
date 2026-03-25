@@ -14,9 +14,11 @@ Nowoczesna strona korporacyjna dla firmy IT stworzona w React + Vite + Tailwind 
 1. ✅ Poprawiono `vite.config.ts` - base URL z `/conner-website/` na `/Conner/`
 2. ✅ Dodano `.github/workflows/deploy.yml` - automatyczny deployment
 3. ✅ Sprawdzono wszystkie komponenty - brak błędów
+4. ✅ **BONUS: Formularz kontaktowy działa!** Wysyła na **sklep@conner.pl**
 
 📖 **Pełny raport:** `RAPORT_AUDYTU_PROJEKTU.md`  
-🚀 **Co dalej:** `CO_DALEJ.md` - 3 proste kroki do wdrożenia!
+🚀 **Co dalej:** `CO_DALEJ.md` - 3 proste kroki do wdrożenia!  
+📧 **Formularz:** `INSTRUKCJA_FORMULARZ_KONTAKTOWY.md` - jak działa FormSubmit
 
 ---
 

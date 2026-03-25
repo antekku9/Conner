@@ -2,7 +2,7 @@
 
 ## ✅ Audyt zakończony - projekt GOTOWY!
 
-Przejrzałem całe repozytorium i znalazłem **2 problemy**, które **NAPRAWIŁEM**:
+Przejrzałem całe repozytorium i znalazłem **2 problemy**, które **NAPRAWIŁEM** + **BONUS: Dodałem działający formularz kontaktowy!**
 
 ---
 
@@ -35,6 +35,22 @@ Dodałem plik `.github/workflows/deploy.yml` z automatycznym:
 - ✅ Buildem przy każdym push do `main`
 - ✅ Deploymentem na GitHub Pages
 - ✅ Możliwością manualnego uruchomienia
+
+---
+
+### 3. 🎁 BONUS: Formularz kontaktowy działa! ✉️
+
+**Problem:**  
+Formularz NIE wysyłał wiadomości - tylko symulował wysyłanie.
+
+**Naprawa:**  
+Dodałem integrację z **FormSubmit.co** (darmowe, bez limitów!):
+- ✅ Wiadomości wysyłane na **sklep@conner.pl**
+- ✅ Automatyczna odpowiedź dla klienta
+- ✅ Ładny format emaila (tabela)
+- ✅ Spinner ładowania + obsługa błędów
+
+📖 **Pełna instrukcja:** `INSTRUKCJA_FORMULARZ_KONTAKTOWY.md`
 
 ---
 
