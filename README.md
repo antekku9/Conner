@@ -8,16 +8,26 @@ Nowoczesna strona korporacyjna dla firmy IT stworzona w React + Vite + Tailwind 
 
 **Status projektu:** 🟢 **GOTOWY DO WDROŻENIA**
 
-**Przejrzałem całe repozytorium i naprawiłem wszystkie problemy!**
+**AKTUALIZACJA:** Znaleziono i naprawiono problem z deploymentem!
 
-### Co zostało naprawione:
-1. ✅ Poprawiono `vite.config.ts` - base URL z `/conner-website/` na `/Conner/`
-2. ✅ Dodano `.github/workflows/deploy.yml` - automatyczny deployment
-3. ✅ Sprawdzono wszystkie komponenty - brak błędów
-4. ✅ **BONUS: Formularz kontaktowy działa!** Wysyła na **sklep@conner.pl**
+### ⚠️ ZNALEZIONY PROBLEM:
+❌ **Brakowało `.github/workflows/deploy.yml`** - dlatego zmiany się nie wprowadzały!
 
+### ✅ CO ZOSTAŁO NAPRAWIONE:
+1. ✅ Utworzono `.github/workflows/deploy.yml` - automatyczny deployment
+2. ✅ Utworzono `.gitignore` - ignorowanie plików tymczasowych
+3. ✅ Poprawiono `vite.config.ts` - base URL z `/conner-website/` na `/Conner/`
+4. ✅ Sprawdzono wszystkie komponenty - brak błędów
+5. ✅ **Formularz kontaktowy działa!** Wysyła na **sklep@conner.pl**
+
+### 🚨 CO MUSISZ ZROBIĆ (3 KROKI):
+1. **Wgraj pliki na GitHub** (Publish w Figma Make lub git push)
+2. **Zmień Source na "GitHub Actions"** w Settings → Pages
+3. **Poczekaj 6 minut** - strona będzie live!
+
+📖 **Szczegółowa naprawa:** `NAPRAWA_DEPLOYMENT.md` lub `QUICK_FIX.txt`  
 📖 **Pełny raport:** `RAPORT_AUDYTU_PROJEKTU.md`  
-🚀 **Co dalej:** `CO_DALEJ.md` - 3 proste kroki do wdrożenia!  
+🚀 **Co dalej:** `CO_DALEJ.md` - dalsze kroki wdrożenia  
 📧 **Formularz:** `INSTRUKCJA_FORMULARZ_KONTAKTOWY.md` - jak działa FormSubmit
 
 ---
