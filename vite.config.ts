@@ -5,9 +5,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   // Ustaw base URL dla GitHub Pages
-  // Zmień 'conner-website' na nazwę TWOJEGO repozytorium
-  // Jeśli używasz własnej domeny lub głównego repo (nazwa.github.io), ustaw base: '/'
-  base: process.env.GITHUB_PAGES ? '/conner-website/' : '/',
+  // Repo: https://github.com/antekku9/Conner
+  // Deployed URL: https://antekku9.github.io/Conner/
+  base: process.env.GITHUB_PAGES ? '/Conner/' : '/',
   
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
