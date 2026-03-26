@@ -8,6 +8,7 @@ export interface Product {
   category: string;
   price: number;
   oldPrice?: number; // opcjonalna stara cena (dla promocji)
+  lowestPrice30Days?: number; // OMNIBUS: najniższa cena z ostatnich 30 dni
   description: string;
   shortDescription: string;
   image: string;
@@ -35,6 +36,7 @@ export const products: Product[] = [
     category: 'Laptopy',
     price: 2499,
     oldPrice: 2899,
+    lowestPrice30Days: 2499, // OMNIBUS: Najniższa cena z 30 dni = aktualna cena
     shortDescription: 'Profesjonalny laptop biznesowy z procesorem Intel Core i5',
     description: 'Dell Latitude 5520 to niezawodny laptop biznesowy zaprojektowany dla profesjonalistów. Wyposażony w procesor Intel Core i5 11. generacji, 16GB RAM i szybki dysk SSD 512GB. Idealny do pracy biurowej, multimediów i zadań wymagających mocy obliczeniowej.',
     image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800',

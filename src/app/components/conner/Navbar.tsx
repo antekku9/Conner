@@ -35,12 +35,12 @@ export function Navbar() {
       <div className="max-w-[1200px] mx-auto px-5">
         <div className="flex justify-between items-center">
           <Link to="/" className="font-extrabold text-2xl tracking-tight no-underline text-[#1a1c20] flex items-center">
-            {/* Logo image - replace src with your logo path */}
-            {/* Uncomment and use your logo: */}
-            {/* <img src="/logo.svg" alt="Conner" className="h-8 w-auto" /> */}
-            
-            {/* Current text logo - will be replaced */}
-            <span>CONNER<span className="text-[#c5a059]"> sp. z o.o.</span></span>
+            {/* Logo Conner Sp. z o.o. */}
+            <img 
+              src={`${import.meta.env.BASE_URL}logo.svg`} 
+              alt="Conner Sp. z o.o." 
+              className="h-12 w-auto transition-opacity hover:opacity-80"
+            />
           </Link>
           
           {/* Desktop Menu */}

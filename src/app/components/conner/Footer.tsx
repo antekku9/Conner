@@ -8,9 +8,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">
-              CONNER<span className="text-[#c5a059]"> sp. z o.o.</span>
-            </h3>
+            <Link to="/" className="inline-block mb-4">
+              <img 
+                src={`${import.meta.env.BASE_URL}logo.svg`} 
+                alt="Conner Sp. z o.o." 
+                className="h-10 w-auto"
+              />
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Profesjonalne usługi IT od 1996 roku. Kompleksowa obsługa firm, szkół i instytucji w zakresie sprzętu komputerowego, serwisu i wynajmu urządzeń.
             </p>

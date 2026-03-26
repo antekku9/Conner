@@ -72,6 +72,15 @@ export function ProductCard({ product }: ProductCardProps) {
             )}
           </div>
         </div>
+        
+        {/* OMNIBUS - Najniższa cena z 30 dni (tylko przy promocji) */}
+        {product.oldPrice && product.lowestPrice30Days && (
+          <div className="mt-3 pt-3 border-t border-gray-200">
+            <p className="text-xs text-gray-600">
+              Najniższa cena z 30 dni: <strong>{product.lowestPrice30Days.toLocaleString('pl-PL')} zł</strong>
+            </p>
+          </div>
+        )}
       </div>
     </Link>
   );
