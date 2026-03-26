@@ -7,7 +7,7 @@ export default defineConfig({
   // Ustaw base URL dla GitHub Pages
   // Repo: https://github.com/antekku9/Conner
   // Deployed URL: https://antekku9.github.io/Conner/
-  base: process.env.GITHUB_PAGES ? '/Conner/' : '/',
+  base: '/Conner/',
   
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
