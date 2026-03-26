@@ -3,11 +3,11 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({
-  // Ustaw base URL dla GitHub Pages
-  // Repo: https://github.com/antekku9/Conner
-  // Deployed URL: https://antekku9.github.io/Conner/
-  base: '/Conner/',
+export default defineConfig(({ mode }) => ({
+  // Dynamiczny base URL:
+  // - Figma Make: '/' (development)
+  // - GitHub Pages: '/Conner/' (production)
+  base: mode === 'production' ? '/Conner/' : '/',
   
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
@@ -24,4 +24,4 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
-})
+}))
