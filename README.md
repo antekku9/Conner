@@ -1,242 +1,245 @@
 # 🏢 Strona internetowa Conner Sp. z o.o.
 
-Nowoczesna strona korporacyjna dla firmy IT stworzona w React + Vite + Tailwind CSS.
+Nowoczesna strona korporacyjna dla firmy IT stworzona w React + Tailwind CSS.
+
+**🌐 Strona online:** https://antekku9.github.io/Conner
+
+**⚡ Szybki przewodnik:** [QUICK_GUIDE.md](QUICK_GUIDE.md) - najczęstsze zmiany krok po kroku
 
 ---
 
-## 🆕 OSTATNIE AKTUALIZACJE (26.03.2026)
+## 📋 O projekcie
 
-**✅ Strona w pełni działająca:**
-- ✅ Deploy na GitHub Pages działa automatycznie
-- ✅ Routing działa poprawnie
-- ✅ Formularz kontaktowy wysyła na sklep@conner.pl
-- ✅ Wszystkie komponenty działają
+Profesjonalna strona dla **Conner Sp. z o.o.** - firmy IT z Łodzi działającej od 2007 roku.
 
-**✨ Nowości:**
-- Odnośniki "Serwis" i "Wynajem" w menu (smooth scroll)
-- Karuzela urządzeń do wynajmu (6 urządzeń, auto-play, responsywna)
-- Przygotowanie do logo firmy (instrukcja: `/public/README_LOGO.md`)
-
-**📖 Pełny changelog:** `CHANGELOG_POPRAWKI.md`
-
----
-
-## 👋 NOWY UŻYTKOWNIK? START TUTAJ!
-
-**📖 Otwórz plik: `START_TUTAJ.md`**
-
-Zawiera przewodnik po CAŁEJ dokumentacji i pomoże Ci wybrać odpowiednią ścieżkę! 
-
-🎯 **3 najpopularniejsze:**
-1. `EKSPORT_Z_FIGMA_MAKE.md` - Uruchom stronę za 2 minuty!
-2. `GITHUB_DEPLOYMENT.md` - Darmowy hosting GitHub Pages
-3. `INSTRUKCJA_EDYCJI.md` - Jak edytować produkty i treści
-
----
-
-## ⚡ EKSPORT DO GITHUBA Z FIGMA MAKE
-
-**Nie musisz pobierać plików! Możesz wyeksportować BEZPOŚREDNIO z Figma Make do GitHuba!**
-
-### 🚀 Szybki start (1 kliknięcie!):
-1. W Figma Make kliknij **"Publish"**
-2. Szukaj opcji **"Deploy to GitHub"** lub **"Connect GitHub"**
-3. Połącz konto GitHub i kliknij Deploy
-4. **GOTOWE!** Strona będzie online za 2-3 minuty! 🎉
-
-📚 **Szczegółowa instrukcja:** Zobacz `EKSPORT_Z_FIGMA_MAKE.md`
-
----
-
-## 📱 O projekcie
-
-Profesjonalna strona internetowa dla **Conner Sp. z o.o.** - firmy IT z Łodzi działającej od 2007 roku.
-
-### Funkcje:
+### ✨ Funkcje:
 - ✅ Responsywny design (desktop + mobile)
-- ✅ Profesjonalny slider banerów
-- ✅ Kompletny katalog produktów z filtrowaniem i wyszukiwaniem
-- ✅ Dedykowane podstrony produktów
-- ✅ Routing wielostronicowy (React Router)
-- ✅ Sekcje: Usługi, O firmie, Kontakt
+- ✅ Katalog produktów z Allegro (z cenami Omnibus)
 - ✅ Dedykowane podstrony dla różnych grup klientów (Firmy, Szkoły, Instytucje)
+- ✅ Formularz kontaktowy (wysyła na sklep@conner.pl)
+- ✅ Slider banerów
+- ✅ Karuzela urządzeń do wynajmu
+- ✅ Automatyczne wdrażanie przy każdym push na GitHub
 
-### Technologie:
-- **React 18** - framework UI
-- **TypeScript** - typowanie
-- **Vite** - szybki bundler
-- **Tailwind CSS v4** - stylowanie
-- **React Router** - routing
-- **Lucide React** - ikony
-- **React Slick** - slider
+### 🛠️ Technologie:
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS v4
+- React Router
+- GitHub Pages (hosting)
 
-## 🚀 Szybki start
+---
 
-### 1. Zainstaluj Node.js
-Pobierz i zainstaluj z: https://nodejs.org/ (wersja LTS - 18 lub nowsza)
+## 🚀 Jak wprowadzać zmiany (przez przeglądarkę)
 
-### 2. Zainstaluj zależności
-```bash
-npm install
+### 1️⃣ **Edycja produktów na Allegro**
+
+**Plik:** `/src/app/data/products.ts`
+
+**Link:** https://github.com/antekku9/Conner/blob/main/src/app/data/products.ts
+
+**Jak edytować:**
+1. Otwórz link powyżej
+2. Kliknij ikonę **ołówka** (Edit this file) w prawym górnym rogu
+3. Znajdź produkt który chcesz edytować
+4. Zmień dane (nazwę, cenę, opis, obrazek, link do Allegro)
+5. Przewiń na dół i kliknij **"Commit changes"**
+6. Poczekaj 2-3 minuty - strona automatycznie się zaktualizuje! ✅
+
+**Przykład produktu:**
+```typescript
+{
+  id: '1',
+  name: 'Laptop Dell Latitude 5420',
+  category: 'laptopy',
+  price: 1899,
+  omnibusPrice: 2099,  // najniższa cena z ostatnich 30 dni
+  image: 'https://images.unsplash.com/photo-1...',
+  allegroLink: 'https://allegro.pl/...',
+  description: 'Wydajny laptop biznesowy...',
+}
 ```
 
-### 3. Uruchom serwer deweloperski
-```bash
-npm run dev
-```
-Strona otworzy się na: http://localhost:5173
+---
 
-### 4. Zbuduj do produkcji
-```bash
-npm run build
-```
-Gotowe pliki znajdziesz w folderze `dist/`
+### 2️⃣ **Edycja banerów na stronie głównej**
 
-## 📚 Dokumentacja
+**Plik:** `/src/app/components/conner/BannerSlider.tsx`
 
-W projekcie znajdują się trzy instrukcje:
+**Link:** https://github.com/antekku9/Conner/blob/main/src/app/components/conner/BannerSlider.tsx
 
-1. **SZYBKI_START.md** - Podstawowe informacje (5 minut)
-2. **INSTRUKCJA_EDYCJI.md** - Jak edytować produkty, banery, treści
-3. **INSTRUKCJA_WDROZENIA.md** - Pełna dokumentacja wdrożenia na hosting
+**Jak edytować:**
+1. Otwórz link powyżej
+2. Kliknij **ołówek** (Edit)
+3. Znajdź sekcję `banners` (około linia 12-40)
+4. Zmień:
+   - `title` - nagłówek
+   - `subtitle` - podtytuł
+   - `buttonText` - tekst przycisku
+   - `buttonLink` - link przycisku
+   - `image` - obrazek (użyj Unsplash lub własnego)
+5. **Commit changes**
 
-## 📝 Najczęstsze edycje
+---
 
-### Zmiana banerów na stronie głównej:
-```
-/src/app/components/conner/BannerSlider.tsx
-```
+### 3️⃣ **Zmiana danych kontaktowych**
 
-### Dodanie/edycja produktów:
-```
-/src/app/data/products.ts
-```
+**Footer (stopka):**
+- **Plik:** `/src/app/components/conner/Footer.tsx`
+- **Link:** https://github.com/antekku9/Conner/blob/main/src/app/components/conner/Footer.tsx
 
-### Zmiana danych kontaktowych:
-```
-/src/app/components/conner/Footer.tsx
-/src/app/components/conner/Contact.tsx
-```
+**Sekcja kontakt:**
+- **Plik:** `/src/app/components/conner/Contact.tsx`
+- **Link:** https://github.com/antekku9/Conner/blob/main/src/app/components/conner/Contact.tsx
 
-### Edycja kolorów firmowych:
-```
-/src/styles/theme.css
-```
+---
 
-## 🌐 Wdrożenie
+### 4️⃣ **Zmiana urządzeń do wynajmu**
 
-### Opcja 1: GitHub Pages (DARMOWE + AUTOMATYCZNE!) ⭐ POLECAM
-```bash
-# Pełna instrukcja w: GITHUB_DEPLOYMENT.md
-git init
-git add .
-git commit -m "Initial commit"
-git push
-```
-**Zalety:**
-- ✅ Całkowicie darmowe
-- ✅ Automatyczne wdrożenie przy każdym `git push`
-- ✅ HTTPS za darmo
-- ✅ Historia zmian (Git)
-- ✅ Możliwość podpięcia własnej domeny
+**Plik:** `/src/app/components/conner/RentalCarousel.tsx`
 
-📚 **Szczegóły:** Zobacz `GITHUB_DEPLOYMENT.md`
+**Link:** https://github.com/antekku9/Conner/blob/main/src/app/components/conner/RentalCarousel.tsx
 
-### Opcja 2: FTP/SFTP (hosting standardowy)
-1. Zbuduj: `npm run build`
-2. Wgraj zawartość folderu `dist/` do `public_html/`
-3. Dodaj plik `.htaccess` (instrukcja w INSTRUKCJA_WDROZENIA.md)
+**Jak edytować:**
+1. Otwórz link
+2. Znajdź sekcję `devices` (linia ~14)
+3. Zmień nazwę urządzenia, model, cenę, obrazek
+4. **Commit changes**
 
-### Opcja 3: Netlify (najprostsze dla testów)
-```bash
-npm run build
-npx netlify-cli deploy --prod --dir=dist
-```
+---
 
-### Opcja 4: Vercel
-```bash
-npx vercel --prod
-```
+### 5️⃣ **Zmiana logo**
 
-## 📁 Struktura projektu
+**Jak podmienić logo:**
+1. Przejdź do: https://github.com/antekku9/Conner/tree/main/public
+2. Kliknij na plik `logo.svg`
+3. Kliknij ikonę **kosza** (usuń stare logo)
+4. Wróć do folderu `public/`
+5. Kliknij **"Add file"** → **"Upload files"**
+6. Przeciągnij nowy plik `logo.svg` lub `logo.png`
+7. **Commit changes**
 
-```
-conner-website/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── conner/          # Komponenty strony Conner
-│   │   │   ├── products/        # Komponenty produktów
-│   │   │   └── ui/              # Komponenty UI (buttony, karty)
-│   │   ├── pages/               # Podstrony (Home, Produkty, itp.)
-│   │   ├── data/
-│   │   │   └── products.ts      # DANE PRODUKTÓW - edytuj tutaj!
-│   │   ├── App.tsx              # Główny komponent
-│   │   └── routes.tsx           # Konfiguracja routingu
-│   ├── styles/
-│   │   ├── theme.css            # KOLORY I STYLE FIRMOWE
-│   │   ├── fonts.css            # Czcionki (Inter)
-│   │   └── index.css            # Style globalne
-│   └── imports/                 # Importowane zasoby
-├── package.json                 # Zależności projektu
-├── vite.config.ts              # Konfiguracja Vite
-├── README.md                    # Ten plik
-├── SZYBKI_START.md             # Krótki przewodnik
-├── INSTRUKCJA_EDYCJI.md        # Jak edytować treści
-└── INSTRUKCJA_WDROZENIA.md     # Jak wdrożyć na hosting
-```
+Jeśli zmieniasz z SVG na PNG, musisz też edytować:
+- **Plik:** `/src/app/components/conner/Navbar.tsx` (linia 40)
+- Zmień `logo.svg` na `logo.png`
+
+---
+
+### 6️⃣ **Edycja treści na podstronach**
+
+**Firmy:** `/src/app/pages/FirmyPage.tsx`  
+**Szkoły:** `/src/app/pages/SzkolyPage.tsx`  
+**Instytucje:** `/src/app/pages/InstytucjePage.tsx`
+
+**Jak edytować:**
+1. Otwórz plik na GitHubie
+2. Kliknij **ołówek** (Edit)
+3. Zmień teksty, nagłówki, opisy
+4. **Commit changes**
+
+---
+
+### 7️⃣ **Zmiana kolorów firmowych**
+
+**Plik:** `/src/styles/theme.css`
+
+**Link:** https://github.com/antekku9/Conner/blob/main/src/styles/theme.css
+
+Obecne kolory:
+- Ciemny grafit: `#1a1c20`
+- Złoty akcent: `#c5a059`
+
+---
+
+## ⚙️ Automatyczne wdrażanie
+
+Po każdym **Commit changes** na GitHubie:
+
+1. ⚡ GitHub Actions automatycznie uruchamia workflow
+2. 🔨 Buduje nową wersję strony
+3. 🚀 Wdraża na GitHub Pages
+4. ✅ **Za 2-3 minuty strona jest zaktualizowana!**
+
+**Sprawdź status:** https://github.com/antekku9/Conner/actions
+
+- 🟢 **Zielona fajka** = Wdrożenie udane! ✅
+- 🟡 **Żółte kółko** = Trwa budowanie... ⏳
+- 🔴 **Czerwony krzyżyk** = Błąd (napisz do mnie!) ❌
+
+---
+
+## 📂 Najważniejsze pliki do edycji
+
+| Co chcesz zmienić | Plik |
+|-------------------|------|
+| **Produkty Allegro** | `/src/app/data/products.ts` |
+| **Banery** | `/src/app/components/conner/BannerSlider.tsx` |
+| **Wynajem urządzeń** | `/src/app/components/conner/RentalCarousel.tsx` |
+| **Stopka (kontakt)** | `/src/app/components/conner/Footer.tsx` |
+| **Sekcja kontakt** | `/src/app/components/conner/Contact.tsx` |
+| **Menu nawigacji** | `/src/app/components/conner/Navbar.tsx` |
+| **Strona główna** | `/src/app/pages/HomePage.tsx` |
+| **Podstrona Firmy** | `/src/app/pages/FirmyPage.tsx` |
+| **Podstrona Szkoły** | `/src/app/pages/SzkolyPage.tsx` |
+| **Podstrona Instytucje** | `/src/app/pages/InstytucjePage.tsx` |
+| **Kolory** | `/src/styles/theme.css` |
+| **Logo** | `/public/logo.svg` |
+
+---
 
 ## 🎨 Kolory firmowe
 
 ```css
 Ciemny grafit: #1a1c20
 Złoty akcent:  #c5a059
+Białe tło:     #ffffff
+Szare tło:     #f5f5f5
 ```
 
-## 📞 Dane kontaktowe firmy
+---
+
+## 📞 Dane kontaktowe
 
 **Conner Sp. z o.o.**
-- Adres: ul. Dr. Seweryna Sterlinga 27/29, 90-217 Łódź
-- Telefon: 42 631 94 20
-- Email: sklep@conner.pl
-- Działalność: od 2007 roku
+- 📍 Adres: ul. Dr. Seweryna Sterlinga 27/29, 90-217 Łódź
+- ☎️ Telefon: 42 631 94 20
+- 📧 Email: sklep@conner.pl
+- 🛒 Allegro: https://allegro.pl/uzytkownik/ConnerMedia
+- 📅 Działalność: od 2007 roku
 
 ### Usługi:
 - Serwis komputerowy
 - Obsługa firm, szkół i instytucji publicznych
 - Wynajem urządzeń drukujących
-- Sprzedaż sprzętu (Allegro)
+- Sprzedaż sprzętu IT
 
-## 🔧 Skrypty npm
+---
 
-```bash
-npm run dev         # Uruchom serwer deweloperski
-npm run build       # Zbuduj do produkcji
-npm run preview     # Podgląd wersji produkcyjnej lokalnie
-```
+## 🆘 Pomoc
 
-## ⚠️ Wymagania
+### Logo się nie wyświetla?
+1. Sprawdź czy plik jest w folderze `/public/` (NIE `/src/`!)
+2. Plik musi się nazywać dokładnie `logo.svg` lub `logo.png`
+3. Wyczyść cache przeglądarki: **Ctrl+F5** (Windows) lub **Cmd+Shift+R** (Mac)
 
-- Node.js: **18.0.0** lub nowszy
-- npm: **9.0.0** lub nowszy (lub pnpm 8+)
+### Zmiany się nie pojawiają na stronie?
+1. Sprawdź czy workflow zakończył się sukcesem: https://github.com/antekku9/Conner/actions
+2. Poczekaj 2-3 minuty po commit
+3. Wyczyść cache: **Ctrl+F5**
 
-## 🆘 Problemy?
+### Jak dodać nowy produkt?
+1. Otwórz: https://github.com/antekku9/Conner/blob/main/src/app/data/products.ts
+2. Skopiuj istniejący produkt i wklej na końcu
+3. Zmień `id` na unikalny (np. '21', '22')
+4. Zmień wszystkie dane (nazwa, cena, kategoria, link)
+5. **Commit changes**
 
-### "npm: command not found"
-Zainstaluj Node.js z https://nodejs.org/
+### Jak usunąć produkt?
+1. Otwórz: https://github.com/antekku9/Conner/blob/main/src/app/data/products.ts
+2. Usuń cały blok produktu (od `{` do `},`)
+3. **Commit changes**
 
-### Błędy podczas instalacji
-```bash
-npm cache clean --force
-rm -rf node_modules package-lock.json
-npm install
-```
-
-### Routing nie działa na hostingu
-Dodaj plik `.htaccess` - instrukcja w `INSTRUKCJA_WDROZENIA.md`
-
-### Inne problemy
-Zobacz plik `INSTRUKCJA_WDROZENIA.md` sekcja "Rozwiązywanie problemów"
+---
 
 ## 📄 Licencja
 
