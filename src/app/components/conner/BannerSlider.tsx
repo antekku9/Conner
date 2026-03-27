@@ -15,14 +15,14 @@ const banners = [
     ctaLink: '#serwis',
   },
   {
-    image: '/images/banners/wynajem.webp',
+    image: '/Conner/wynajem.webp',
     title: 'Wynajem Sprzętu Biurowego',
     subtitle: 'Drukarki, kserokopiarki i urządzenia wielofunkcyjne',
     ctaText: 'Zobacz ofertę',
     ctaLink: '#wynajem',
   },
   {
-    image: '/images/banners/sklep-allegro.webp', 
+    image: '/Conner/sklep-allegro.webp', 
     title: 'Sklep na Allegro',
     subtitle: 'Szeroki wybór sprzętu komputerowego i akcesoriów',
     ctaText: 'Odwiedź sklep',
