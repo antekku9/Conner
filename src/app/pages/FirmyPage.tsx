@@ -38,28 +38,36 @@ export default function FirmyPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-[#f9fafb] to-[#f3f4f6]">
+      <section className="py-24" style={{ background: 'linear-gradient(to bottom right, var(--bg-light), var(--background))' }}>
         <div className="max-w-[1200px] mx-auto px-5">
           <div className="text-center max-w-[800px] mx-auto">
-            <span className="text-[#c5a059] uppercase text-xs font-bold tracking-[2px]">
+            <span style={{ color: 'var(--accent)' }} className="uppercase text-xs font-bold tracking-[2px]">
               Dla biznesu
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold mb-5 mt-2 tracking-tight" style={{ letterSpacing: '-1.5px' }}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-5 mt-2 tracking-tight" style={{ letterSpacing: '-1.5px', color: 'var(--foreground)' }}>
               Kompleksowa Obsługa IT dla Firm
             </h1>
-            <p className="text-lg text-[#6b7280] mb-10">
+            <p className="text-lg mb-10" style={{ color: 'var(--text-muted)' }}>
               Zapewniamy pełne wsparcie technologiczne dla małych i dużych przedsiębiorstw. Od dostaw sprzętu, przez wdrożenia systemów, po codzienne zarządzanie infrastrukturą IT.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a 
                 href="#kontakt" 
-                className="bg-[#c5a059] text-white px-7 py-3.5 rounded-lg no-underline font-semibold inline-block hover:bg-[#b39050] transition-colors"
+                style={{ 
+                  backgroundColor: 'var(--accent)',
+                  color: 'var(--accent-foreground)'
+                }}
+                className="px-7 py-3.5 rounded-lg no-underline font-semibold inline-block hover:opacity-90 transition-opacity"
               >
                 Zapytaj o ofertę
               </a>
               <a 
                 href="tel:426319420" 
-                className="border border-[#1a1c20] px-7 py-3.5 rounded-lg no-underline font-semibold inline-block hover:bg-[#1a1c20] hover:text-white transition-colors text-[#1a1c20]"
+                style={{ 
+                  borderColor: 'var(--foreground)',
+                  color: 'var(--foreground)'
+                }}
+                className="border px-7 py-3.5 rounded-lg no-underline font-semibold inline-block hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors"
               >
                 Zadzwoń: 42 631 94 20
               </a>
@@ -69,7 +77,7 @@ export default function FirmyPage() {
       </section>
 
       {/* Main Content Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24" style={{ backgroundColor: 'var(--background)' }}>
         <div className="max-w-[1200px] mx-auto px-5">
           <div className="flex items-center gap-16 flex-wrap">
             {/* Image */}
@@ -103,11 +111,11 @@ export default function FirmyPage() {
       </section>
 
       {/* Benefits Grid */}
-      <section className="py-24 bg-[#f9fafb]">
+      <section className="py-24" style={{ backgroundColor: 'var(--bg-light)' }}>
         <div className="max-w-[1200px] mx-auto px-5">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Nasze korzyści dla biznesu</h2>
-            <p className="text-[#6b7280] max-w-[600px] mx-auto">
+            <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--foreground)' }}>Nasze korzyści dla biznesu</h2>
+            <p style={{ color: 'var(--text-muted)' }} className="max-w-[600px] mx-auto">
               Oferujemy kompleksowe rozwiązania dopasowane do specyfiki Twojej firmy
             </p>
           </div>
@@ -118,11 +126,15 @@ export default function FirmyPage() {
               return (
                 <div
                   key={index}
-                  className="bg-white p-8 rounded-2xl border border-[#f0f0f0] hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all"
+                  style={{ 
+                    backgroundColor: 'var(--card)',
+                    borderColor: 'var(--border)'
+                  }}
+                  className="p-8 rounded-2xl border hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all"
                 >
-                  <Icon className="text-[#c5a059] mb-4 w-10 h-10" />
-                  <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                  <p className="text-[#6b7280] leading-relaxed text-sm">{benefit.description}</p>
+                  <Icon style={{ color: 'var(--accent)' }} className="mb-4 w-10 h-10" />
+                  <h3 className="text-xl font-semibold mb-3" style={{ color: 'var(--foreground)' }}>{benefit.title}</h3>
+                  <p style={{ color: 'var(--text-muted)' }} className="leading-relaxed text-sm">{benefit.description}</p>
                 </div>
               );
             })}

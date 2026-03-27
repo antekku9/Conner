@@ -41,14 +41,14 @@ export function Services() {
   ];
 
   return (
-    <section id="obsluga" className="py-20">
+    <section id="obsluga" className="py-20" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[1200px] mx-auto px-5">
         <div className="text-center mb-12">
-          <span className="text-[#c5a059] uppercase text-xs font-bold tracking-[2px]">
+          <span style={{ color: 'var(--accent)' }} className="uppercase text-xs font-bold tracking-[2px]">
             Nasze usługi
           </span>
-          <h2 className="text-4xl font-bold mt-2">Kompleksowa Obsługa IT</h2>
-          <p className="text-[#6b7280] mt-4 max-w-[600px] mx-auto">
+          <h2 className="text-4xl font-bold mt-2" style={{ color: 'var(--foreground)' }}>Kompleksowa Obsługa IT</h2>
+          <p style={{ color: 'var(--text-muted)' }} className="mt-4 max-w-[600px] mx-auto">
             Ponad 28 lat doświadczenia w branży IT. Zaufało nam wiele firm, szkół i instytucji w Łodzi.
           </p>
         </div>
@@ -59,13 +59,27 @@ export function Services() {
             return (
               <div
                 key={index}
-                className={`p-10 border rounded-2xl transition-all duration-300 bg-white hover:-translate-y-2.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] ${
-                  service.featured ? 'border-2 border-[#c5a059]' : 'border-[#f0f0f0]'
-                }`}
+                style={{ 
+                  backgroundColor: 'var(--card)',
+                  borderColor: 'var(--border)'
+                }}
+                className="p-8 rounded-lg border hover:shadow-xl transition-all duration-300 group cursor-pointer"
               >
-                <Icon className="text-[#c5a059] mb-5 w-8 h-8" />
-                <h3 className="mb-4 text-xl font-semibold">{service.title}</h3>
-                <p className="text-[#6b7280] leading-relaxed">{service.description}</p>
+                <div 
+                  style={{ 
+                    backgroundColor: service.featured ? 'var(--accent)' : 'var(--bg-light)',
+                    color: service.featured ? 'var(--accent-foreground)' : 'var(--accent)'
+                  }}
+                  className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 transition-all"
+                >
+                  <Icon className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--foreground)' }}>
+                  {service.title}
+                </h3>
+                <p style={{ color: 'var(--text-muted)' }} className="leading-relaxed text-sm">
+                  {service.description}
+                </p>
               </div>
             );
           })}

@@ -10,18 +10,18 @@ export function Printers() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[1200px] mx-auto px-5">
         <div className="flex items-center gap-16 flex-wrap">
           {/* Text Content */}
           <div className="flex-1 min-w-[300px]">
-            <span className="text-[#c5a059] uppercase text-xs font-bold tracking-[2px]">
-              Rozwiązania drukujące
+            <span style={{ color: 'var(--accent)' }} className="uppercase text-xs font-bold tracking-[2px]">
+              Urządzenia drukujące
             </span>
-            <h2 className="text-4xl font-bold mt-2 mb-4">
+            <h2 className="text-4xl font-bold mt-2 mb-4" style={{ color: 'var(--foreground)' }}>
               Drukarki i Kserokopiarki dla Firm
             </h2>
-            <p className="text-[#6b7280] leading-relaxed mb-6">
+            <p style={{ color: 'var(--text-muted)' }} className="leading-relaxed mb-6">
               Dostarczamy i serwisujemy profesjonalne urządzenia drukujące dostosowane do różnych obciążeń i wymagań. Od małych drukarek biurowych po wielofunkcyjne systemy dla dużych organizacji.
             </p>
             <ul className="list-none my-6 space-y-3">

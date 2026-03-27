@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -9,7 +9,7 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 // Każdy baner może zawierać: image (URL obrazu), title, subtitle, ctaText, ctaLink
 const banners = [
   {
-    image: 'https://images.unsplash.com/photo-1756801370266-f589801cedc3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: 'https://images.unsplash.com/photo-1685159375835-e987def57d25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBJVCUyMHNlcnZpY2VzJTIwYmFubmVyfGVufDF8fHx8MTc3MzE1NjkxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     title: 'Profesjonalny Serwis IT',
     subtitle: 'Kompleksowa obsługa komputerów, laptopów i serwerów',
     ctaText: 'Dowiedz się więcej',
@@ -33,26 +33,54 @@ const banners = [
 
 function NextArrow(props: any) {
   const { onClick } = props;
+  const [isDark, setIsDark] = useState(false);
+  
+  useEffect(() => {
+    const checkDark = () => setIsDark(document.documentElement.classList.contains('dark'));
+    checkDark();
+    const observer = new MutationObserver(checkDark);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+  
   return (
     <button
       onClick={onClick}
-      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+      style={{ 
+        backgroundColor: isDark ? 'rgba(26, 29, 36, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+        borderColor: isDark ? 'rgba(212, 169, 96, 0.3)' : 'transparent'
+      }}
+      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full shadow-lg transition-all hover:scale-110 border"
       aria-label="Następny slajd"
     >
-      <ChevronRight className="w-6 h-6 text-[#1a1c20]" />
+      <ChevronRight style={{ color: isDark ? '#d4a960' : '#1a1c20' }} className="w-6 h-6" />
     </button>
   );
 }
 
 function PrevArrow(props: any) {
   const { onClick } = props;
+  const [isDark, setIsDark] = useState(false);
+  
+  useEffect(() => {
+    const checkDark = () => setIsDark(document.documentElement.classList.contains('dark'));
+    checkDark();
+    const observer = new MutationObserver(checkDark);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+  
   return (
     <button
       onClick={onClick}
-      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+      style={{ 
+        backgroundColor: isDark ? 'rgba(26, 29, 36, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+        borderColor: isDark ? 'rgba(212, 169, 96, 0.3)' : 'transparent'
+      }}
+      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full shadow-lg transition-all hover:scale-110 border"
       aria-label="Poprzedni slajd"
     >
-      <ChevronLeft className="w-6 h-6 text-[#1a1c20]" />
+      <ChevronLeft style={{ color: isDark ? '#d4a960' : '#1a1c20' }} className="w-6 h-6" />
     </button>
   );
 }

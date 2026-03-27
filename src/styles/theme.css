@@ -9,6 +9,9 @@
   --bg-light: #f9fafb;
   --text-muted: #6b7280;
   --white: #ffffff;
+  --navbar-bg: #ffffff;
+  --navbar-text: #1a1c20;
+  --navbar-border: rgba(26, 28, 32, 0.1);
   --card: #ffffff;
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -45,40 +48,87 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
+  --background: #121418;
+  --foreground: #f5f5f7;
+  --primary: #f5f5f7;
+  --accent: #d4a960;
+  --bg-light: #1c1f26;
+  --text-muted: #a8adb7;
+  --navbar-bg: #0d0f12;
+  --navbar-text: #f5f5f7;
+  --navbar-border: rgba(212, 169, 96, 0.12);
+  --card: #1a1d24;
+  --card-foreground: #f5f5f7;
+  --popover: #1a1d24;
+  --popover-foreground: #f5f5f7;
+  --primary-foreground: #121418;
+  --secondary: #252930;
+  --secondary-foreground: #f5f5f7;
+  --muted: #252930;
+  --muted-foreground: #a8adb7;
+  --accent-foreground: #121418;
+  --border: rgba(212, 169, 96, 0.12);
+  --input-background: #1c1f26;
+  --switch-background: #252930;
+  --destructive: #ef4444;
+  --destructive-foreground: #f5f5f7;
+  --ring: rgba(212, 169, 96, 0.4);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: #1a1d24;
+  --sidebar-foreground: #f5f5f7;
+  --sidebar-primary: #d4a960;
+  --sidebar-primary-foreground: #121418;
+  --sidebar-accent: #252930;
+  --sidebar-accent-foreground: #f5f5f7;
+  --sidebar-border: rgba(212, 169, 96, 0.12);
+  --sidebar-ring: rgba(212, 169, 96, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #121418;
+    --foreground: #f5f5f7;
+    --primary: #f5f5f7;
+    --accent: #d4a960;
+    --bg-light: #1c1f26;
+    --text-muted: #a8adb7;
+    --navbar-bg: #0d0f12;
+    --navbar-text: #f5f5f7;
+    --navbar-border: rgba(212, 169, 96, 0.12);
+    --card: #1a1d24;
+    --card-foreground: #f5f5f7;
+    --popover: #1a1d24;
+    --popover-foreground: #f5f5f7;
+    --primary-foreground: #121418;
+    --secondary: #252930;
+    --secondary-foreground: #f5f5f7;
+    --muted: #252930;
+    --muted-foreground: #a8adb7;
+    --accent-foreground: #121418;
+    --border: rgba(212, 169, 96, 0.12);
+    --input-background: #1c1f26;
+    --switch-background: #252930;
+    --destructive: #ef4444;
+    --destructive-foreground: #f5f5f7;
+    --ring: rgba(212, 169, 96, 0.4);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: #1a1d24;
+    --sidebar-foreground: #f5f5f7;
+    --sidebar-primary: #d4a960;
+    --sidebar-primary-foreground: #121418;
+    --sidebar-accent: #252930;
+    --sidebar-accent-foreground: #f5f5f7;
+    --sidebar-border: rgba(212, 169, 96, 0.12);
+    --sidebar-ring: rgba(212, 169, 96, 0.4);
+  }
 }
 
 @theme inline {
@@ -129,6 +179,9 @@
 
   body {
     @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /**

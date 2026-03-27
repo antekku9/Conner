@@ -65,10 +65,13 @@ export function ContactForm() {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-      <h3 className="text-2xl font-bold mb-2">Napisz do nas</h3>
-      <p className="text-[#6b7280] mb-6">
-        Wypełnij formularz, a nasz specjalista skontaktuje się z Tobą w ciągu 24h.
+    <div style={{ 
+      backgroundColor: 'var(--card)',
+      borderColor: 'var(--border)'
+    }} className="rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border">
+      <h3 className="text-2xl font-bold mb-2" style={{ color: 'var(--foreground)' }}>Napisz do nas</h3>
+      <p style={{ color: 'var(--text-muted)' }} className="mb-6">
+        Wypełnij formularz, a nasz zespół skontaktuje się z Tobą w ciągu 24 godzin.
       </p>
 
       {submitted ? (

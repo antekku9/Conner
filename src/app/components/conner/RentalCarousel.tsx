@@ -103,94 +103,95 @@ export function RentalCarousel() {
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[1200px] mx-auto px-5">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="text-[#c5a059] uppercase text-xs font-bold tracking-[2px]">
-            Dostępne urządzenia
+          <span style={{ color: 'var(--accent)' }} className="uppercase text-xs font-bold tracking-[2px]">
+            Do wynajęcia
           </span>
-          <h2 className="text-4xl font-bold mt-2 mb-4">
-            Sprzęt do Wynajmu
-          </h2>
-          <p className="text-[#6b7280] max-w-2xl mx-auto">
-            Profesjonalny sprzęt IT i urządzenia biurowe dostępne w elastycznym wynajmie krótko i długoterminowym
+          <h2 className="text-4xl font-bold mt-2" style={{ color: 'var(--foreground)' }}>Urządzenia Dostępne do Wynajmu</h2>
+          <p style={{ color: 'var(--text-muted)' }} className="mt-4 max-w-[600px] mx-auto">
+            Profesjonalny sprzęt IT na wyciągnięcie ręki. Elastyczne warunki najmu i pełne wsparcie techniczne.
           </p>
         </div>
 
         {/* Carousel */}
-        <div 
-          className="relative"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+        <div className="relative px-12" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-[#f9fafb] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{ 
+              backgroundColor: 'var(--card)',
+              borderColor: 'var(--border)'
+            }}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 rounded-full p-3 shadow-lg hover:opacity-80 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed border"
             disabled={currentIndex === 0}
             aria-label="Previous"
           >
-            <ChevronLeft className="w-6 h-6 text-[#1a1c20]" />
+            <ChevronLeft style={{ color: 'var(--foreground)' }} className="w-6 h-6" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-[#f9fafb] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{ 
+              backgroundColor: 'var(--card)',
+              borderColor: 'var(--border)'
+            }}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 rounded-full p-3 shadow-lg hover:opacity-80 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed border"
             disabled={currentIndex >= maxIndex}
             aria-label="Next"
           >
-            <ChevronRight className="w-6 h-6 text-[#1a1c20]" />
+            <ChevronRight style={{ color: 'var(--foreground)' }} className="w-6 h-6" />
           </button>
 
           {/* Carousel Container */}
           <div className="overflow-hidden">
             <div 
-              className="flex transition-transform duration-500 ease-in-out gap-6"
-              style={{ 
-                transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-              }}
+              className="flex gap-6 transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView + 2)}%)` }}
             >
               {rentalDevices.map((device) => (
                 <div 
                   key={device.id}
-                  className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
-                  style={{ width: `calc(${100 / itemsPerView}% - ${(itemsPerView - 1) * 24 / itemsPerView}px)` }}
+                  style={{ 
+                    backgroundColor: 'var(--card)',
+                    borderColor: 'var(--border)',
+                    width: `calc(${100 / itemsPerView}% - ${(itemsPerView - 1) * 24 / itemsPerView}px)`
+                  }}
+                  className="flex-shrink-0 rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border"
                 >
                   {/* Image */}
-                  <div className="relative h-64 bg-[#f9fafb] overflow-hidden">
+                  <div className="relative h-64 overflow-hidden" style={{ backgroundColor: 'var(--bg-light)' }}>
                     <ImageWithFallback
                       src={device.imageUrl}
                       alt={device.name}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-
+                  
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className="font-bold text-xl mb-2 text-[#1a1c20]">
-                      {device.name}
-                    </h3>
-                    <p className="text-[#6b7280] text-sm mb-4">
-                      {device.description}
-                    </p>
-
-                    {/* Specs */}
+                    <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--foreground)' }}>{device.name}</h3>
+                    <p style={{ color: 'var(--text-muted)' }} className="text-sm mb-4">{device.description}</p>
+                    
                     {device.specs && (
-                      <ul className="space-y-2 mb-4">
-                        {device.specs.map((spec, index) => (
-                          <li key={index} className="text-sm text-[#6b7280] flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 bg-[#c5a059] rounded-full flex-shrink-0"></span>
-                            {spec}
+                      <ul className="space-y-1 mb-4">
+                        {device.specs.map((spec, idx) => (
+                          <li key={idx} style={{ color: 'var(--text-muted)' }} className="text-xs flex items-center gap-2">
+                            <span style={{ color: 'var(--accent)' }}>✓</span> {spec}
                           </li>
                         ))}
                       </ul>
                     )}
-
-                    {/* CTA */}
-                    <a
-                      href="#kontakt"
-                      className="inline-block w-full text-center bg-[#c5a059] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#b39050] transition-colors no-underline"
+                    
+                    <a 
+                      href="#kontakt" 
+                      style={{ 
+                        borderColor: 'var(--accent)',
+                        color: 'var(--accent)'
+                      }}
+                      className="inline-block border px-4 py-2 rounded-md text-sm font-semibold hover:bg-[var(--accent)] hover:text-[var(--accent-foreground)] transition-all"
                     >
                       Zapytaj o wynajem
                     </a>

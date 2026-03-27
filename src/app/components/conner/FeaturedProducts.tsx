@@ -11,15 +11,15 @@ export function FeaturedProducts() {
   }
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24" style={{ backgroundColor: 'var(--bg-light)' }}>
       <div className="max-w-[1200px] mx-auto px-5">
         <div className="text-center mb-12">
-          <span className="text-[#c5a059] uppercase text-xs font-bold tracking-[2px]">
-            Polecane produkty
+          <span style={{ color: 'var(--accent)' }} className="uppercase text-xs font-bold tracking-[2px]">
+            Katalog produktów
           </span>
-          <h2 className="text-4xl font-bold mt-2 mb-4">Wybrane produkty z naszej oferty</h2>
-          <p className="text-[#6b7280] max-w-[700px] mx-auto">
-            Sprawdź wybrane przez nas produkty. Pełna oferta dostępna w katalogu oraz na naszym sklepie Allegro.
+          <h2 className="text-4xl font-bold mt-2" style={{ color: 'var(--foreground)' }}>Sprawdź Naszą Ofertę</h2>
+          <p style={{ color: 'var(--text-muted)' }} className="mt-4 max-w-[600px] mx-auto">
+            Szeroki wybór laptopów, komputerów i akcesoriów w konkurencyjnych cenach. Sklep dostępny również na Allegro.
           </p>
         </div>
 

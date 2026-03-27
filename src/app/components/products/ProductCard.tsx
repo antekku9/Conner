@@ -11,10 +11,14 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       to={`/produkty/${product.slug}`}
-      className="group bg-white rounded-xl border border-[#eee] overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all no-underline"
+      style={{ 
+        backgroundColor: 'var(--card)',
+        borderColor: 'var(--border)'
+      }}
+      className="group rounded-xl border overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all no-underline"
     >
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+      <div className="relative aspect-[4/3] overflow-hidden" style={{ backgroundColor: 'var(--bg-light)' }}>
         <ImageWithFallback
           src={product.image}
           alt={product.name}
@@ -27,7 +31,10 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
         {!product.inStock && (
           <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-            <span className="bg-white text-[#1a1c20] px-4 py-2 rounded-lg font-semibold">
+            <span style={{ 
+              backgroundColor: 'var(--card)',
+              color: 'var(--foreground)'
+            }} className="px-4 py-2 rounded-lg font-semibold">
               Brak w magazynie
             </span>
           </div>
@@ -36,13 +43,13 @@ export function ProductCard({ product }: ProductCardProps) {
 
       {/* Content */}
       <div className="p-5">
-        <div className="text-sm text-[#c5a059] font-semibold mb-1">
+        <div className="text-sm font-semibold mb-1" style={{ color: 'var(--accent)' }}>
           {product.category}
         </div>
-        <h3 className="text-lg font-bold text-[#1a1c20] mb-2 group-hover:text-[#c5a059] transition-colors">
+        <h3 className="text-lg font-bold mb-2 group-hover:text-[var(--accent)] transition-colors" style={{ color: 'var(--foreground)' }}>
           {product.name}
         </h3>
-        <p className="text-sm text-[#6b7280] mb-4 line-clamp-2">
+        <p className="text-sm mb-4 line-clamp-2" style={{ color: 'var(--text-muted)' }}>
           {product.shortDescription}
         </p>
 

@@ -3,14 +3,14 @@ import { Link } from 'react-router';
 
 export function Footer() {
   return (
-    <footer className="bg-[#1a1c20] text-white py-12">
+    <footer className="bg-[#1a1c20] text-white py-12 border-t border-[#2a2c30]">
       <div className="max-w-[1200px] mx-auto px-5">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Company Info */}
           <div>
             <Link to="/" className="inline-block mb-4">
               <img 
-                src={`${import.meta.env.BASE_URL}logo.svg`} 
+                src={`${import.meta.env.BASE_URL}logo-white.svg`} 
                 alt="Conner Sp. z o.o." 
                 className="h-10 w-auto"
               />
