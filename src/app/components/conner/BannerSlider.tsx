@@ -8,21 +8,21 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 const banners = [
   {
-    image: '/images/banners/serwis.webp',
+    image: 'Conner/public/images/banners/serwis.webp',
     title: 'Profesjonalny Serwis IT',
     subtitle: 'Kompleksowa obsługa komputerów, laptopów i serwerów',
     ctaText: 'Dowiedz się więcej',
     ctaLink: '#serwis',
   },
   {
-    image: '/images/banners/wynajem.webp',
+    image: 'Conner/public/images/banners/wynajem.webp',
     title: 'Wynajem Sprzętu Biurowego',
     subtitle: 'Drukarki, kserokopiarki i urządzenia wielofunkcyjne',
     ctaText: 'Zobacz ofertę',
     ctaLink: '#wynajem',
   },
   {
-    image: '/images/banners/sklep-allegro.webp', 
+    image: 'Conner/public/images/banners/sklep-allegro.webp', 
     title: 'Sklep na Allegro',
     subtitle: 'Szeroki wybór sprzętu komputerowego i akcesoriów',
     ctaText: 'Odwiedź sklep',
