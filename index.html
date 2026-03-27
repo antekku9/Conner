@@ -1,15 +1,40 @@
-
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Conner</title>
-    </head>
-
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Conner Sp. z o.o. - Profesjonalny serwis komputerowy w Łodzi od 2007 roku. Obsługa firm, szkół i instytucji publicznych, wynajem drukarek, sprzedaż sprzętu IT." />
+    <meta name="keywords" content="serwis komputerowy Łódź, obsługa IT firm, wynajem drukarek, sprzedaż komputerów, Conner" />
+    <meta name="author" content="Conner Sp. z o.o." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Conner Sp. z o.o. - Serwis Komputerowy Łódź" />
+    <meta property="og:description" content="Profesjonalny serwis komputerowy w Łodzi od 2007 roku. Obsługa firm, szkół i instytucji." />
+    
+    <title>Conner Sp. z o.o. - Serwis Komputerowy Łódź | Obsługa IT Firm</title>
+    
+    <!-- GitHub Pages SPA redirect handling -->
+    <!-- Dokumentacja: https://github.com/rafgraph/spa-github-pages -->
+    <script>
+      // Sprawdź czy URL zawiera przekierowanie z 404.html
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

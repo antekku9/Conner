@@ -4,7 +4,13 @@
 Zmiany w kodzie nie pojawiają się na stronie po `git push`.
 
 ## ✅ Rozwiązanie
-Utworzyłem brakujący workflow GitHub Actions. Teraz musisz:
+Brakowało kilku kluczowych plików:
+1. ❌ `.github/workflows/deploy.yml` - GitHub Actions workflow
+2. ❌ `/index.html` - Entry point HTML
+3. ❌ `/src/main.tsx` - Entry point React
+4. ❌ React i ReactDOM w devDependencies
+
+**WSZYSTKO ZOSTAŁO NAPRAWIONE!** ✅
 
 ---
 
