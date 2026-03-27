@@ -13,9 +13,9 @@ interface RentalDevice {
 const rentalDevices: RentalDevice[] = [
   {
     id: 1,
-    name: 'Konica Minolta bizhub C308',
+    name: 'Brother HL-L8260CDW',
     description: 'Profesjonalna kolorowa drukarka wielofunkcyjna A3',
-    imageUrl: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
+    image: '/Conner/Wynajem/Brother HL-L8260CDW.jpg,
     specs: ['Druk kolorowy A3', 'Kopiowanie i skanowanie', 'Do 30 str/min']
   },
   {
