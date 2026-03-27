@@ -8,7 +8,7 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 const banners = [
   {
-    image: '/serwis.webp',
+    image: '/Conner/serwis.webp',
     title: 'Profesjonalny Serwis IT',
     subtitle: 'Kompleksowa obsługa komputerów, laptopów i serwerów',
     ctaText: 'Dowiedz się więcej',
