@@ -9,7 +9,7 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 // Każdy baner może zawierać: image (URL obrazu), title, subtitle, ctaText, ctaLink
 const banners = [
   {
-    image: 'https://images.unsplash.com/photo-1756801370266-f589801cedc3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D,
+    image: 'https://images.unsplash.com/photo-1685159375835-e987def57d25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBJVCUyMHNlcnZpY2VzJTIwYmFubmVyfGVufDF8fHx8MTc3MzE1NjkxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     title: 'Profesjonalny Serwis IT',
     subtitle: 'Kompleksowa obsługa komputerów, laptopów i serwerów',
     ctaText: 'Dowiedz się więcej',
