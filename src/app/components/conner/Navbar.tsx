@@ -31,8 +31,20 @@ export function Navbar() {
   };
 
   return (
-    <nav className="py-5 border-b border-[#eee] bg-white sticky top-0 z-50">
-      <div className="max-w-[1200px] mx-auto px-5">
+    <nav className="py-5 border-b border-[#eee] bg-white sticky top-0 z-50 relative overflow-hidden">
+      {/* Circuit Board Decoration - Full Width Background */}
+      <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+        <img 
+          src={`${import.meta.env.BASE_URL}circuit.png`}
+          alt="" 
+          className="w-full h-full object-cover"
+          style={{ 
+            filter: 'grayscale(100%) contrast(1.2)',
+          }}
+        />
+      </div>
+
+      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
         <div className="flex justify-between items-center">
           <Link to="/" className="font-extrabold text-2xl tracking-tight no-underline text-[#1a1c20] flex items-center">
             {/* Logo Conner Sp. z o.o. */}
