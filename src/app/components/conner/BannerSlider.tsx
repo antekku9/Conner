@@ -5,25 +5,24 @@ import 'slick-carousel/slick/slick-theme.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
-// INSTRUKCJA: Aby dodać nowy baner, dodaj obiekt do tablicy 'banners' poniżej
-// Każdy baner może zawierać: image (URL obrazu), title, subtitle, ctaText, ctaLink
+
 const banners = [
   {
-    image: 'https://images.unsplash.com/photo-1756801370266-f589801cedc3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: '/images/banners/serwis.webp',
     title: 'Profesjonalny Serwis IT',
     subtitle: 'Kompleksowa obsługa komputerów, laptopów i serwerów',
     ctaText: 'Dowiedz się więcej',
     ctaLink: '#serwis',
   },
   {
-    image: 'https://images.unsplash.com/photo-1560264357-8d9202250f21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHJlcGFpciUyMHNlcnZpY2UlMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzczMTU2OTE1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/images/banners/wynajem.webp',
     title: 'Wynajem Sprzętu Biurowego',
     subtitle: 'Drukarki, kserokopiarki i urządzenia wielofunkcyjne',
     ctaText: 'Zobacz ofertę',
     ctaLink: '#wynajem',
   },
   {
-    image: 'https://images.unsplash.com/photo-1656646424386-69c923c411f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBlcXVpcG1lbnQlMjByZW50YWwlMjBidXNpbmVzc3xlbnwxfHx8fDE3NzMxNTY5MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/images/banners/sklep-allegro.webp', 
     title: 'Sklep na Allegro',
     subtitle: 'Szeroki wybór sprzętu komputerowego i akcesoriów',
     ctaText: 'Odwiedź sklep',
