@@ -42,13 +42,13 @@ export function Printers() {
 
          
 
-{/* Image */}
+{/* Image  */}
           <div className="flex-1 min-w-[300px] flex items-center justify-center">
-            <div className="w-full max-w-[450px]"> {/* Dodatkowy kontener, żeby kwadrat nie był zbyt ogromny na dużych ekranach */}
+            <div className="w-full max-w-[450px]">
               <ImageWithFallback
                 image="/Conner/sharp-printer.webp"
                 alt="Drukarki biurowe"
-                className="w-full aspect-square object-cover rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+                className="w-full aspect-square object-cover rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
               />
             </div>
           </div>
@@ -56,7 +56,7 @@ export function Printers() {
         </div>
       </div>
     </section>
-);
+  );
 };
 
 export default Printers;
