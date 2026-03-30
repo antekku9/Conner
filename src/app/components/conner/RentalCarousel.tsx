@@ -11,19 +11,13 @@ interface RentalDevice {
 }
 
 const rentalDevices: RentalDevice[] = [
-  {
-    id: 1,
-    name: 'Brother HL-L8260CDW',
-    description: 'Profesjonalna kolorowa drukarka A4',
-    image: '/Conner/HL-L8260CDW.webp',
-    specs: ['Druk kolorowy A4', 'Automatyczne dwustronne drukowanie', 'Do 31 str/min']
-  },
+
   {
     id: 2,
     name: 'Brother HL-L9310CDW',
-    description: 'Wydajne urządzenie wielofunkcyjne dla dużych biur',
+    description: 'Profesjonalna kolorowa drukarka A4',
     imageUrl: '/Conner/HL-L9310CDW.webp',
-    specs: ['Druk A3 mono', 'Duplex automatyczny', 'Do 55 str/min']
+    specs: ['Druk kolorowy A4', 'Duplex automatyczny', 'Do 31 str/min']
   },
   {
     id: 3,
