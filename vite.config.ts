@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => ({
   // Dynamiczny base URL:
   // - Figma Make: '/' (development)
   // - GitHub Pages: '/Conner/' (production)
-  base: mode === 'production' ? '/Conner/' : '/',
+  base: '/',
   
   plugins: [
     // The React and Tailwind plugins are both required for Make, even if
