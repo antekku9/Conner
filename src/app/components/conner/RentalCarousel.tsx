@@ -15,36 +15,36 @@ const rentalDevices: RentalDevice[] = [
     id: 1,
     name: 'Brother HL-L8260CDW',
     description: 'Profesjonalna kolorowa drukarka wielofunkcyjna A3',
-    image: '/Conner/Wynajem/Brother HL-L8260CDW.jpg,
-    specs: ['Druk kolorowy A3', 'Kopiowanie i skanowanie', 'Do 30 str/min']
+    image: '/Conner/public/Wynajem/Brother HL-L8260CDW.jpg,
+    specs: ['Druk kolorowy A4', 'Automatyczne dwustronne drukowanie', 'Do 31 str/min']
   },
   {
     id: 2,
-    name: 'Konica Minolta bizhub 558e',
+    name: 'Brother HL-L9310CDW',
     description: 'Wydajne urządzenie wielofunkcyjne dla dużych biur',
     imageUrl: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
     specs: ['Druk A3 mono', 'Duplex automatyczny', 'Do 55 str/min']
   },
   {
     id: 3,
-    name: 'HP LaserJet Enterprise',
+    name: 'Brother MFC-L5710DW',
     description: 'Drukarka laserowa dla wymagających użytkowników',
     imageUrl: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
     specs: ['Druk A4 mono', 'Sieć Ethernet', 'Do 40 str/min']
   },
   {
     id: 4,
-    name: 'Laptop Dell Latitude',
+    name: 'Brother MFC-L6710DW',
     description: 'Biznesowy laptop z pełnym wyposażeniem',
     imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800',
-    specs: ['Intel Core i5', '16GB RAM', 'SSD 512GB']
+    specs: ['Druk A3 mono', 'Duplex automatyczny', 'Do 55 str/min']
   },
   {
     id: 5,
-    name: 'Laptop Lenovo ThinkPad',
+    name: 'Brother MFC-L8900CDW',
     description: 'Niezawodne rozwiązanie dla profesjonalistów',
     imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800',
-    specs: ['Intel Core i7', '16GB RAM', 'SSD 1TB']
+    specs: ['Druk A3 mono', 'Duplex automatyczny', 'Do 55 str/min']
   },
   {
     id: 6,
