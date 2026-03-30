@@ -7,12 +7,12 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 
 const banners = [
-   {
-    image: '/Conner/Komputery.webp',
-    title: 'Komputery Szyte na Miarę',
-    subtitle: 'Kompleksowa budowa komputerów, profesjonalne doradztwo',
-    ctaText: 'Dowiedz się więcej',
-    ctaLink: '#Skonfiguruj swój PC',
+  {
+  image: '/Conner/Komputery.webp',
+  title: 'Komputery Szyte na Miarę',
+  subtitle: 'Kompleksowa budowa komputerów, profesjonalne doradztwo',
+  ctaText: 'Zadzwoń już teraz',
+  ctaLink: 'tel:426319420', 
   },
   {
     image: '/Conner/serwis.webp',
