@@ -111,14 +111,13 @@ export function RentalCarousel() {
         </div>
 
         {/* Carousel */}
-        <div className="relative px-12" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            style={{ 
-              backgroundColor: 'var(--card)',
-              borderColor: 'var(--border)'
-            }}
+<div className="relative h-64 overflow-hidden bg-white p-4 flex items-center justify-center">
+  <ImageWithFallback
+    src={device.imageUrl}
+    alt={device.name}
+    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
+  />
+</div>
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 rounded-full p-3 shadow-lg hover:opacity-80 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed border"
             disabled={currentIndex === 0}
             aria-label="Previous"
