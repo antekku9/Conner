@@ -43,7 +43,7 @@ export function Printers() {
          
 
 {/* Image  */}
-          <div className="flex-1 min-w-[300px] flex items-center justify-center">
+          <div className="flex-1 min-w-[500px] flex items-center justify-center">
             <div className="w-full max-w-[450px]">
               <ImageWithFallback
                 src="/Conner/sharp-printer.webp"
