@@ -15,35 +15,35 @@ const rentalDevices: RentalDevice[] = [
     id: 2,
     name: 'Brother HL-L9310CDW',
     description: 'Profesjonalna kolorowa drukarka A4',
-    imageUrl: '/Conner/HL-L9310CDW.webp',
+    imageUrl: '/HL-L9310CDW.webp',
     specs: ['Druk kolorowy A4', 'Duplex automatyczny', 'Do 31 str/min']
   },
   {
     id: 3,
     name: 'Brother MFC-L5710DW',
     description: 'Drukarka laserowa dla wymagających użytkowników',
-    imageUrl: '/Conner/MFC-L5710DW.webp',
+    imageUrl: '/MFC-L5710DW.webp',
     specs: ['Druk A4 mono', 'Sieć Ethernet', 'Do 40 str/min']
   },
   {
     id: 4,
     name: 'Brother MFC-L6710DW',
     description: 'Wydajne urządzenie wielofunkcyjne do biura',
-    imageUrl: '/Conner/MFC-L6710DW.webp',
+    imageUrl: '/MFC-L6710DW.webp',
     specs: ['Druk A4 mono', 'Duplex do 24 str/min', 'Do 50 str/min']
   },
   {
     id: 5,
     name: 'Brother MFC-L8900CDW',
     description: 'Niezawodne rozwiązanie dla profesjonalistów',
-    imageUrl: '/Conner/MFC-L8900CDW.webp',
+    imageUrl: '/MFC-L8900CDW.webp',
     specs: ['Urządzenie wielofunkcyjne', 'Druk już po 15 sekundach', 'Do 31 str/min']
   },
   {
     id: 6,
     name: 'Sharp MX-B356W',
     description: 'Profesjonalne urządzenie dla firm oraz instytucji',
-    imageUrl: '/Conner/MX-B356W.webp',
+    imageUrl: '/MX-B356W.webp',
     specs: ['Panel dotykowy LCD 7″', 'Do 35 str/min', 'Maksymalne obciążenie 100 000 str/m-c']
   }
 ];
