@@ -15,7 +15,7 @@ const rentalDevices: RentalDevice[] = [
     id: 1,
     name: 'Brother HL-L8260CDW',
     description: 'Profesjonalna kolorowa drukarka wielofunkcyjna A3',
-    image: '/Conner/public/Wynajem/Brother HL-L8260CDW.jpg,
+    image: '/Conner/public/Wynajem/Brother HL-L8260CDW.jpg',
     specs: ['Druk kolorowy A4', 'Automatyczne dwustronne drukowanie', 'Do 31 str/min']
   },
   {
