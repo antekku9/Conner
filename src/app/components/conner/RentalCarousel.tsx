@@ -31,21 +31,21 @@ const rentalDevices: RentalDevice[] = [
     name: 'Brother MFC-L6710DW',
     description: 'Biznesowy laptop z pełnym wyposażeniem',
     imageUrl: '/Conner/MFC-L6710DW.webp',
-    specs: ['Druk A3 mono', 'Duplex automatyczny', 'Do 55 str/min']
+    specs: ['Druk A4 mono', 'Duplex do 24 str/min', 'Do 50 str/min']
   },
   {
     id: 5,
     name: 'Brother MFC-L8900CDW',
     description: 'Niezawodne rozwiązanie dla profesjonalistów',
     imageUrl: '/Conner/MFC-L8900CDW.webp',
-    specs: ['Druk A3 mono', 'Duplex automatyczny', 'Do 55 str/min']
+    specs: ['Urządzenie wielofunkcyjne', 'Druk już po 15 sekundach', 'Do 31 str/min']
   },
   {
     id: 6,
-    name: 'Projektor multimedialny',
-    description: 'Full HD projektor do prezentacji i szkoleń',
-    imageUrl: '/Conner/',
-    specs: ['Full HD 1920x1080', '3500 ANSI lumenów', 'HDMI, VGA, USB']
+    name: 'Sharp MX-B356W',
+    description: 'Profesjonalne urządzenie dla firm oraz instytucji',
+    imageUrl: '/Conner/MX-B356W.webp',
+    specs: ['Panel dotykowy LCD 7″', 'Do 35 str/min', 'Maksymalne obciążenie 100 000 str/m-c']
   }
 ];
 
