@@ -23,9 +23,9 @@ const banners = [
   },
   {
     image: '/Conner/sklep-allegro.webp', 
-    title: 'Sklep na Allegro',
-    subtitle: 'Szeroki wybór sprzętu komputerowego i akcesoriów',
-    ctaText: 'Odwiedź sklep',
+    title: 'Obsługa',
+    subtitle: 'Firm, Szkół, Instytucji',
+    ctaText: 'Dowiedz się więcej',
     ctaLink: 'https://allegro.pl/uzytkownik/ConnerMedia',
   },
 ];
