@@ -41,17 +41,16 @@ export function Printers() {
           </div>
 
          
-{/* Image Test */}
-<div className="flex-1 min-w-[300px]">
-  <img 
-    src="/Conner/sharp-printer.webp" 
-    alt="Test zdjęcia"
-    className="w-full h-auto bg-red-500" 
-    style={{ minHeight: '100px', display: 'block' }}
-  />
-</div>
+
+{/* Image */}
+          <div className="flex-1 min-w-[300px] flex items-center justify-center">
+            <ImageWithFallback
+              image="/Conner/sharp-printer.webp"
+              alt="Drukarki biurowe"
+              className="w-full aspect-[4/3] object-cover rounded-[20px] shadow-[0_20px_40px_rgba(0,0,0,0.1)]"
+            />
           </div>
+
         </div>
+      </div>
     </section>
-  );
-}
