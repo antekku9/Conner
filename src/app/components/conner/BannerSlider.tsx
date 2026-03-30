@@ -29,7 +29,7 @@ const banners = [
     ctaLink: '#wynajem',
   },
   {
-    image: '/Conner/sklep-allegro.webp', 
+    image: '/Conner/wynajem.webp', 
     title: 'Obsługa Firm, Szkół oraz Instytucji',
     subtitle: 'Kompleksowe zaopatrzenie w sprzęt IT',
     ctaText: 'Dowiedz się więcej',
