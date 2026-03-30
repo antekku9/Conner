@@ -7,6 +7,13 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 
 const banners = [
+   {
+    image: '/Conner/Komputery.webp',
+    title: 'Komputery Szyte na Miarę',
+    subtitle: 'Kompleksowa budowa komputerów, profesjonalne doradztwo',
+    ctaText: 'Dowiedz się więcej',
+    ctaLink: '#Skonfiguruj swój PC',
+  }
   {
     image: '/Conner/serwis.webp',
     title: 'Profesjonalny Serwis IT',
@@ -28,13 +35,7 @@ const banners = [
     ctaText: 'Dowiedz się więcej',
     ctaLink: '#Zobacz ofertę',
   },
-  {
-    image: '/Conner/serwis.webp',
-    title: 'Komputery Szyte na Miarę',
-    subtitle: 'Kompleksowa budowa komputerów, profesjonalne doradztwo',
-    ctaText: 'Dowiedz się więcej',
-    ctaLink: '#Skonfiguruj swój PC',
-  }
+ 
 ];
 
 function NextArrow(props: any) {
