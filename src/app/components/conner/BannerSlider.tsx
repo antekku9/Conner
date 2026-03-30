@@ -23,11 +23,18 @@ const banners = [
   },
   {
     image: '/Conner/sklep-allegro.webp', 
-    title: 'Obsługa',
-    subtitle: 'Firm, Szkół, Instytucji',
+    title: 'Obsługa Firm, Szkół oraz Instytucji',
+    subtitle: 'Kompleksowe zaopatrzenie w sprzęt IT',
     ctaText: 'Dowiedz się więcej',
-    ctaLink: 'https://allegro.pl/uzytkownik/ConnerMedia',
+    ctaLink: '#Zobacz ofertę',
   },
+  {
+    image: '/Conner/serwis.webp',
+    title: 'Komputery Szyte na Miarę',
+    subtitle: 'Kompleksowa budowa komputerów, profesjonalne doradztwo',
+    ctaText: 'Dowiedz się więcej',
+    ctaLink: '#Skonfiguruj swój PC',
+  }
 ];
 
 function NextArrow(props: any) {
