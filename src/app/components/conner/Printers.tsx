@@ -51,7 +51,6 @@ export function Printers() {
 </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }
