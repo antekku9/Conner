@@ -43,7 +43,7 @@ export function Printers() {
           {/* Image */}
           <div className="flex-1 min-w-[300px]">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1739826294194-9e0ceaea136f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBwcmludGVyJTIwY29waWVyJTIwbWFjaGluZXxlbnwxfHx8fDE3NzI5NjYzODR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              image: '/Conner/sharp-printer.webp'
               alt="Drukarki biurowe"
               className="w-full rounded-[20px] shadow-[0_20px_40px_rgba(0,0,0,0.05)]"
             />
