@@ -22,35 +22,35 @@ const rentalDevices: RentalDevice[] = [
     id: 2,
     name: 'Brother HL-L9310CDW',
     description: 'Wydajne urządzenie wielofunkcyjne dla dużych biur',
-    imageUrl: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
+    imageUrl: '/Conner/HL-L9310CDW.webp',
     specs: ['Druk A3 mono', 'Duplex automatyczny', 'Do 55 str/min']
   },
   {
     id: 3,
     name: 'Brother MFC-L5710DW',
     description: 'Drukarka laserowa dla wymagających użytkowników',
-    imageUrl: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
+    imageUrl: '/Conner/MFC-L5710DW.webp',
     specs: ['Druk A4 mono', 'Sieć Ethernet', 'Do 40 str/min']
   },
   {
     id: 4,
     name: 'Brother MFC-L6710DW',
     description: 'Biznesowy laptop z pełnym wyposażeniem',
-    imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800',
+    imageUrl: '/Conner/MFC-L6710DW.webp',
     specs: ['Druk A3 mono', 'Duplex automatyczny', 'Do 55 str/min']
   },
   {
     id: 5,
     name: 'Brother MFC-L8900CDW',
     description: 'Niezawodne rozwiązanie dla profesjonalistów',
-    imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800',
+    imageUrl: '/Conner/MFC-L8900CDW.webp',
     specs: ['Druk A3 mono', 'Duplex automatyczny', 'Do 55 str/min']
   },
   {
     id: 6,
     name: 'Projektor multimedialny',
     description: 'Full HD projektor do prezentacji i szkoleń',
-    imageUrl: 'https://images.unsplash.com/photo-1478358161113-b0e11994a36b?w=800',
+    imageUrl: '/Conner/',
     specs: ['Full HD 1920x1080', '3500 ANSI lumenów', 'HDMI, VGA, USB']
   }
 ];
