@@ -8,28 +8,28 @@ import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 const banners = [
   {
-  image: '/Conner/Komputery.webp',
+  image: '/Komputery.webp',
   title: 'Komputery Szyte na Miarę',
   subtitle: 'Kompleksowa budowa komputerów, profesjonalne doradztwo',
   ctaText: 'Zadzwoń już teraz',
   ctaLink: 'tel:426319420', 
   },
   {
-    image: '/Conner/serwis.webp',
+    image: '/serwis.webp',
     title: 'Profesjonalny Serwis IT',
     subtitle: 'Kompleksowa obsługa komputerów, laptopów i serwerów',
     ctaText: 'Dowiedz się więcej',
     ctaLink: '#serwis',
   },
   {
-    image: '/Conner/wynajem.webp',
+    image: '/wynajem.webp',
     title: 'Wynajem Sprzętu Biurowego',
     subtitle: 'Drukarki, kserokopiarki i urządzenia wielofunkcyjne',
     ctaText: 'Zobacz ofertę',
     ctaLink: '#wynajem',
   },
   {
-    image: '/Conner/Obsluga.webp', 
+    image: '/Obsluga.webp', 
     title: 'Obsługa Firm, Szkół oraz Instytucji',
     subtitle: 'Kompleksowe zaopatrzenie w sprzęt IT',
     ctaText: 'Dowiedz się więcej',
