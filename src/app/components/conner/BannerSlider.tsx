@@ -33,7 +33,7 @@ const banners = [
     title: 'Obsługa Firm, Szkół oraz Instytucji',
     subtitle: 'Kompleksowe zaopatrzenie w sprzęt IT',
     ctaText: 'Dowiedz się więcej',
-    ctaLink: '#Zobacz ofertę',
+    ctaLink: 'https://antekku9.github.io/Conner/obsluga-firm',
   },
  
 ];
