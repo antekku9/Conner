@@ -13,7 +13,7 @@ const banners = [
     subtitle: 'Kompleksowa budowa komputerów, profesjonalne doradztwo',
     ctaText: 'Dowiedz się więcej',
     ctaLink: '#Skonfiguruj swój PC',
-  }
+  },
   {
     image: '/Conner/serwis.webp',
     title: 'Profesjonalny Serwis IT',
