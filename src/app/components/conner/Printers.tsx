@@ -56,3 +56,7 @@ export function Printers() {
         </div>
       </div>
     </section>
+);
+};
+
+export default Printers;
