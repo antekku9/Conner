@@ -22,11 +22,11 @@ export function Trust() {
             <span style={{ 
               backgroundColor: 'var(--bg-light)',
               color: 'var(--foreground)'
-            }} className="px-4 py-2 rounded-lg font-medium">Szkoły podstawowe i średnie</span>
+            }} className="px-4 py-2 rounded-lg font-medium">Szkoły podstawowe, średnie oraz uczelnie wyższe</span>
             <span style={{ 
               backgroundColor: 'var(--bg-light)',
               color: 'var(--foreground)'
-            }} className="px-4 py-2 rounded-lg font-medium">Przedsiębiorstwa MŚP</span>
+            }} className="px-4 py-2 rounded-lg font-medium">Prywatne przedsiębiorstwa </span>
             <span style={{ 
               backgroundColor: 'var(--bg-light)',
               color: 'var(--foreground)'
@@ -34,7 +34,7 @@ export function Trust() {
             <span style={{ 
               backgroundColor: 'var(--bg-light)',
               color: 'var(--foreground)'
-            }} className="px-4 py-2 rounded-lg font-medium">Organizacje edukacyjne</span>
+            }} className="px-4 py-2 rounded-lg font-medium">Organy Państwowe</span>
           </div>
         </div>
       </div>
