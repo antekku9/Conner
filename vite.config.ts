@@ -4,17 +4,15 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ mode }) => ({
-  // Dynamiczny base URL:
-  // - Figma Make: '/' (development)
-  // - GitHub Pages: '/Conner/' (production)
-  base: '/',
+  // Dla domeny własnej conner.pl ZAWSZE używamy '/'
+  base: '/', 
   
   plugins: [
-    // The React and Tailwind plugins are both required for Make, even if
-    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
   ],
+  // ... reszta bez zmian
+}))
   resolve: {
     alias: {
       // Alias @ to the src directory
