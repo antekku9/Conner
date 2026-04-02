@@ -3,23 +3,22 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig(({ mode }) => ({
-  // Dla domeny własnej conner.pl ZAWSZE używamy '/'
-  base: '/', 
+export default defineConfig({
+  // Dla domeny conner.pl base musi być '/'
+  base: '/',
   
   plugins: [
     react(),
     tailwindcss(),
   ],
-  // ... reszta bez zmian
-}))
+
   resolve: {
     alias: {
-      // Alias @ to the src directory
+      // To mapuje folder src na symbol @
       '@': path.resolve(__dirname, './src'),
     },
   },
 
-  // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
+  // Obsługa plików statycznych
   assetsInclude: ['**/*.svg', '**/*.csv'],
-}))
+})
