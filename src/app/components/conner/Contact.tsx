@@ -58,7 +58,8 @@ export function Contact() {
                   <Clock style={{ color: 'var(--accent)' }} className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold mb-1" style={{ color: 'var(--foreground)' }}>Godziny otwarcia</p>
-                    <p style={{ color: 'var(--text-muted)' }}>Pon - Pt: 9:00 - 17:00</p>
+                    <p style={{ color: 'var(--text-muted)' }}>Pon - wt: 9:00 - 18:00</p>
+                    <p style={{ color: 'var(--text-muted)' }}>Śrd - Pt: 9:00 - 17:00</p>
                     <p style={{ color: 'var(--text-muted)' }}>Sobota i Niedziela: Zamknięte</p>
                   </div>
                 </div>
