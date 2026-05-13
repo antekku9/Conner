@@ -22,7 +22,7 @@ export function ContactForm() {
       const data = new FormData(form);
 
       // WAŻNE: Używamy endpointu AJAX
-      const response = await fetch('https://formsubmit.co/ajax/akuran@conner.pl', {
+      const response = await fetch('https://formsubmit.co/antekku9@gmail.com', {
         method: 'POST',
         body: data,
         headers: {
