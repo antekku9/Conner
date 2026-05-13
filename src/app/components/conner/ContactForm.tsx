@@ -22,7 +22,8 @@ export function ContactForm() {
       const form = e.currentTarget;
       const formData = new FormData(form);
       
-      const response = await fetch('https://formsubmit.co/akuran@conner.pl', {
+      const response = await fetch('https://formsubmit.co/ajax/akuran@conner.pl', {
+    
         method: 'POST',
         body: formData,
         headers: {
