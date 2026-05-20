@@ -38,7 +38,7 @@ export const products: Product[] = [
     oldPrice: 5999, 
     lowestPrice30Days: 5999,
     shortDescription: 'Solidny komputer stacjonarny do gier i pracy z procesorem i5 oraz kartą RTX 5060',
-    description: 'Conner Okręt Bojowy to przemyślana konfiguracja stworzona z myślą o płynnej rozgrywce w najnowszych tytułach oraz stabilnej pracy w wymagających programach graficznych i montażowych. Wyposażony w potężny, 20-rdzeniowy procesor Intel Core i5 14. generacji, najnowszą kartę graficzną RTX 5060 oraz wydajne chłodzenie wodne DeepCool, które zapewnia idealną kulturę pracy i niskie temperatury.',
+    description: 'Conner Okręt Bojowy to przemyślana konfiguracja stworzona z myślą o płynnej rozgrywce w najnowszych tytułach oraz stabilnej pracy w wymagających programach graficznych i montażowych. Wyposażony w potężny, 10-rdzeniowy procesor Intel Core i5 14. generacji, najnowszą kartę graficzną RTX 5060 oraz wydajne chłodzenie wodne DeepCool, które zapewnia idealną kulturę pracy i niskie temperatury.',
     image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800', 
     images: [
       'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800',
