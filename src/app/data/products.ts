@@ -29,33 +29,36 @@ export const categories = [
 ];
 
 export const products: Product[] = [
-  {
-    id: '1',
-    name: 'Dell Latitude 5520',
-    slug: 'dell-latitude-5520',
-    category: 'Laptopy',
-    price: 2499,
-    oldPrice: 2899,
-    lowestPrice30Days: 2499, // OMNIBUS: Najniższa cena z 30 dni = aktualna cena
-    shortDescription: 'Profesjonalny laptop biznesowy z procesorem Intel Core i5',
-    description: 'Dell Latitude 5520 to niezawodny laptop biznesowy zaprojektowany dla profesjonalistów. Wyposażony w procesor Intel Core i5 11. generacji, 16GB RAM i szybki dysk SSD 512GB. Idealny do pracy biurowej, multimediów i zadań wymagających mocy obliczeniowej.',
-    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800',
+  id: '1',
+    name: 'Conner Okręt Bojowy',
+    slug: 'conner-okret-bojowy',
+    category: 'Komputery stacjonarne',
+    price: 5999,
+    oldPrice: 5999, 
+    lowestPrice30Days: 5999, // OMNIBUS: Najniższa cena z 30 dni = aktualna cena
+    shortDescription: 'Solidny komputer stacjonarny do gier i pracy z procesorem i5 oraz kartą RTX 5060',
+    description: 'Conner Okręt Bojowy to przemyślana konfiguracja stworzona z myślą o płynnej rozgrywce w najnowszych tytułach oraz stabilnej pracy w wymagających programach graficznych i montażowych. Wyposażony w potężny, 20-rdzeniowy procesor Intel Core i5 14. generacji, najnowszą kartę graficzną RTX 5060 oraz wydajne chłodzenie wodne DeepCool, które zapewnia idealną kulturę pracy i niskie temperatury.',
+    image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800', // Przykładowy link, podmień na własny adres URL zdjęcia głównego
     images: [
-      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800',
-      'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800',
+      'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800', // Podmień na linki do swoich wygenerowanych zdjęć
+      'https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?w=800',
     ],
     specs: [
-      { label: 'Procesor', value: 'Intel Core i5-1145G7' },
+      { label: 'Procesor', value: 'Intel Core i5-14700F (do 5.4 GHz)' },
+      { label: 'Płyta główna', value: 'MSI PRO B760M' },
       { label: 'RAM', value: '16GB DDR4' },
-      { label: 'Dysk', value: '512GB SSD NVMe' },
-      { label: 'Ekran', value: '15.6" FHD (1920x1080)' },
-      { label: 'Karta graficzna', value: 'Intel Iris Xe Graphics' },
-      { label: 'System', value: 'Windows 11 Pro' },
+      { label: 'Dysk', value: '1TB SSD NVMe M.2' },
+      { label: 'Karta graficzna', value: 'NVIDIA GeForce RTX 5060 (MSI / Gigabyte / Asus)' },
+      { label: 'Chłodzenie procesora', value: 'DeepCool LE240 WH v2 (Wodne)' },
+      { label: 'Zasilacz', value: 'Chieftec 700W' },
+      { label: 'Obudowa', value: 'DeepCool CG530 4F' },
+      { label: 'System', value: 'MS Windows 11 Home OEM' },
       { label: 'Gwarancja', value: '24 miesiące' },
     ],
     inStock: true,
     featured: true,
   },
+  
   {
     id: '2',
     name: 'HP EliteDesk 800 G6 SFF',
