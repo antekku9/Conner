@@ -4,18 +4,18 @@
 export interface Product {
   id: string;
   name: string;
-  slug: string; // URL-friendly nazwa (np. "laptop-dell-latitude")
+  slug: string; 
   category: string;
   price: number;
-  oldPrice?: number; // opcjonalna stara cena (dla promocji)
-  lowestPrice30Days?: number; // OMNIBUS: najniższa cena z ostatnich 30 dni
+  oldPrice?: number; 
+  lowestPrice30Days?: number; 
   description: string;
   shortDescription: string;
   image: string;
-  images?: string[]; // dodatkowe zdjęcia
-  specs?: { label: string; value: string }[]; // specyfikacja techniczna
+  images?: string[]; 
+  specs?: { label: string; value: string }[]; 
   inStock: boolean;
-  featured?: boolean; // wyróżniony produkt
+  featured?: boolean; 
   
   // Pola dla rozbudowanej karty produktu:
   badges?: string[]; 
@@ -71,7 +71,7 @@ export const products: Product[] = [
     category: 'Komputery stacjonarne',
     price: 5499,
     shortDescription: 'Złoty środek dla graczy. i5-14600KF, RTX 5060 i obudowa typu "akwarium".',
-    description: 'Zbudowany, by przyciągać wzrok i miażdżyć wymagania sprzętowe. GameCon Standard łączy moc najnowszej architektury RTX 5060 z 14-generacją procesorów Intel. Panoramiczna obudowa DeepCool CH530 wyeksponuje chłodzenie wodne, oferując nie tylko genialne osiągi, ale i niesamowity wygląd Twojego stanowiska.',
+    description: 'Zbudowany, by przyciągać wzrok i miażdżyć wymagania sprzętowe. GameCon Standard łączy moc najnowszej architektury RTX 5060 z 14-generacją procesorów Intel. Panoramiczna obudowa DeepCool wyeksponuje chłodzenie wodne, oferując nie tylko genialne osiągi, ale i niesamowity wygląd Twojego stanowiska.',
     image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800',
     badges: ['Nowość', 'Polecamy'],
     features: [
@@ -209,41 +209,3 @@ export const products: Product[] = [
     category: 'Komputery stacjonarne',
     price: 12499,
     shortDescription: 'Potężna stacja robocza. 64GB RAM, i7-14700K i wybitnie ciche środowisko pracy.',
-    description: 'Sprzęt dla agencji kreatywnych, animatorów i montażystów pracujących na wysokich rozdzielczościach. Aż 64GB pamięci RAM, procesor Intel z odblokowanym mnożnikiem oraz mocarza RTX 5080. Całość zamknięta w klasowej obudowie be quiet! z wyciszanymi panelami, chłodzona wodą, aby zminimalizować hałas nawet pod 100% obciążeniem podczas wielogodzinnych renderów.',
-    image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800',
-    badges: ['Stacja Robocza', 'Cisza'],
-    specs: [
-      { label: 'Procesor', value: 'Intel Core i7-14700K' },
-      { label: 'Karta graficzna', value: 'NVIDIA GeForce RTX 5080' },
-      { label: 'Pamięć RAM', value: '64GB DDR4' },
-      { label: 'Płyta główna', value: 'MSI B760 PRO Wi-Fi + BT' },
-      { label: 'Zasilacz', value: '1000W' },
-      { label: 'Chłodzenie', value: 'Wodne AIO 360mm' },
-      { label: 'Obudowa', value: 'be quiet! Shadow Base 800' }
-    ],
-    inStock: true,
-    featured: true,
-  },
-
-  // ==========================================
-  // POZOSTAŁE KATEGORIE (ZACHOWANE)
-  // ==========================================
-  {
-    id: '3',
-    name: 'Dell UltraSharp U2722DE',
-    slug: 'dell-ultrasharp-u2722de',
-    category: 'Monitory',
-    price: 1299,
-    shortDescription: 'Monitor 27" QHD z USB-C i IPS',
-    description: 'Dell UltraSharp U2722DE to profesjonalny monitor 27 cali z rozdzielczością QHD (2560x1440). Matryca IPS zapewnia doskonałe odwzorowanie kolorów i szerokie kąty widzenia. Port USB-C umożliwia ładowanie laptopa i przesyłanie danych jednym kablem.',
-    image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800',
-    specs: [
-      { label: 'Przekątna', value: '27 cali' },
-      { label: 'Rozdzielczość', value: 'QHD 2560x1440' },
-      { label: 'Matryca', value: 'IPS' },
-      { label: 'Odświeżanie', value: '60Hz' },
-      { label: 'Kontrast', value: '1000:1' },
-      { label: 'Porty', value: 'USB-C, HDMI, DisplayPort' },
-      { label: 'Regulacja', value: 'Wysokość, obrót, pivot' },
-    ],
-    in
