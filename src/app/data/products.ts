@@ -17,7 +17,6 @@ export interface Product {
   inStock: boolean;
   featured?: boolean; 
   
-  // Pola dla rozbudowanej karty produktu:
   badges?: string[]; 
   features?: { title: string; description: string }[]; 
   includes?: string[];
@@ -35,11 +34,11 @@ export const categories = [
 
 export const products: Product[] = [
   // ==========================================
-  // KOMPUTERY STACJONARNE - SERIA CONNER
+  // KOMPUTERY STACJONARNE
   // ==========================================
   {
     id: 'gc-mini',
-    name: 'Conner GameCon Mini',
+    name: 'GameCon Mini',
     slug: 'conner-gamecon-mini',
     category: 'Komputery stacjonarne',
     price: 3299,
@@ -66,7 +65,7 @@ export const products: Product[] = [
   },
   {
     id: 'gc-standard',
-    name: 'Conner GameCon Standard',
+    name: 'GameCon Standard',
     slug: 'conner-gamecon-standard',
     category: 'Komputery stacjonarne',
     price: 5499,
@@ -93,7 +92,7 @@ export const products: Product[] = [
   },
   {
     id: 'gc-max',
-    name: 'Conner GameCon Max',
+    name: 'GameCon Max',
     slug: 'conner-gamecon-max',
     category: 'Komputery stacjonarne',
     price: 9999,
@@ -116,7 +115,7 @@ export const products: Product[] = [
   },
   {
     id: 'wc-office',
-    name: 'Conner WorkCon Office',
+    name: 'WorkCon Office',
     slug: 'conner-workcon-office',
     category: 'Komputery stacjonarne',
     price: 1899,
@@ -137,7 +136,7 @@ export const products: Product[] = [
   },
   {
     id: 'wc-standard',
-    name: 'Conner WorkCon Standard',
+    name: 'WorkCon Standard',
     slug: 'conner-workcon-standard',
     category: 'Komputery stacjonarne',
     price: 3199,
@@ -157,7 +156,7 @@ export const products: Product[] = [
   },
   {
     id: 'wc-business',
-    name: 'Conner WorkCon Business',
+    name: 'WorkCon Business',
     slug: 'conner-workcon-business',
     category: 'Komputery stacjonarne',
     price: 4599,
@@ -178,7 +177,7 @@ export const products: Product[] = [
   },
   {
     id: 'graphcon-standard',
-    name: 'Conner GraphCon Standard',
+    name: 'GraphCon Standard',
     slug: 'conner-graphcon-standard',
     category: 'Komputery stacjonarne',
     price: 5999,
@@ -204,7 +203,7 @@ export const products: Product[] = [
   },
   {
     id: 'graphcon-pro',
-    name: 'Conner GraphCon Pro',
+    name: 'GraphCon Pro',
     slug: 'conner-graphcon-pro',
     category: 'Komputery stacjonarne',
     price: 12499,
@@ -226,31 +225,76 @@ export const products: Product[] = [
   },
 
   // ==========================================
-  // POZOSTAŁE KATEGORIE
+  // LAPTOPY
   // ==========================================
   {
-    id: '3',
-    name: 'Dell UltraSharp U2722DE',
-    slug: 'dell-ultrasharp-u2722de',
+    id: 'lap-acer-extensa-15',
+    name: 'Acer Extensa 15',
+    slug: 'acer-extensa-15',
+    category: 'Laptopy',
+    price: 2599,
+    shortDescription: 'Niezawodny sprzęt biurowy i domowy z mocnym procesorem Intel i5.',
+    description: 'Laptop Acer Extensa to świetny wybór do codziennej pracy, nauki i multimediów. Wyposażony w procesor Intel Core i5, aż 16GB pamięci operacyjnej oraz szybki i pojemny dysk SSD. Matowa matryca zapobiega męczeniu wzroku, a wytrzymała obudowa świetnie znosi podróże.',
+    image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800',
+    badges: ['Optymalny'],
+    specs: [
+      { label: 'Procesor', value: 'Intel Core i5' },
+      { label: 'Pamięć RAM', value: '16GB DDR4' },
+      { label: 'Dysk', value: '512GB SSD NVMe' },
+      { label: 'Ekran', value: '15.6" FHD (1920x1080) Matowy' },
+      { label: 'System', value: 'Windows 11 Home' }
+    ],
+    inStock: true,
+    featured: true,
+  },
+
+  // ==========================================
+  // MONITORY
+  // ==========================================
+  {
+    id: 'mon-dell-p2725he',
+    name: 'Dell P2725HE',
+    slug: 'dell-p2725he',
     category: 'Monitory',
-    price: 1299,
-    shortDescription: 'Monitor 27" QHD z USB-C i IPS',
-    description: 'Dell UltraSharp U2722DE to profesjonalny monitor 27 cali z rozdzielczością QHD (2560x1440). Matryca IPS zapewnia doskonałe odwzorowanie kolorów i szerokie kąty widzenia. Port USB-C umożliwia ładowanie laptopa i przesyłanie danych jednym kablem.',
+    price: 899,
+    shortDescription: 'Nowoczesny 27-calowy monitor biurowy z zaawansowanym hubem USB-C.',
+    description: 'Monitor Dell P2725HE to doskonałe centrum produktywności. Matryca IPS zapewnia perfekcyjne odwzorowanie kolorów, a podwyższone odświeżanie 100Hz sprawia, że interfejs systemu działa płynniej. Wbudowany hub USB-C o mocy 90W pozwala na zasilanie laptopa, przesyłanie obrazu i sieci po jednym kablu.',
     image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800',
     specs: [
       { label: 'Przekątna', value: '27 cali' },
-      { label: 'Rozdzielczość', value: 'QHD 2560x1440' },
-      { label: 'Matryca', value: 'IPS' },
-      { label: 'Odświeżanie', value: '60Hz' },
-      { label: 'Kontrast', value: '1000:1' },
-      { label: 'Porty', value: 'USB-C, HDMI, DisplayPort' },
-      { label: 'Regulacja', value: 'Wysokość, obrót, pivot' },
+      { label: 'Rozdzielczość', value: 'FHD 1920x1080' },
+      { label: 'Matryca', value: 'IPS, 100Hz' },
+      { label: 'Złącza', value: 'USB-C (90W), HDMI, DisplayPort, RJ45' },
+      { label: 'Ergonomia', value: 'Regulacja wysokości, Tilt, Swivel, Pivot' }
+    ],
+    inStock: true,
+    featured: true,
+  },
+  {
+    id: 'mon-philips-24e2n1100',
+    name: 'Philips 24E2N1100',
+    slug: 'philips-24e2n1100',
+    category: 'Monitory',
+    price: 399,
+    shortDescription: 'Przystępny cenowo, bezramkowy ekran 24" o odświeżaniu 100Hz.',
+    description: 'Philips z serii E to idealny balans między świetnym designem a wydajnością. Wyróżnia się bezramkową matrycą IPS oraz odświeżaniem na poziomie 100Hz, które zmniejsza smużenie obrazu i chroni Twój wzrok. Świetnie nadaje się do standardowej pracy biurowej i konsumpcji multimediów.',
+    image: 'https://images.unsplash.com/photo-1585792180566-04428cb524f8?w=800',
+    specs: [
+      { label: 'Przekątna', value: '24 cale' },
+      { label: 'Rozdzielczość', value: 'FHD 1920x1080' },
+      { label: 'Matryca', value: 'IPS, 100Hz' },
+      { label: 'Czas reakcji', value: '1 ms (MPRT)' },
+      { label: 'Technologie', value: 'Flicker-free, Low Blue Mode' }
     ],
     inStock: true,
     featured: false,
   },
+
+  // ==========================================
+  // DRUKARKI
+  // ==========================================
   {
-    id: '4',
+    id: 'prn-hp-m404dn',
     name: 'HP LaserJet Pro M404dn',
     slug: 'hp-laserjet-pro-m404dn',
     category: 'Drukarki',
@@ -264,104 +308,72 @@ export const products: Product[] = [
       { label: 'Rozdzielczość', value: '1200 x 1200 dpi' },
       { label: 'Druk dwustronny', value: 'Automatyczny' },
       { label: 'Pamięć', value: '256 MB' },
-      { label: 'Łączność', value: 'Ethernet, USB' },
-      { label: 'Wydajność', value: 'Do 80 000 str/mc' },
+      { label: 'Łączność', value: 'Ethernet, USB' }
     ],
     inStock: true,
     featured: false,
   },
   {
-    id: '5',
-    name: 'Logitech MX Keys',
-    slug: 'logitech-mx-keys',
-    category: 'Akcesoria',
-    price: 459,
-    shortDescription: 'Bezprzewodowa klawiatura dla profesjonalistów',
-    description: 'Logitech MX Keys to premium klawiatura bezprzewodowa z podświetlanymi klawiszami. Klawisze idealnie wyprofilowane zapewniają komfortowe pisanie przez długie godziny. Możliwość sparowania z maksymalnie 3 urządzeniami.',
-    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800',
+    id: 'prn-brother-t430',
+    name: 'Brother DCP-T430W',
+    slug: 'brother-dcp-t430',
+    category: 'Drukarki',
+    price: 699,
+    shortDescription: 'Tania w eksploatacji domowa drukarka atramentowa z systemem napełniania i Wi-Fi.',
+    description: 'Urządzenie z serii InkBenefit Plus. Oferuje niezwykle niski koszt druku dzięki systemowi wbudowanych pojemników na atrament, które łatwo się napełnia. Świetnie sprawdza się w małym biurze oraz u uczniów. Posiada wbudowaną łączność bezprzewodową do pracy prosto ze smartfona.',
+    image: 'https://images.unsplash.com/photo-1598550473950-89196b087095?w=800',
+    badges: ['Tani druk'],
     specs: [
-      { label: 'Typ', value: 'Klawiatura bezprzewodowa' },
-      { label: 'Łączność', value: 'Bluetooth, USB receiver' },
-      { label: 'Podświetlenie', value: 'Tak, automatyczne' },
-      { label: 'Bateria', value: 'Do 10 dni z podświetleniem' },
-      { label: 'Multi-device', value: 'Do 3 urządzeń' },
-      { label: 'Kompatybilność', value: 'Windows, Mac, Linux' },
+      { label: 'Typ', value: 'Atramentowa, kolorowa' },
+      { label: 'Zasilanie atramentem', value: 'System zbiornikowy (CISS)' },
+      { label: 'Łączność', value: 'Wi-Fi, USB' },
+      { label: 'Funkcje', value: 'Druk, Kopia, Skaner' }
     ],
     inStock: true,
     featured: false,
   },
   {
-    id: '6',
-    name: 'Dell PowerEdge T340',
-    slug: 'dell-poweredge-t340',
-    category: 'Serwery',
-    price: 5499,
-    shortDescription: 'Serwer wieżowy dla małych i średnich firm',
-    description: 'Dell PowerEdge T340 to wydajny serwer wieżowy zaprojektowany dla małych i średnich przedsiębiorstw. Wyposażony w procesor Intel Xeon E-2224, oferuje niezawodność i skalowalność. Idealny do wirtualizacji, baz danych i aplikacji biznesowych.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800',
+    id: 'prn-brother-t530',
+    name: 'Brother DCP-T530W',
+    slug: 'brother-dcp-t530',
+    category: 'Drukarki',
+    price: 849,
+    shortDescription: 'Wydajne urządzenie wielofunkcyjne InkBenefit Plus dla domu i małego biura.',
+    description: 'Szybsza alternatywa dla modelu T430. Posiada wygodny, 1-wierszowy wyświetlacz LCD oraz w pełni uszczelniony, łatwy w uzupełnianiu system atramentów. W komplecie z urządzeniem otrzymujesz atrament pozwalający na wydruk tysięcy stron.',
+    image: 'https://images.unsplash.com/photo-1598550473950-89196b087095?w=800',
     specs: [
-      { label: 'Procesor', value: 'Intel Xeon E-2224' },
-      { label: 'RAM', value: '16GB DDR4 ECC' },
-      { label: 'Dyski', value: '2x 1TB SAS RAID 1' },
-      { label: 'Zasilacz', value: '495W redundantny' },
-      { label: 'RAID', value: 'PERC H330' },
-      { label: 'Sloty PCIe', value: '4x PCIe Gen3' },
-      { label: 'Gwarancja', value: '36 miesięcy ProSupport' },
-    ],
-    inStock: true,
-    featured: true,
-  },
-  {
-    id: '7',
-    name: 'Ubiquiti UniFi Switch 24 PoE',
-    slug: 'ubiquiti-unifi-switch-24-poe',
-    category: 'Networking',
-    price: 1599,
-    shortDescription: 'Zarządzalny switch 24-portowy z PoE+',
-    description: 'Ubiquiti UniFi Switch 24 PoE to profesjonalny przełącznik sieciowy z obsługą PoE+ na wszystkich portach. Idealny do zasilania punktów dostępowych, kamer IP i telefonów VoIP. Zarządzanie przez UniFi Controller.',
-    image: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=800',
-    specs: [
-      { label: 'Porty', value: '24x Gigabit RJ45 + 2x SFP' },
-      { label: 'PoE+', value: '24 porty, budżet 250W' },
-      { label: 'Przepustowość', value: '52 Gbps' },
-      { label: 'Zarządzanie', value: 'UniFi Controller' },
-      { label: 'VLAN', value: 'Tak' },
-      { label: 'Montaż', value: 'Rack 19" 1U' },
+      { label: 'Typ', value: 'Atramentowa, kolorowa' },
+      { label: 'Zasilanie atramentem', value: 'System zbiornikowy (CISS)' },
+      { label: 'Łączność', value: 'Wi-Fi, USB' },
+      { label: 'Panel', value: 'Wyświetlacz LCD' }
     ],
     inStock: true,
     featured: false,
   },
   {
-    id: '8',
-    name: 'Logitech MX Master 3S',
-    slug: 'logitech-mx-master-3s',
-    category: 'Akcesoria',
-    price: 429,
-    shortDescription: 'Ergonomiczna myszka dla profesjonalistów',
-    description: 'Logitech MX Master 3S to flagowa myszka bezprzewodowa zaprojektowana dla maksymalnej produktywności. Cicha praca, precyzyjny sensor 8000 DPI i możliwość pracy na wielu urządzeniach jednocześnie.',
-    image: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=800',
+    id: 'prn-brother-t730',
+    name: 'Brother DCP-T730DW',
+    slug: 'brother-dcp-t730',
+    category: 'Drukarki',
+    price: 1099,
+    shortDescription: 'Zaawansowana drukarka atramentowa z ADF i automatycznym drukiem dwustronnym.',
+    description: 'Topowy model z rodziny InkBenefit Plus zaprojektowany do wyższych obciążeń. Oprócz zalet płynących z systemu zbiornikowego, model T730DW posiada automatyczny podajnik dokumentów (ADF) znacznie przyspieszający skanowanie oraz funkcję oszczędzania papieru dzięki automatycznemu drukowi dwustronnemu.',
+    image: 'https://images.unsplash.com/photo-1598550473950-89196b087095?w=800',
+    badges: ['Dla małego biura'],
     specs: [
-      { label: 'Typ', value: 'Myszka bezprzewodowa' },
-      { label: 'Sensor', value: '8000 DPI' },
-      { label: 'Łączność', value: 'Bluetooth, USB receiver' },
-      { label: 'Bateria', value: 'Do 70 dni' },
-      { label: 'Multi-device', value: 'Do 3 urządzeń' },
-      { label: 'Cicha praca', value: 'Tak, 90% ciszej' },
+      { label: 'Typ', value: 'Atramentowa, kolorowa' },
+      { label: 'Druk dwustronny', value: 'Automatyczny (Duplex)' },
+      { label: 'Skanowanie', value: 'Z automatycznym podajnikiem (ADF)' },
+      { label: 'Łączność', value: 'Wi-Fi, USB' }
     ],
     inStock: true,
     featured: false,
   },
-];
-
-// Funkcje pomocnicze
-export const getProductBySlug = (slug: string): Product | undefined => {
-  return products.find((p) => p.slug === slug);
-};
-
-export const getProductsByCategory = (category: string): Product[] => {
-  return products.filter((p) => p.category === category);
-};
-
-export const getFeaturedProducts = (): Product[] => {
-  return products.filter((p) => p.featured);
-};
+  {
+    id: 'prn-sharp-bp51c26',
+    name: 'Sharp BP-51C26',
+    slug: 'sharp-bp-51c26',
+    category: 'Drukarki',
+    price: 12915,
+    shortDescription: 'Potężne kolorowe urządzenie wielofunkcyjne formatu A3 dla dużych przedsiębiorstw.',
+    description
