@@ -16,6 +16,11 @@ export interface Product {
   specs?: { label: string; value: string }[]; // specyfikacja techniczna
   inStock: boolean;
   featured?: boolean; // wyróżniony produkt
+  
+  // Pola dla rozbudowanej karty produktu:
+  badges?: string[]; 
+  features?: { title: string; description: string }[]; 
+  includes?: string[];
 }
 
 export const categories = [
@@ -29,55 +34,200 @@ export const categories = [
 ];
 
 export const products: Product[] = [
+  // ==========================================
+  // KOMPUTERY STACJONARNE - SERIA CONNER
+  // ==========================================
   {
-    id: '1',
-    name: 'Conner Okręt Bojowy',
-    slug: 'conner-okret-bojowy',
+    id: 'gc-mini',
+    name: 'Conner GameCon Mini',
+    slug: 'conner-gamecon-mini',
     category: 'Komputery stacjonarne',
-    price: 5999,
-    shortDescription: 'Solidny komputer stacjonarny do gier i pracy z procesorem i5 oraz kartą RTX 5060',
-    description: 'Conner Okręt Bojowy to przemyślana konfiguracja stworzona z myślą o płynnej rozgrywce w najnowszych tytułach oraz stabilnej pracy w wymagających programach graficznych i montażowych. Wyposażony w potężny, 10-rdzeniowy procesor Intel Core i5 14. generacji, najnowszą kartę graficzną RTX 5060 oraz wydajne chłodzenie wodne DeepCool, które zapewnia idealną kulturę pracy i niskie temperatury.',
-    image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800', 
-    images: [
-      'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800',
-      'https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?w=800',
+    price: 3299,
+    shortDescription: 'Świetny start w świat gamingu. i5-12400F i RTX 3050 w kompaktowej formie.',
+    description: 'GameCon Mini to idealny wybór dla graczy szukających świetnego stosunku ceny do wydajności. Płynna gra w rozdzielczości 1080p, stabilny procesor Intel Core i5 12. generacji oraz karta graficzna z serii RTX pozwalają cieszyć się najnowszymi tytułami. Całość zamknięta w zgrabnej obudowie z przeszklonym panelem bocznym.',
+    image: 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800',
+    badges: ['Bestseller', 'Gaming'],
+    features: [
+      { title: 'Ray Tracing', description: 'Technologia śledzenia promieni dzięki karcie RTX 3050' },
+      { title: 'Kompaktowy rozmiar', description: 'Zmieści się na każdym biurku' }
     ],
     specs: [
-      { label: 'Procesor', value: 'Intel Core i5-14700F (do 5.4 GHz)' },
-      { label: 'Płyta główna', value: 'MSI PRO B760M' },
-      { label: 'RAM', value: '16GB DDR4' },
-      { label: 'Dysk', value: '1TB SSD NVMe M.2' },
-      { label: 'Karta graficzna', value: 'NVIDIA GeForce RTX 5060 (MSI / Gigabyte / Asus)' },
-      { label: 'Chłodzenie procesora', value: 'DeepCool LE240 WH v2 (Wodne)' },
-      { label: 'Zasilacz', value: 'Chieftec 700W' },
-      { label: 'Obudowa', value: 'DeepCool CG530 4F' },
-      { label: 'System', value: 'MS Windows 11 Home OEM' },
-      { label: 'Gwarancja', value: '24 miesiące' },
+      { label: 'Procesor', value: 'Intel Core i5-12400F' },
+      { label: 'Karta graficzna', value: 'NVIDIA GeForce RTX 3050' },
+      { label: 'Pamięć RAM', value: '16GB DDR4' },
+      { label: 'Płyta główna', value: 'MSI B760 PRO' },
+      { label: 'Zasilacz', value: '650W' },
+      { label: 'Chłodzenie', value: 'Endorfy Spartan 5' },
+      { label: 'Obudowa', value: 'Kompaktowa z oknem' },
+      { label: 'System', value: 'Windows 11 Home' }
+    ],
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: 'gc-standard',
+    name: 'Conner GameCon Standard',
+    slug: 'conner-gamecon-standard',
+    category: 'Komputery stacjonarne',
+    price: 5499,
+    shortDescription: 'Złoty środek dla graczy. i5-14600KF, RTX 5060 i obudowa typu "akwarium".',
+    description: 'Zbudowany, by przyciągać wzrok i miażdżyć wymagania sprzętowe. GameCon Standard łączy moc najnowszej architektury RTX 5060 z 14-generacją procesorów Intel. Panoramiczna obudowa DeepCool CH530 wyeksponuje chłodzenie wodne, oferując nie tylko genialne osiągi, ale i niesamowity wygląd Twojego stanowiska.',
+    image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800',
+    badges: ['Nowość', 'Polecamy'],
+    features: [
+      { title: 'Chłodzenie Cieczą', description: 'Niskie temperatury dzięki zestawowi AIO 240mm' },
+      { title: 'Panoramiczny Design', description: 'Obudowa Dual-Chamber ze szkłem hartowanym' }
+    ],
+    specs: [
+      { label: 'Procesor', value: 'Intel Core i5-14600KF' },
+      { label: 'Karta graficzna', value: 'NVIDIA GeForce RTX 5060' },
+      { label: 'Pamięć RAM', value: '16GB DDR4' },
+      { label: 'Płyta główna', value: 'MSI B760 PRO' },
+      { label: 'Zasilacz', value: '750W' },
+      { label: 'Chłodzenie', value: 'Wodne AIO 240mm (MSI / Endorfy)' },
+      { label: 'Obudowa', value: 'DeepCool CH530 4F' },
+      { label: 'System', value: 'Windows 11 Home' }
     ],
     inStock: true,
     featured: true,
   },
   {
-    id: '2',
-    name: 'HP EliteDesk 800 G6 SFF',
-    slug: 'hp-elitedesk-800-g6',
+    id: 'gc-max',
+    name: 'Conner GameCon Max',
+    slug: 'conner-gamecon-max',
+    category: 'Komputery stacjonarne',
+    price: 9999,
+    shortDescription: 'Ekstremalna wydajność i potęga RTX 5080. Komputer dla najbardziej wymagających.',
+    description: 'Nie uznajemy kompromisów. GameCon Max to stacja bojowa, która pozwala na grę w rozdzielczości 4K na ustawieniach Ultra. Na pokładzie potężny Intel i7-14700KF, aż 32GB pamięci RAM oraz flagowa karta RTX 5080. Całość bezprzewodowo łączy się z siecią dzięki wbudowanemu modułowi Wi-Fi/Bluetooth.',
+    image: 'https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?w=800',
+    badges: ['Premium', '4K Gaming'],
+    specs: [
+      { label: 'Procesor', value: 'Intel Core i7-14700KF' },
+      { label: 'Karta graficzna', value: 'NVIDIA GeForce RTX 5080' },
+      { label: 'Pamięć RAM', value: '32GB DDR4' },
+      { label: 'Płyta główna', value: 'MSI B760 PRO Wi-Fi + BT' },
+      { label: 'Zasilacz', value: '850W' },
+      { label: 'Chłodzenie', value: 'Wodne AIO 360mm DeepCool' },
+      { label: 'Obudowa', value: 'DeepCool CH690' },
+      { label: 'System', value: 'Windows 11 Pro' }
+    ],
+    inStock: true,
+    featured: true,
+  },
+  {
+    id: 'wc-office',
+    name: 'Conner WorkCon Office',
+    slug: 'conner-workcon-office',
     category: 'Komputery stacjonarne',
     price: 1899,
-    shortDescription: 'Kompaktowy komputer biznesowy z Intel Core i7',
-    description: 'HP EliteDesk 800 G6 w obudowie Small Form Factor to wydajny komputer stacjonarny idealny dla firm. Procesor Intel Core i7 10. generacji zapewnia wysoką wydajność przy niskim poborze energii. Kompaktowa konstrukcja oszczędza miejsce na biurku.',
-    image: 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800',
+    shortDescription: 'Niezawodna stacja biurowa z obsługą wielu monitorów.',
+    description: 'Idealny koń pociągowy do zadań administracyjnych, księgowości czy obsługi klienta. Dzięki zastosowaniu wydajnego procesora i3 12. generacji oraz dodatkowej karty graficznej, zyskujesz płynną pracę w aplikacjach biurowych i możliwość bezproblemowego podłączenia kilku monitorów jednocześnie.',
+    image: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800',
     specs: [
-      { label: 'Procesor', value: 'Intel Core i7-10700' },
-      { label: 'RAM', value: '16GB DDR4' },
-      { label: 'Dysk', value: '512GB SSD + 1TB HDD' },
-      { label: 'Karta graficzna', value: 'Intel UHD Graphics 630' },
-      { label: 'System', value: 'Windows 11 Pro' },
-      { label: 'Porty', value: 'USB 3.2, DisplayPort, HDMI' },
-      { label: 'Gwarancja', value: '36 miesięcy' },
+      { label: 'Procesor', value: 'Intel Core i3-12100F' },
+      { label: 'Karta graficzna', value: 'Dedykowana (np. GeForce 210)' },
+      { label: 'Pamięć RAM', value: '16GB DDR4' },
+      { label: 'Płyta główna', value: 'H610' },
+      { label: 'Zasilacz', value: '500W' },
+      { label: 'Chłodzenie', value: 'Intel OEM' },
+      { label: 'Obudowa', value: 'Armis 100 Solid' }
+    ],
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: 'wc-standard',
+    name: 'Conner WorkCon Standard',
+    slug: 'conner-workcon-standard',
+    category: 'Komputery stacjonarne',
+    price: 3199,
+    shortDescription: 'Wydajność i5 14. generacji dla płynnego multitaskingu w firmie.',
+    description: 'Stworzony dla pracowników, którzy na co dzień korzystają z wielu zasobożernych aplikacji jednocześnie. 14-rdzeniowy (w modelu i5-14600) procesor gwarantuje, że arkusze kalkulacyjne, bazy danych i przeglądarka z dziesiątkami zakładek będą działać błyskawicznie.',
+    image: 'https://images.unsplash.com/photo-1621361365424-06f0e1eb5c49?w=800',
+    specs: [
+      { label: 'Procesor', value: 'Intel Core i5-14600' },
+      { label: 'Pamięć RAM', value: '16GB DDR4' },
+      { label: 'Płyta główna', value: 'MSI B760 PRO' },
+      { label: 'Zasilacz', value: '550W' },
+      { label: 'Chłodzenie', value: 'Intel OEM' },
+      { label: 'Obudowa', value: 'Modecom Oberon / Armis 100 Solid' }
+    ],
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: 'wc-business',
+    name: 'Conner WorkCon Business',
+    slug: 'conner-workcon-business',
+    category: 'Komputery stacjonarne',
+    price: 4599,
+    shortDescription: 'Wielozadaniowość bez granic. Procesor i7, 32GB RAM i Wi-Fi.',
+    description: 'Maszyna do zadań specjalnych. Nieważne, czy analizujesz wielkie zbiory danych, pracujesz w zaawansowanym środowisku wirtualnym czy zarządzasz skomplikowanymi projektami. Zapas pamięci operacyjnej (32GB) i procesor i7 dbają o absolutny brak opóźnień. Wbudowane moduły bezprzewodowe pozwalają na elastyczne ustawienie stacji w nowoczesnym biurze.',
+    image: 'https://images.unsplash.com/photo-1544654803-b69140b285a1?w=800',
+    badges: ['Dla Profesjonalistów'],
+    specs: [
+      { label: 'Procesor', value: 'Intel Core i7-14700' },
+      { label: 'Pamięć RAM', value: '32GB DDR4' },
+      { label: 'Płyta główna', value: 'MSI B760 PRO Wi-Fi + BT' },
+      { label: 'Zasilacz', value: '700W' },
+      { label: 'Chłodzenie', value: 'Endorfy Spartan 5' },
+      { label: 'Obudowa', value: 'Modecom Pro Glass' }
+    ],
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: 'graphcon-standard',
+    name: 'Conner GraphCon Standard',
+    slug: 'conner-graphcon-standard',
+    category: 'Komputery stacjonarne',
+    price: 5999,
+    shortDescription: 'Stworzony do pracy z grafiką i wideo. 32GB RAM i akceleracja RTX 5060.',
+    description: 'Twoje narzędzie pracy w pakietach Adobe, DaVinci Resolve czy środowiskach 3D. Podwojona ilość pamięci RAM względem maszyn gamingowych zapewnia przestrzeń roboczą dla wielowarstwowych projektów, a dedykowana grafika NVIDIA znacznie przyspiesza renderowanie i eksport finalnego materiału.',
+    image: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800',
+    badges: ['Creative Studio'],
+    features: [
+      { title: 'Przestrzeń robocza', description: '32GB RAM do swobodnej pracy z wieloma projektami' },
+      { title: 'Renderowanie GPGPU', description: 'Sprzętowe przyspieszenie dzięki RTX 5060' }
+    ],
+    specs: [
+      { label: 'Procesor', value: 'Intel Core i5-14600KF' },
+      { label: 'Karta graficzna', value: 'NVIDIA GeForce RTX 5060' },
+      { label: 'Pamięć RAM', value: '32GB DDR4' },
+      { label: 'Płyta główna', value: 'MSI B760 PRO Wi-Fi + BT' },
+      { label: 'Zasilacz', value: '700W' },
+      { label: 'Chłodzenie', value: 'Endorfy Spartan 5' },
+      { label: 'Obudowa', value: 'Modecom Pro Glass' }
     ],
     inStock: true,
     featured: true,
   },
+  {
+    id: 'graphcon-pro',
+    name: 'Conner GraphCon Pro',
+    slug: 'conner-graphcon-pro',
+    category: 'Komputery stacjonarne',
+    price: 12499,
+    shortDescription: 'Potężna stacja robocza. 64GB RAM, i7-14700K i wybitnie ciche środowisko pracy.',
+    description: 'Sprzęt dla agencji kreatywnych, animatorów i montażystów pracujących na wysokich rozdzielczościach. Aż 64GB pamięci RAM, procesor Intel z odblokowanym mnożnikiem oraz mocarza RTX 5080. Całość zamknięta w klasowej obudowie be quiet! z wyciszanymi panelami, chłodzona wodą, aby zminimalizować hałas nawet pod 100% obciążeniem podczas wielogodzinnych renderów.',
+    image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800',
+    badges: ['Stacja Robocza', 'Cisza'],
+    specs: [
+      { label: 'Procesor', value: 'Intel Core i7-14700K' },
+      { label: 'Karta graficzna', value: 'NVIDIA GeForce RTX 5080' },
+      { label: 'Pamięć RAM', value: '64GB DDR4' },
+      { label: 'Płyta główna', value: 'MSI B760 PRO Wi-Fi + BT' },
+      { label: 'Zasilacz', value: '1000W' },
+      { label: 'Chłodzenie', value: 'Wodne AIO 360mm' },
+      { label: 'Obudowa', value: 'be quiet! Shadow Base 800' }
+    ],
+    inStock: true,
+    featured: true,
+  },
+
+  // ==========================================
+  // POZOSTAŁE KATEGORIE (ZACHOWANE)
+  // ==========================================
   {
     id: '3',
     name: 'Dell UltraSharp U2722DE',
@@ -96,122 +246,4 @@ export const products: Product[] = [
       { label: 'Porty', value: 'USB-C, HDMI, DisplayPort' },
       { label: 'Regulacja', value: 'Wysokość, obrót, pivot' },
     ],
-    inStock: true,
-    featured: false,
-  },
-  {
-    id: '4',
-    name: 'HP LaserJet Pro M404dn',
-    slug: 'hp-laserjet-pro-m404dn',
-    category: 'Drukarki',
-    price: 899,
-    shortDescription: 'Drukarka laserowa mono z dupleksem',
-    description: 'HP LaserJet Pro M404dn to wydajna drukarka laserowa monochromatyczna idealna do małych i średnich biur. Obsługuje automatyczny druk dwustronny, posiada moduł sieciowy Ethernet i drukuje z prędkością do 38 stron na minutę.',
-    image: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
-    specs: [
-      { label: 'Typ', value: 'Drukarka laserowa mono' },
-      { label: 'Prędkość', value: 'Do 38 str/min' },
-      { label: 'Rozdzielczość', value: '1200 x 1200 dpi' },
-      { label: 'Druk dwustronny', value: 'Automatyczny' },
-      { label: 'Pamięć', value: '256 MB' },
-      { label: 'Łączność', value: 'Ethernet, USB' },
-      { label: 'Wydajność', value: 'Do 80 000 str/mc' },
-    ],
-    inStock: true,
-    featured: false,
-  },
-  {
-    id: '5',
-    name: 'Logitech MX Keys',
-    slug: 'logitech-mx-keys',
-    category: 'Akcesoria',
-    price: 459,
-    shortDescription: 'Bezprzewodowa klawiatura dla profesjonalistów',
-    description: 'Logitech MX Keys to premium klawiatura bezprzewodowa z podświetlanymi klawiszami. Klawisze idealnie wyprofilowane zapewniają komfortowe pisanie przez długie godziny. Możliwość sparowania z maksymalnie 3 urządzeniami.',
-    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800',
-    specs: [
-      { label: 'Typ', value: 'Klawiatura bezprzewodowa' },
-      { label: 'Łączność', value: 'Bluetooth, USB receiver' },
-      { label: 'Podświetlenie', value: 'Tak, automatyczne' },
-      { label: 'Bateria', value: 'Do 10 dni z podświetleniem' },
-      { label: 'Multi-device', value: 'Do 3 urządzeń' },
-      { label: 'Kompatybilność', value: 'Windows, Mac, Linux' },
-    ],
-    inStock: true,
-    featured: false,
-  },
-  {
-    id: '6',
-    name: 'Dell PowerEdge T340',
-    slug: 'dell-poweredge-t340',
-    category: 'Serwery',
-    price: 5499,
-    shortDescription: 'Serwer wieżowy dla małych i średnich firm',
-    description: 'Dell PowerEdge T340 to wydajny serwer wieżowy zaprojektowany dla małych i średnich przedsiębiorstw. Wyposażony w procesor Intel Xeon E-2224, oferuje niezawodność i skalowalność. Idealny do wirtualizacji, baz danych i aplikacji biznesowych.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800',
-    specs: [
-      { label: 'Procesor', value: 'Intel Xeon E-2224' },
-      { label: 'RAM', value: '16GB DDR4 ECC' },
-      { label: 'Dyski', value: '2x 1TB SAS RAID 1' },
-      { label: 'Zasilacz', value: '495W redundantny' },
-      { label: 'RAID', value: 'PERC H330' },
-      { label: 'Sloty PCIe', value: '4x PCIe Gen3' },
-      { label: 'Gwarancja', value: '36 miesięcy ProSupport' },
-    ],
-    inStock: true,
-    featured: true,
-  },
-  {
-    id: '7',
-    name: 'Ubiquiti UniFi Switch 24 PoE',
-    slug: 'ubiquiti-unifi-switch-24-poe',
-    category: 'Networking',
-    price: 1599,
-    shortDescription: 'Zarządzalny switch 24-portowy z PoE+',
-    description: 'Ubiquiti UniFi Switch 24 PoE to profesjonalny przełącznik sieciowy z obsługą PoE+ na wszystkich portach. Idealny do zasilania punktów dostępowych, kamer IP i telefonów VoIP. Zarządzanie przez UniFi Controller.',
-    image: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=800',
-    specs: [
-      { label: 'Porty', value: '24x Gigabit RJ45 + 2x SFP' },
-      { label: 'PoE+', value: '24 porty, budżet 250W' },
-      { label: 'Przepustowość', value: '52 Gbps' },
-      { label: 'Zarządzanie', value: 'UniFi Controller' },
-      { label: 'VLAN', value: 'Tak' },
-      { label: 'Montaż', value: 'Rack 19" 1U' },
-    ],
-    inStock: true,
-    featured: false,
-  },
-  {
-    id: '8',
-    name: 'Logitech MX Master 3S',
-    slug: 'logitech-mx-master-3s',
-    category: 'Akcesoria',
-    price: 429,
-    shortDescription: 'Ergonomiczna myszka dla profesjonalistów',
-    description: 'Logitech MX Master 3S to flagowa myszka bezprzewodowa zaprojektowana dla maksymalnej produktywności. Cicha praca, precyzyjny sensor 8000 DPI i możliwość pracy na wielu urządzeniach jednocześnie.',
-    image: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=800',
-    specs: [
-      { label: 'Typ', value: 'Myszka bezprzewodowa' },
-      { label: 'Sensor', value: '8000 DPI' },
-      { label: 'Łączność', value: 'Bluetooth, USB receiver' },
-      { label: 'Bateria', value: 'Do 70 dni' },
-      { label: 'Multi-device', value: 'Do 3 urządzeń' },
-      { label: 'Cicha praca', value: 'Tak, 90% ciszej' },
-    ],
-    inStock: true,
-    featured: false,
-  },
-];
-
-// Funkcje pomocnicze
-export const getProductBySlug = (slug: string): Product | undefined => {
-  return products.find((p) => p.slug === slug);
-};
-
-export const getProductsByCategory = (category: string): Product[] => {
-  return products.filter((p) => p.category === category);
-};
-
-export const getFeaturedProducts = (): Product[] => {
-  return products.filter((p) => p.featured);
-};
+    in
