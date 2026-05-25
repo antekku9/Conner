@@ -70,7 +70,7 @@ export const products: Product[] = [
     category: 'Komputery stacjonarne',
     price: 5499,
     shortDescription: 'Złoty środek dla graczy. i5-14600KF, RTX 5060 i obudowa typu "akwarium".',
-    description: 'Zbudowany, by przyciągać wzrok i miażdżyć wymagania sprzętowe. GameCon Standard łączy moc najnowszej architektury RTX 5060 z 14-generacją procesorów Intel. Panoramiczna obudowa DeepCool wyeksponuje chłodzenie wodne, oferując nie tylko genialne osiągi, ale i niesamowity wygląd Twojego stanowiska.',
+    description: 'Zbudowany, by przyciągać wzrok i miażdżyć wymagania sprzętowe. GameCon Standard łączy moc najnowszej architektury RTX 5060 z 14-generacją procesorów Intel. Panoramiczna obudowa wyeksponuje chłodzenie wodne, oferując nie tylko genialne osiągi, ale i niesamowity wygląd Twojego stanowiska.',
     image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800',
     badges: ['Nowość', 'Polecamy'],
     features: [
@@ -376,4 +376,167 @@ export const products: Product[] = [
     category: 'Drukarki',
     price: 12915,
     shortDescription: 'Potężne kolorowe urządzenie wielofunkcyjne formatu A3 dla dużych przedsiębiorstw.',
-    description
+    description: 'Oparte na najnowszych technologiach, profesjonalne wolnostojące urządzenie wielofunkcyjne SRA3/A3 od Sharp. Prędkość druku wynosząca 26 stron na minutę w połączeniu ze skanowaniem sieciowym na potężnym wyświetlaczu dotykowym 10,1" robi z niego centrum dowodzenia obiegami dokumentów w korporacji. Oferuje gigantyczną wydajność i niesłychanie tani koszt wydruku.',
+    image: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800',
+    badges: ['Maszyna Biurowa', 'Format A3'],
+    specs: [
+      { label: 'Typ urządzenia', value: 'Wolnostojące wielofunkcyjne (A3, SRA3)' },
+      { label: 'Prędkość druku', value: '26 stron na minutę' },
+      { label: 'Panel', value: 'Dotykowy, 10,1 cala' },
+      { label: 'Kasety na papier', value: 'Pojemne kasety dolne z możliwością rozbudowy' }
+    ],
+    inStock: true,
+    featured: true,
+  },
+
+  // ==========================================
+  // AKCESORIA
+  // ==========================================
+  {
+    id: 'acc-logitech-mx-keys',
+    name: 'Logitech MX Keys',
+    slug: 'logitech-mx-keys',
+    category: 'Akcesoria',
+    price: 459,
+    shortDescription: 'Bezprzewodowa klawiatura dla profesjonalistów',
+    description: 'Logitech MX Keys to premium klawiatura bezprzewodowa z podświetlanymi klawiszami. Klawisze idealnie wyprofilowane zapewniają komfortowe pisanie przez długie godziny. Możliwość sparowania z maksymalnie 3 urządzeniami.',
+    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800',
+    specs: [
+      { label: 'Typ', value: 'Klawiatura bezprzewodowa' },
+      { label: 'Łączność', value: 'Bluetooth, USB receiver' },
+      { label: 'Podświetlenie', value: 'Tak, automatyczne' },
+      { label: 'Bateria', value: 'Do 10 dni z podświetleniem' }
+    ],
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: 'acc-logitech-mx-master-3s',
+    name: 'Logitech MX Master 3S',
+    slug: 'logitech-mx-master-3s',
+    category: 'Akcesoria',
+    price: 429,
+    shortDescription: 'Ergonomiczna myszka dla profesjonalistów',
+    description: 'Logitech MX Master 3S to flagowa myszka bezprzewodowa zaprojektowana dla maksymalnej produktywności. Cicha praca, precyzyjny sensor 8000 DPI i możliwość pracy na wielu urządzeniach jednocześnie.',
+    image: 'https://images.unsplash.com/photo-1527814050087-3793815479db?w=800',
+    specs: [
+      { label: 'Typ', value: 'Myszka bezprzewodowa' },
+      { label: 'Sensor', value: '8000 DPI' },
+      { label: 'Łączność', value: 'Bluetooth, USB receiver' },
+      { label: 'Bateria', value: 'Do 70 dni' }
+    ],
+    inStock: true,
+    featured: false,
+  },
+
+  // ==========================================
+  // SERWERY
+  // ==========================================
+  {
+    id: 'srv-dell-t340',
+    name: 'Dell PowerEdge T340',
+    slug: 'dell-poweredge-t340',
+    category: 'Serwery',
+    price: 5499,
+    shortDescription: 'Serwer wieżowy dla małych i średnich firm',
+    description: 'Dell PowerEdge T340 to wydajny serwer wieżowy zaprojektowany dla małych i średnich przedsiębiorstw. Wyposażony w procesor Intel Xeon E-2224, oferuje niezawodność i skalowalność. Idealny do wirtualizacji, baz danych i aplikacji biznesowych.',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800',
+    specs: [
+      { label: 'Procesor', value: 'Intel Xeon E-2224' },
+      { label: 'RAM', value: '16GB DDR4 ECC' },
+      { label: 'Dyski', value: '2x 1TB SAS RAID 1' },
+      { label: 'Zasilacz', value: '495W redundantny' },
+      { label: 'Gwarancja', value: '36 miesięcy ProSupport' }
+    ],
+    inStock: true,
+    featured: true,
+  },
+
+  // ==========================================
+  // NETWORKING
+  // ==========================================
+  {
+    id: 'net-unifi-switch-24-poe',
+    name: 'Ubiquiti UniFi Switch 24 PoE',
+    slug: 'ubiquiti-unifi-switch-24-poe',
+    category: 'Networking',
+    price: 1839,
+    shortDescription: 'Zarządzalny switch 24-portowy z PoE+',
+    description: 'Ubiquiti UniFi Switch 24 PoE to profesjonalny przełącznik sieciowy z obsługą PoE+ na wszystkich portach. Idealny do zasilania punktów dostępowych, kamer IP i telefonów VoIP. Zarządzanie z poziomu scentralizowanej chmury UniFi Controller.',
+    image: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=800',
+    specs: [
+      { label: 'Porty', value: '24x Gigabit RJ45 + 2x SFP' },
+      { label: 'PoE+', value: '24 porty, budżet 250W' },
+      { label: 'Zarządzanie', value: 'UniFi Controller' },
+      { label: 'Montaż', value: 'Rack 19" 1U' }
+    ],
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: 'net-unifi-u6-pro',
+    name: 'Ubiquiti UniFi 6 Pro',
+    slug: 'ubiquiti-unifi-6-pro',
+    category: 'Networking',
+    price: 862,
+    shortDescription: 'Wydajny punkt dostępowy Wi-Fi 6 dedykowany do montażu sufitowego.',
+    description: 'Access Point klasy biznesowej obsługujący najnowszy standard Wi-Fi 6 z przepustowością przekraczającą 5.3 Gbps. Bez problemu obsługuje środowiska o wysokim zagęszczeniu klientów - gwarantuje stabilne działanie nawet do 300 podłączonych urządzeń jednocześnie.',
+    image: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=800', 
+    specs: [
+      { label: 'Standard Wi-Fi', value: '802.11ax (Wi-Fi 6)' },
+      { label: 'Zasilanie', value: 'PoE+' },
+      { label: 'MIMO', value: '4x4 na pasmach 5 GHz, 2x2 na 2.4 GHz' },
+      { label: 'Środowisko', value: 'Wewnętrzne (Indoor), obudowa z ochroną IP54' }
+    ],
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: 'net-tplink-sg3428x',
+    name: 'TP-Link Omada TL-SG3428X',
+    slug: 'tp-link-omada-sg3428x',
+    category: 'Networking',
+    price: 1150, 
+    shortDescription: 'Zarządzalny przełącznik L2+ z 24 portami Gigabitowymi i 4 slotami 10G SFP+.',
+    description: 'Serce nowoczesnej sieci z rodziny TP-Link Omada SDN. Zapewnia błyskawiczne połączenie z serwerami szkieletowymi dzięki czterem slotom 10G. Może być centralnie kontrolowany z darmowego serwera kontrolera lub chmury sprzętowej TP-Link, ułatwiając zarządzanie flotą przełączników.',
+    image: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=800', 
+    specs: [
+      { label: 'Porty', value: '24x Gigabit RJ45, 4x 10G SFP+' },
+      { label: 'Zarządzanie', value: 'Omada SDN (Chmura, Sprzętowe, Softowe)' },
+      { label: 'Warstwa', value: 'L2+ oraz statyczny routing L3' }
+    ],
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: 'net-tplink-eap650',
+    name: 'TP-Link Omada EAP650',
+    slug: 'tp-link-omada-eap650',
+    category: 'Networking',
+    price: 690, 
+    shortDescription: 'Niskoprofilowy punkt dostępowy Wi-Fi 6 ze środowiska Omada.',
+    description: 'Elegancki, zaledwie 33mm grubości, Access Point AX3000 pracujący w ekosystemie Omada. Szybki roaming (802.11k/v) pozwala na bezproblemowe przemieszczanie się po firmie bez zrywania połączeń na urządzeniach takich jak laptopy, telefony czy terminale magazynowe.',
+    image: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=800', 
+    specs: [
+      { label: 'Standard', value: 'Wi-Fi 6 AX3000' },
+      { label: 'Zarządzanie', value: 'Omada SDN' },
+      { label: 'Zasilanie', value: 'PoE+ lub zasilacz DC' },
+      { label: 'Roaming', value: 'Szybki roaming, Seamless' }
+    ],
+    inStock: true,
+    featured: false,
+  }
+];
+
+// Funkcje pomocnicze
+export const getProductBySlug = (slug: string): Product | undefined => {
+  return products.find((p) => p.slug === slug);
+};
+
+export const getProductsByCategory = (category: string): Product[] => {
+  return products.filter((p) => p.category === category);
+};
+
+export const getFeaturedProducts = (): Product[] => {
+  return products.filter((p) => p.featured);
+};
