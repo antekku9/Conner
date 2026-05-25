@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router';
 import { getProductBySlug, products } from '../data/products';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { CheckCircle, XCircle, ArrowLeft, Phone, Mail, ShoppingCart, ShieldCheck, Check } from 'lucide-react';
