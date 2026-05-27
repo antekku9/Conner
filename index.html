@@ -2,28 +2,37 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Tytuł strony zoptymalizowany pod SEO -->
+    <title>Conner - Salon i Serwis Komputerowy Łódź | Kompleksowe Usługi IT</title>
+    
+    <!-- Meta Tagi Podstawowe -->
     <meta name="description" content="Conner to profesjonalny salon i serwis komputerowy w Łodzi. Oferujemy kompleksowe usługi IT dla firm, naprawę laptopów, wynajem drukarek oraz sprzętu komputerowego." />
     <meta name="keywords" content="serwis komputerowy Łódź, naprawa laptopów Łódź, obsługa IT firm Łódź, wynajem drukarek Łódź, usługi IT, Conner" />
     <meta name="author" content="Conner Sp. z o.o." />
+    <meta name="application-name" content="Conner" />
     
+    <!-- Zarządzanie ikonami i logo (Pod przeglądarki oraz algorytm Google) -->
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="image_src" href="/apple-touch-icon.png" />
+    
+    <!-- Protokoły Open Graph (Dla Social Media np. Facebook, LinkedIn) -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://conner.pl" />
     <meta property="og:title" content="Conner - Salon i Serwis Komputerowy Łódź | Kompleksowe Usługi IT" />
     <meta property="og:description" content="Profesjonalny serwis komputerowy w Łodzi. Obsługa IT firm, naprawa sprzętu, wynajem drukarek i kserokopiarek." />
-    <meta property="og:image" content="https://conner.pl/logo.png" /> <!-- Warto podać pełny adres do logo dla Social Media -->
+    <meta property="og:image" content="https://conner.pl/apple-touch-icon.png" />
     
-    <!-- Twój nowy, zoptymalizowany tytuł strony -->
-    <title>Conner - Salon i Serwis Komputerowy Łódź | Kompleksowe Usługi IT</title>
-    
-    <!-- Dane Strukturalne Schema.org dla robotów Google -->
+    <!-- Dane Strukturalne Schema.org (Wizytówka lokalna dla robotów Google) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Conner Sp. z o.o.",
-      "image": "https://conner.pl/logo.svg",
+      "image": "https://conner.pl/apple-touch-icon.png",
       "@id": "https://conner.pl",
       "url": "https://conner.pl",
       "telephone": "+48426319420",
@@ -50,7 +59,7 @@
     }
     </script>
 
-    <!-- Skrypt routingu GitHub Pages -->
+    <!-- Skrypt routingu dla SPA na GitHub Pages -->
     <script>
       (function(l) {
         if (l.search[1] === '/' ) {
@@ -64,7 +73,7 @@
       }(window.location))
     </script>
 
-    <!-- Skrypt motywu (Dark/Light) -->
+    <!-- Skrypt sprawdzania i ustawiania motywu (Dark/Light) -->
     <script>
       (function() {
         const savedTheme = localStorage.getItem('theme');
