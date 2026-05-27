@@ -12,7 +12,7 @@ export function SeoText() {
             Profesjonalny Serwis Komputerowy i Obsługa IT w Łodzi – Conner Sp. z o.o.
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-300 text-base leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-300 text-base leading-relaxed mb-8">
             <div>
               <p className="mb-4">
                 Szukasz sprawdzonego wsparcia technologicznego dla swojego biznesu lub potrzebujesz szybkiej naprawy sprzętu prywatnego? 
@@ -29,7 +29,7 @@ export function SeoText() {
             <div>
               <p className="mb-4">
                 Dla sektora biznesowego, szkół oraz instytucji publicznych na terenie Łodzi i województwa łódzkiego przygotowaliśmy dedykowaną ofertę 
-                <strong className="text-white"> outsourcingu IT i stałej obsługi firm</strong>. Projektujemy i wdrażamy bezpieczne sieci komputerowe w oparciu o niezawodne systemy 
+                na kompleksowe <strong className="text-white">usługi IT w Łodzi</strong> oraz stały outsourcing informatyczny. Projektujemy i wdrażamy bezpieczne sieci komputerowe w oparciu o niezawodne systemy 
                 zarządzania takie jak <em className="text-white font-medium">Ubiquiti UniFi</em> oraz <em className="text-white font-medium">TP-Link Omada</em>, gwarantując stabilne i szybkie połączenie w każdym biurze.
               </p>
               <p>
@@ -39,6 +39,26 @@ export function SeoText() {
               </p>
             </div>
           </div>
+
+          {/* Nowa sekcja dedykowana pod brakujące frazy kluczowe */}
+          <div className="border-t border-gray-800 pt-8">
+            <h3 className="text-xl font-semibold text-white mb-4">Nasze specjalizacje lokalne:</h3>
+            <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-450 text-sm">
+              <li className="bg-gray-900/50 p-4 rounded-lg border border-gray-800/60">
+                <strong className="text-white block text-base mb-1">Składanie komputerów Łódź</strong>
+                Projektujemy i konfigurujemy jednostki centralne skrojone pod indywidualne potrzeby. Oferujemy profesjonalne składanie komputerów do gier, pracy biurowej oraz zaawansowanej obróbki graficznej i wideo, dbając o optymalny dobór komponentów i perfekcyjny cable management.
+              </li>
+              <li className="bg-gray-900/50 p-4 rounded-lg border border-gray-800/60">
+                <strong className="text-white block text-base mb-1">Laptopy Łódź – Serwis i doradztwo</strong>
+                Twój notebook zwalnia lub przegrzewa się pod obciążeniem? Nasz salon diagnozuje laptopy w Łodzi w ekspresowym tempie. Zajmujemy się modernizacją podzespołów, wymianą dysków na ultra szybkie NVMe SSD oraz naprawą płyt głównych po zalaniach.
+              </li>
+              <li className="bg-gray-900/50 p-4 rounded-lg border border-gray-800/60">
+                <strong className="text-white block text-base mb-1">Kompleksowe usługi IT w Łodzi</strong>
+                Dla łódzkich przedsiębiorców dostarczamy wsparcie techniczne najwyższej klasy. Nasze usługi IT obejmują audyty bezpieczeństwa, wdrażanie systemów kopii zapasowych (backup), administrację serwerami oraz natychmiastową pomoc w nagłych awariach systemowych.
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
