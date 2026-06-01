@@ -18,7 +18,7 @@ export function SeoText() {
               </h2>
               <p className="text-gray-300 text-base leading-relaxed">
                 Szukasz sprawdzonego wsparcia technologicznego dla swojego biznesu lub potrzebujesz szybkiej naprawy sprzętu prywatnego? 
-                <strong className="text-white"> Conner</strong> to nowoczesny salon i serwis komputerowy w Łodzi, który od 2007 roku dostarcza kompleksowe rozwiązania 
+                <strong className="text-white"> Conner</strong> to nowoczesny salon, <strong className="text-white">sklep komputerowy w Łodzi</strong> i serwis, który od 2007 roku dostarcza kompleksowe rozwiązania 
                 teleinformatyczne. Nasz zespół tworzą doświadczeni specjaliści, dla których priorytetem jest ciągłość działania Twoich systemów IT.
               </p>
             </div>
@@ -50,7 +50,7 @@ export function SeoText() {
                 zarządzania takie jak <em className="text-white font-medium">Ubiquiti UniFi</em> oraz <em className="text-white font-medium">TP-Link Omada</em>, gwarantując stabilne i szybkie połączenie w każdym biurze.
               </p>
               <p>
-                Naszą specjalizacją jest również optymalizacja kosztów druku w przedsiębiorstwach. Oferujemy elastyczny <strong className="text-white">wynajem drukarek i urządzeń 
+                Naszą specjalizacją są nowoczesne <strong className="text-white">urządzenia biurowe w Łodzi</strong> oraz pełna optymalizacja kosztów druku w przedsiębiorstwach. Oferujemy elastyczny <strong className="text-white">wynajem drukarek i urządzeń 
                 wielofunkcyjnych</strong> oraz kompleksowy serwis kserokopiarek. Wybierając Conner, zyskujesz stałe pogotowie komputerowe, fachowe doradztwo 
                 przy zakupie sprzętu IT oraz partnera, który dba o cyfrowe bezpieczeństwo Twojego biznesu.
               </p>
