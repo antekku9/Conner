@@ -2,16 +2,13 @@ import { useState, useEffect } from 'react';
 import { Wrench, Timer } from 'lucide-react';
 
 export function HitService() {
-  // Stan przechowujący realnie obliczony czas pozostały do końca dnia
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    // Funkcja obliczająca czas pozostały do godziny 23:59:59 dzisiejszego dnia
     const calculateTimeLeft = () => {
       const now = new Date();
       const endOfDay = new Date();
-      
-      endOfDay.setHours(23, 59, 59, 999); // Ustawiamy punkt docelowy na koniec dnia
+      endOfDay.setHours(23, 59, 59, 999);
 
       const difference = endOfDay.getTime() - now.getTime();
 
@@ -19,18 +16,13 @@ export function HitService() {
         const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((difference / 1000 / 60) % 60);
         const seconds = Math.floor((difference / 1000) % 60);
-        
         setTimeLeft({ hours, minutes, seconds });
       } else {
-        // Jeśli z jakiegoś powodu czas minął, resetujemy na pełną dobę
         setTimeLeft({ hours: 23, minutes: 59, seconds: 59 });
       }
     };
 
-    // Wywołujemy natychmiast przy montowaniu, żeby uniknąć mignięcia zerami
     calculateTimeLeft();
-
-    // Każda sekunda aktualizuje realną różnicę czasu
     const interval = setInterval(calculateTimeLeft, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -41,21 +33,21 @@ export function HitService() {
     <section className="py-4 bg-[var(--background)]">
       <div className="max-w-[1200px] mx-auto px-4">
         
-        {/* Główna karta Gorącego Strzału */}
+        {/* Główna karta Oferty Dnia */}
         <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-950 text-white p-5 overflow-hidden shadow-sm">
           
-          {/* Nagłówek sekcji */}
+          {/* Nagłówek sekcji - ZMIENIONO NAZWĘ NA OFERTA DNIA */}
           <div className="flex justify-between items-center mb-4 relative z-10">
             <h3 className="text-base font-black tracking-tight text-white flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              Gorąca Usługa Serwisowa
+              Oferta Dnia
             </h3>
             <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-[11px] font-black px-2.5 py-1 rounded-lg">
               Oszczędzasz 50 zł
             </div>
           </div>
 
-          {/* Środek karty: Prezentacja usługi graficznie */}
+          {/* Środek karty */}
           <div className="flex items-center justify-between my-2 relative z-10">
             <div className="max-w-[65%]">
               <h4 className="text-lg font-extrabold text-white leading-tight">
@@ -67,11 +59,11 @@ export function HitService() {
             </div>
             
             <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-[var(--accent)] shrink-0 shadow-inner">
-              <Wrench className="w-8 h-8 animate-none" />
+              <Wrench className="w-8 h-8" />
             </div>
           </div>
 
-          {/* Dół karty: Cennik, Dyrektywa Omnibus i Licznik czasu */}
+          {/* Dół karty */}
           <div className="mt-5 pt-4 border-t border-slate-900 flex justify-between items-end relative z-10">
             <div className="flex flex-col gap-1">
               <span className="block text-[10px] text-slate-500 uppercase font-bold tracking-wider">Cena w pakiecie</span>
@@ -84,10 +76,10 @@ export function HitService() {
               </span>
             </div>
 
-            {/* Licznik czasu (Timer) - TERAZ BEZWZGLĘDNY I ODPORNY NA ODŚWIEŻANIE */}
+            {/* Licznik czasu */}
             <div className="flex flex-col items-end">
               <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1 mb-1">
-                <Timer className="w-3 h-3" /> Zostało czasu
+                <Timer className="w-3 h-3" /> Okazja kończy się za
               </span>
               <div className="flex gap-1 text-xs font-mono font-bold">
                 <span className="bg-slate-900 px-2 py-1 rounded border border-slate-800">{formatNum(timeLeft.hours)}</span>
@@ -99,7 +91,7 @@ export function HitService() {
             </div>
           </div>
 
-          {/* Pełnowymiarowy przycisk akcji na dole karty */}
+          {/* Pełnowymiarowy przycisk akcji */}
           <div className="mt-5 relative z-10">
             <a
               href="tel:426319420"
