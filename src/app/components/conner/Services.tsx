@@ -7,7 +7,7 @@ export function Services() {
       title: 'Serwis sprzętu',
       fullTitle: 'Serwis Komputerowy',
       description: 'Profesjonalne naprawy komputerów, laptopów i serwerów. Szybka diagnoza, naprawa sprzętu oraz opieka pogwarancyjna. Obsługa w siedzibie klienta lub w naszym serwisie.',
-      featured: true,
+      featured: true, // Zachowujemy flagę, jeśli jest potrzebna gdzieś indziej, ale zmieniamy jej wpływ na style ikonki
     },
     {
       icon: Building2,
@@ -64,7 +64,7 @@ export function Services() {
         </div>
         
         {/* ====================================================================== */}
-        {/* 1. WIDOK MOBILNY (A'la x-kom: 3 kolumny, ikona na górze, bez opisu, bez tła) */}
+        {/* 1. WIDOK MOBILNY */}
         {/* ====================================================================== */}
         <div className="grid grid-cols-3 gap-2.5 md:hidden">
           {services.map((service, index) => {
@@ -90,7 +90,7 @@ export function Services() {
         </div>
 
         {/* ====================================================================== */}
-        {/* 2. WIDOK DESKTOP (Oryginalny, szeroki siatkowy grid z pełnymi opisami)     */}
+        {/* 2. WIDOK DESKTOP (Poprawione style tła i koloru ikonki dla spójności) */}
         {/* ====================================================================== */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
@@ -106,10 +106,11 @@ export function Services() {
               >
                 <div 
                   style={{ 
-                    backgroundColor: service.featured ? 'var(--accent)' : 'var(--bg-light)',
-                    color: service.featured ? 'var(--accent-foreground)' : 'var(--accent)'
+                    // Usunięto warunek service.featured – teraz wszystkie ikony mają ten sam styl bazowy
+                    backgroundColor: 'var(--bg-light)',
+                    color: 'var(--accent)'
                   }}
-                  className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 transition-all"
+                  className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 transition-all group-hover:scale-105"
                 >
                   <Icon className="w-7 h-7" />
                 </div>
@@ -128,3 +129,57 @@ export function Services() {
     </section>
   );
 }
+
+import { CheckCircle } from 'lucide-react';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
+
+export function ServiceDetails() {
+  return (
+    <>
+      {/* Serwis Section */}
+      <section id="serwis" className="py-12 md:py-24" style={{ backgroundColor: 'var(--background)' }}>
+        <div className="max-w-[1200px] mx-auto px-5">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+            
+            {/* Image */}
+            <div className="w-full md:flex-1 order-1 md:order-1">
+              <ImageWithFallback
+                src="https://images.unsplash.com/photo-1768633647910-7e6fb53e5b0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJVCUyMHN1cHBvcnQlMjB0ZWNobmljaWFuJTIwd29ya2luZ3xlbnwxfHx8fDE3NzMwNDk3ODN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Serwis komputerowy"
+                className="w-full aspect-video md:aspect-auto object-cover rounded-2xl md:rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+              />
+            </div>
+
+            {/* Text Content */}
+            <div className="w-full md:flex-1 order-2 md:order-2">
+              <span style={{ color: 'var(--accent)' }} className="uppercase text-[10px] md:text-xs font-bold tracking-[2px]">
+                Profesjonalny serwis
+              </span>
+              <h2 className="text-2xl md:text-4xl font-bold mt-1 mb-3 md:mb-4" style={{ color: 'var(--foreground)' }}>
+                Serwis Komputerowy
+              </h2>
+              <p style={{ color: 'var(--text-muted)' }} className="leading-relaxed text-sm md:text-base mb-4 md:mb-6">
+                Nasz wykwalifikowany zespół techników zapewnia kompleksową obsługę serwisową sprzętu komputerowego. Realizujemy naprawy na miejscu u klienta lub w naszym centrum serwisowym w Łodzi.
+              </p>
+              
+              <ul className="list-none my-4 md:my-6 space-y-2.5 md:space-y-3">
+                <li className="flex items-start gap-2.5 text-sm md:text-base font-medium" style={{ color: 'var(--foreground)' }}>
+                  <CheckCircle style={{ color: 'var(--accent)' }} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" />
+                  <span>Naprawa laptopów, komputerów stacjonarnych i serwerów</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-sm md:text-base font-medium" style={{ color: 'var(--foreground)' }}>
+                  <CheckCircle style={{ color: 'var(--accent)' }} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" />
+                  <span>Szybka diagnostyka i usuwanie awarii</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-sm md:text-base font-medium" style={{ color: 'var(--foreground)' }}>
+                  <CheckCircle style={{ color: 'var(--accent)' }} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" />
+                  <span>Opieka pogwarancyjna i konserwacja sprzętu</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-sm md:text-base font-medium" style={{ color: 'var(--foreground)' }}>
+                  <CheckCircle style={{ color: 'var(--accent)' }} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" />
+                  <span>Konfiguracja i optymalizacja systemów</span>
+                </li>
+              </ul>
+              
+              <a 
+                href
