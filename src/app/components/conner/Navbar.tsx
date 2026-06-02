@@ -107,7 +107,8 @@ export function Navbar() {
 
   return (
     <>
-      <nav style={{ backgroundColor: 'var(--navbar-bg)', borderBottomColor: 'var(--navbar-border)' }} className="py-4 md:py-5 border-b sticky top-0 z-50 overflow-hidden backdrop-blur-sm">
+      {/* ZMIENIONO z-50 na z-[1000], aby pasek i ikona X zawsze były na samym wierzchu */}
+      <nav style={{ backgroundColor: 'var(--navbar-bg)', borderBottomColor: 'var(--navbar-border)' }} className="py-4 md:py-5 border-b sticky top-0 z-[1000] overflow-hidden backdrop-blur-sm">
         {/* Circuit Board Decoration - Full Width Background */}
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
           <img 
@@ -132,6 +133,7 @@ export function Navbar() {
             
             {/* Desktop Menu */}
             <ul className="hidden md:flex gap-8 items-center list-none">
+              {"..." /* Zachowanie oryginalnych linków desktopowych */}
               <li>
                 <button 
                   onClick={() => handleScrollTo('serwis')}
@@ -248,9 +250,10 @@ export function Navbar() {
       </nav>
 
       {/* Nowe Mobilne Menu Pełnoekranowe (App-style Overaly) */}
+      {/* ZMIENIONO: Dodano klasę z-[999] oraz bg-white dark:bg-slate-950 jako twarde odcięcie dla filtrów w tle */}
       <div 
         style={{ backgroundColor: 'var(--navbar-bg)' }}
-        className={`fixed inset-0 top-[73px] z-40 md:hidden flex flex-col justify-between transition-all duration-300 ease-in-out border-t border-slate-100 dark:border-slate-900 ${
+        className={`fixed inset-0 top-[73px] z-[999] md:hidden flex flex-col justify-between bg-white dark:bg-slate-950 transition-all duration-300 ease-in-out border-t border-slate-100 dark:border-slate-900 ${
           mobileMenuOpen 
             ? 'opacity-100 translate-y-0 pointer-events-auto' 
             : 'opacity-0 -translate-y-4 pointer-events-none'
