@@ -47,86 +47,88 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* ZOPTYMALIZOWANY WĘZEŁ DARK MODE (Styl technologii klasy Premium) */
 .dark {
-  --background: #121418;
-  --foreground: #f5f5f7;
-  --primary: #f5f5f7;
+  --background: #0f1115;                  /* Rozjaśnione, głębokie tło grafitowe - oczy natychmiast odpoczywają */
+  --foreground: #f1f3f6;                  /* Bardzo miękka, czysta biel cyfrowa */
+  --primary: #f1f3f6;
   --accent: #d4a960;
-  --bg-light: #1c1f26;
-  --text-muted: #a8adb7;
-  --navbar-bg: #0d0f12;
-  --navbar-text: #f5f5f7;
-  --navbar-border: rgba(212, 169, 96, 0.12);
-  --card: #1a1d24;
-  --card-foreground: #f5f5f7;
-  --popover: #1a1d24;
-  --popover-foreground: #f5f5f7;
-  --primary-foreground: #121418;
-  --secondary: #252930;
-  --secondary-foreground: #f5f5f7;
-  --muted: #252930;
-  --muted-foreground: #a8adb7;
-  --accent-foreground: #121418;
-  --border: rgba(212, 169, 96, 0.12);
-  --input-background: #1c1f26;
-  --switch-background: #252930;
-  --destructive: #ef4444;
-  --destructive-foreground: #f5f5f7;
+  --bg-light: #181b22;                    /* Tło sekcji wewnętrznych, idealnie zestrojone */
+  --text-muted: #949ca8;                  /* Wyraźniejszy kontrast dla tekstów pomocniczych */
+  --navbar-bg: #13161c;                  /* Górna belka minimalnie jaśniejsza od spodu witryny */
+  --navbar-text: #f1f3f6;
+  --navbar-border: rgba(212, 169, 96, 0.15);
+  --card: #191d26;                       /* Kafelki stają się wyraźne i "wyskakują" trójwymiarowo do przodu */
+  --card-foreground: #f1f3f6;
+  --popover: #191d26;
+  --popover-foreground: #f1f3f6;
+  --primary-foreground: #0f1115;
+  --secondary: #222731;
+  --secondary-foreground: #f1f3f6;
+  --muted: #222731;
+  --muted-foreground: #949ca8;
+  --accent-foreground: #0f1115;
+  --border: rgba(212, 169, 96, 0.15);
+  --input-background: #181b22;
+  --switch-background: #222731;
+  --destructive: #f87171;
+  --destructive-foreground: #f1f3f6;
   --ring: rgba(212, 169, 96, 0.4);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #1a1d24;
-  --sidebar-foreground: #f5f5f7;
+  --sidebar: #191d26;
+  --sidebar-foreground: #f1f3f6;
   --sidebar-primary: #d4a960;
-  --sidebar-primary-foreground: #121418;
-  --sidebar-accent: #252930;
-  --sidebar-accent-foreground: #f5f5f7;
-  --sidebar-border: rgba(212, 169, 96, 0.12);
+  --sidebar-primary-foreground: #0f1115;
+  --sidebar-accent: #222731;
+  --sidebar-accent-foreground: #f1f3f6;
+  --sidebar-border: rgba(212, 169, 96, 0.15);
   --sidebar-ring: rgba(212, 169, 96, 0.4);
 }
 
+/* AUTOMATYCZNE SINKRONIZOWANIE Z SYSTEMEM URZĄDZENIA */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
-    --background: #121418;
-    --foreground: #f5f5f7;
-    --primary: #f5f5f7;
+    --background: #0f1115;
+    --foreground: #f1f3f6;
+    --primary: #f1f3f6;
     --accent: #d4a960;
-    --bg-light: #1c1f26;
-    --text-muted: #a8adb7;
-    --navbar-bg: #0d0f12;
-    --navbar-text: #f5f5f7;
-    --navbar-border: rgba(212, 169, 96, 0.12);
-    --card: #1a1d24;
-    --card-foreground: #f5f5f7;
-    --popover: #1a1d24;
-    --popover-foreground: #f5f5f7;
-    --primary-foreground: #121418;
-    --secondary: #252930;
-    --secondary-foreground: #f5f5f7;
-    --muted: #252930;
-    --muted-foreground: #a8adb7;
-    --accent-foreground: #121418;
-    --border: rgba(212, 169, 96, 0.12);
-    --input-background: #1c1f26;
-    --switch-background: #252930;
-    --destructive: #ef4444;
-    --destructive-foreground: #f5f5f7;
+    --bg-light: #181b22;
+    --text-muted: #949ca8;
+    --navbar-bg: #13161c;
+    --navbar-text: #f1f3f6;
+    --navbar-border: rgba(212, 169, 96, 0.15);
+    --card: #191d26;
+    --card-foreground: #f1f3f6;
+    --popover: #191d26;
+    --popover-foreground: #f1f3f6;
+    --primary-foreground: #0f1115;
+    --secondary: #222731;
+    --secondary-foreground: #f1f3f6;
+    --muted: #222731;
+    --muted-foreground: #949ca8;
+    --accent-foreground: #0f1115;
+    --border: rgba(212, 169, 96, 0.15);
+    --input-background: #181b22;
+    --switch-background: #222731;
+    --destructive: #f87171;
+    --destructive-foreground: #f1f3f6;
     --ring: rgba(212, 169, 96, 0.4);
     --chart-1: oklch(0.488 0.243 264.376);
     --chart-2: oklch(0.696 0.17 162.48);
     --chart-3: oklch(0.769 0.188 70.08);
     --chart-4: oklch(0.627 0.265 303.9);
     --chart-5: oklch(0.645 0.246 16.439);
-    --sidebar: #1a1d24;
-    --sidebar-foreground: #f5f5f7;
+    --sidebar: #191d26;
+    --sidebar-foreground: #f1f3f6;
     --sidebar-primary: #d4a960;
-    --sidebar-primary-foreground: #121418;
-    --sidebar-accent: #252930;
-    --sidebar-accent-foreground: #f5f5f7;
-    --sidebar-border: rgba(212, 169, 96, 0.12);
+    --sidebar-primary-foreground: #0f1115;
+    --sidebar-accent: #222731;
+    --sidebar-accent-foreground: #f1f3f6;
+    --sidebar-border: rgba(212, 169, 96, 0.15);
     --sidebar-ring: rgba(212, 169, 96, 0.4);
   }
 }
@@ -184,11 +186,6 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  /**
-  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
-  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
-  */
-
   html {
     font-size: var(--font-size);
     scroll-behavior: smooth;
@@ -237,30 +234,16 @@
   }
 }
 
-/* Custom animations for blob effect */
 @keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
 }
 
 .animate-blob {
   animation: blob 7s infinite;
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
