@@ -2,7 +2,8 @@ import { Award } from 'lucide-react';
 
 export function Trust() {
   return (
-    <section className="py-10 md:py-16 border-t" style={{ 
+    // DODANO KLASĘ: hidden md:block - sekcja ukrywa się na mobile, wraca na desktopie
+    <section className="hidden md:block py-10 md:py-16 border-t" style={{ 
       backgroundColor: 'var(--background)',
       borderTopColor: 'var(--border)'
     }}>
@@ -19,7 +20,6 @@ export function Trust() {
             Dziękujemy za zaufanie i wieloletnią współpracę!
           </p>
           
-          {/* Na mobile: poziomy, płynny pasek kategorii. Na desktopie: klasyczny flex-wrap */}
           <div className="mt-6 md:mt-8 flex overflow-x-auto md:flex-wrap md:justify-center gap-3 md:gap-6 text-xs md:text-sm pb-4 md:pb-0 scrollbar-none snap-x snap-mandatory px-1">
             <span style={{ 
               backgroundColor: 'var(--bg-light)',
