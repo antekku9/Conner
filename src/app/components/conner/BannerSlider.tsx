@@ -5,13 +5,13 @@ import 'slick-carousel/slick/slick-theme.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
-// PRZYWRÓCONO: Pełne, bogate opisy dla wersji desktopowej
 const banners = [
   {
     image: '/Komputery.webp',
     tag: 'NOWOŚĆ',
     title: 'Komputery Szyte na Miarę',
-    subtitle: 'Niezawodne stacje robocze, wydajne komputery biurowe oraz zaawansowane jednostki gamingowe. Profesjonalne doradztwo komponentów, precyzyjny montaż testowy oraz pełna opieka gwarancyjna na terenie Łodzi.',
+    subtitleDesktop: 'Niezawodne stacje robocze, wydajne komputery biurowe oraz zaawansowane jednostki gamingowe. Profesjonalne doradztwo komponentów, precyzyjny montaż testowy oraz pełna opieka gwarancyjna na terenie Łodzi.',
+    subtitleMobile: 'Profesjonalne doradztwo i precyzyjny montaż jednostek PC.',
     ctaText: 'Zadzwoń',
     ctaLink: 'tel:426319420', 
   },
@@ -19,7 +19,8 @@ const banners = [
     image: '/serwis.webp',
     tag: 'SERWIS IT',
     title: 'Szybka Naprawa Laptopów',
-    subtitle: 'Ekspresowa diagnoza usterek, czyszczenie układów chłodzenia, odzyskiwanie danych oraz profesjonalne naprawy płyt głównych. Przywracamy sprawność komputerów osobistych oraz sprzętu firmowego.',
+    subtitleDesktop: 'Ekspresowa diagnoza usterek, czyszczenie układów chłodzenia, odzyskiwanie danych oraz profesjonalne naprawy płyt głównych. Przywracamy sprawność komputerów osobistych oraz sprzętu firmowego.',
+    subtitleMobile: 'Ekspresowa diagnoza i usuwanie awarii sprzętowych.',
     ctaText: 'Sprawdź',
     ctaLink: '#serwis',
   },
@@ -27,7 +28,8 @@ const banners = [
     image: '/wynajem.webp',
     tag: 'DLA BIURA',
     title: 'Wynajem Drukarek i Ksero',
-    subtitle: 'Nowoczesne urządzenia wielofunkcyjne dostosowane do obciążeń Twojego biura. Brak ukrytych kosztów, pełne wsparcie serwisowe i dostawa materiałów eksploatacyjnych na niezwykle dogodnych warunkach.',
+    subtitleDesktop: 'Nowoczesne urządzenia wielofunkcyjne dostosowane do obciążeń Twojego biura. Brak ukrytych kosztów, pełne wsparcie serwisowe i dostawa materiałów eksploatacyjnych na niezwykle dogodnych warunkach.',
+    subtitleMobile: 'Urządzenia wielofunkcyjne na dogodnych warunkach najmu.',
     ctaText: 'Oferta',
     ctaLink: '#wynajem',
   },
@@ -120,7 +122,6 @@ export function BannerSlider() {
           <div key={index} className="outline-none">
             <div className="relative h-[220px] md:h-[500px] lg:h-[600px] rounded-2xl md:rounded-none overflow-hidden border border-slate-100 dark:border-slate-800/60 md:border-none p-5 md:p-0 flex items-center shadow-xs md:shadow-none">
               
-              {/* Tło baneru */}
               <div className="absolute inset-0 z-0">
                 <ImageWithFallback
                   src={banner.image}
@@ -130,7 +131,6 @@ export function BannerSlider() {
                 <div className="absolute inset-0 bg-black/40 md:bg-gradient-to-r md:from-black/80 md:via-black/50 md:to-transparent" />
               </div>
 
-              {/* Kontener treści */}
               <div className="relative z-10 w-full max-w-[1200px] mx-auto md:px-5 flex items-center">
                 <div className="max-w-[75%] md:max-w-[650px] text-white">
                   <span className="text-[10px] md:text-xs font-extrabold tracking-wider uppercase text-[var(--accent)] mb-1 block">
@@ -140,17 +140,14 @@ export function BannerSlider() {
                     {banner.title}
                   </h2>
                   
-                  {/* POPRAWIONO: Prawidłowe zerowanie mechanizmu skracania dla desktopu (wykorzystanie standardowych stylów CSS) */}
-                  <p 
-                    className="text-xs md:text-lg mb-4 md:mb-8 text-slate-200 md:text-gray-200 opacity-90 leading-snug font-medium"
-                    style={{
-                      display: '-webkit-box',
-                      WebkitLineClamp: window.innerWidth < 768 ? 2 : 'unset',
-                      WebkitBoxOrient: 'vertical',
-                      overflow: 'hidden'
-                    }}
-                  >
-                    {banner.subtitle}
+                  {/* Wersja tekstowa dla komputerów stacjonarnych (Pełna) */}
+                  <p className="hidden md:block text-sm md:text-lg mb-4 md:mb-8 text-gray-200 opacity-90 leading-relaxed font-medium">
+                    {banner.subtitleDesktop}
+                  </p>
+
+                  {/* Wersja tekstowa dla urządzeń mobilnych (Skrócona) */}
+                  <p className="block md:hidden text-xs text-slate-200 opacity-90 leading-snug mb-4 font-medium line-clamp-2">
+                    {banner.subtitleMobile}
                   </p>
                   
                   <div>
