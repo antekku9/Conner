@@ -6,6 +6,7 @@ import SzkolyPage from "./pages/SzkolyPage";
 import InstytucjePage from "./pages/InstytucjePage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import PromoTermsPage from "./pages/PromoTermsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 export const router = createBrowserRouter([
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
       { path: "instytucje-publiczne", Component: InstytucjePage },
       { path: "produkty", Component: ProductsPage },
       { path: "produkty/:slug", Component: ProductDetailPage },
+      { path: "regulamin-okazji", Component: PromoTermsPage },
       { path: "*", Component: NotFoundPage },
     ],
   },
