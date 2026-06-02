@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 const banners = [
@@ -31,6 +32,60 @@ const banners = [
   },
 ];
 
+function NextArrow(props: any) {
+  const { onClick } = props;
+  const [isDark, setIsDark] = useState(false);
+  
+  useEffect(() => {
+    const checkDark = () => setIsDark(document.documentElement.classList.contains('dark'));
+    checkDark();
+    const observer = new MutationObserver(checkDark);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+  
+  return (
+    <button
+      onClick={onClick}
+      style={{ 
+        backgroundColor: isDark ? 'rgba(26, 29, 36, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+        borderColor: isDark ? 'rgba(212, 169, 96, 0.3)' : 'transparent'
+      }}
+      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full shadow-lg transition-all hover:scale-110 border hidden md:block"
+      aria-label="Następny slajd"
+    >
+      <ChevronRight style={{ color: isDark ? '#d4a960' : '#1a1c20' }} className="w-6 h-6" />
+    </button>
+  );
+}
+
+function PrevArrow(props: any) {
+  const { onClick } = props;
+  const [isDark, setIsDark] = useState(false);
+  
+  useEffect(() => {
+    const checkDark = () => setIsDark(document.documentElement.classList.contains('dark'));
+    checkDark();
+    const observer = new MutationObserver(checkDark);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+  
+  return (
+    <button
+      onClick={onClick}
+      style={{ 
+        backgroundColor: isDark ? 'rgba(26, 29, 36, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+        borderColor: isDark ? 'rgba(212, 169, 96, 0.3)' : 'transparent'
+      }}
+      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full shadow-lg transition-all hover:scale-110 border hidden md:block"
+      aria-label="Poprzedni slajd"
+    >
+      <ChevronLeft style={{ color: isDark ? '#d4a960' : '#1a1c20' }} className="w-6 h-6" />
+    </button>
+  );
+}
+
 export function BannerSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -42,7 +97,9 @@ export function BannerSlider() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    arrows: false, // x-kom nie ma strzałek na mobile
+    pauseOnHover: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     beforeChange: (current: number, next: number) => setCurrentSlide(next),
     customPaging: (i: number) => (
       <button
@@ -52,46 +109,52 @@ export function BannerSlider() {
         aria-label={`Slajd ${i + 1}`}
       />
     ),
-    dotsClass: 'slick-dots !bottom-3',
+    dotsClass: 'slick-dots !bottom-3 md:!bottom-6',
   };
 
   return (
-    <div className="banner-slider w-full overflow-hidden px-4 pt-4 bg-[var(--background)]">
+    <div className="banner-slider w-full overflow-hidden px-4 pt-4 md:px-0 md:pt-0 bg-[var(--background)]">
       <Slider {...settings}>
         {banners.map((banner, index) => (
           <div key={index} className="outline-none">
-            {/* Główny kontener kafelka a'la x-kom */}
-            <div className="relative h-[220px] rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/60 p-5 flex items-center">
+            {/* Responsywna wysokość: h-[220px] na mobile, większa na desktopie */}
+            <div className="relative h-[220px] md:h-[500px] lg:h-[600px] rounded-2xl md:rounded-none overflow-hidden border border-slate-100 dark:border-slate-800/60 md:border-none p-5 md:p-0 flex items-center shadow-xs md:shadow-none">
               
-              {/* Treść po lewej stronie */}
-              <div className="z-10 max-w-[60%] flex flex-col justify-center h-full">
-                <span className="text-[10px] font-extrabold tracking-wider uppercase text-[var(--accent)] mb-1">
-                  {banner.tag}
-                </span>
-                <h2 className="text-lg font-black text-slate-900 dark:text-white leading-tight mb-1 tracking-tight">
-                  {banner.title}
-                </h2>
-                <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-4 leading-snug">
-                  {banner.subtitle}
-                </p>
-                {/* Charakterystyczny mały przycisk x-komu w ramce */}
-                <div>
-                  <a
-                    href={banner.ctaLink}
-                    className="inline-flex items-center justify-center border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold px-4 py-2 rounded-lg bg-white dark:bg-slate-800 active:bg-slate-100 dark:active:bg-slate-700 transition-colors min-h-[36px]"
-                  >
-                    {banner.ctaText}
-                  </a>
-                </div>
-              </div>
-
-              {/* Zdjęcie po prawej stronie - wklejone w róg i zaokrąglone */}
-              <div className="absolute right-0 bottom-0 w-[42%] h-full flex items-end justify-end pointer-events-none p-2">
+              {/* Zdjęcie rozciągnięte na cały kafelek jako tło */}
+              <div className="absolute inset-0 z-0">
                 <ImageWithFallback
                   src={banner.image}
                   alt={banner.title}
-                  className="object-contain max-h-[90%] w-auto rounded-xl shadow-xs"
+                  className="w-full h-full object-cover"
                 />
+                {/* Półprzezroczysty, ciemny nakład dla idealnego kontrastu napisów na mobile */}
+                <div className="absolute inset-0 bg-black/40 md:bg-gradient-to-r md:from-black/70 md:via-black/50 md:to-transparent" />
+              </div>
+
+              {/* Treść dostosowana do wersji mobilnej (białe fonty) oraz desktopowej */}
+              <div className="relative z-10 w-full max-w-[1200px] mx-auto md:px-5 flex items-center">
+                <div className="max-w-[70%] md:max-w-[600px] text-white">
+                  <span className="text-[10px] md:text-xs font-extrabold tracking-wider uppercase text-[var(--accent)] mb-1 block">
+                    {banner.tag}
+                  </span>
+                  <h2 className="text-lg md:text-5xl lg:text-6xl font-black md:font-bold text-white leading-tight mb-1 md:mb-4 tracking-tight">
+                    {banner.title}
+                  </h2>
+                  <p className="text-xs md:text-xl mb-4 md:mb-8 text-slate-200 md:text-gray-200 opacity-90 line-clamp-2 md:line-clamp-none leading-snug">
+                    {banner.subtitle}
+                  </p>
+                  <div>
+                    <a
+                      href={banner.ctaLink}
+                      target={banner.ctaLink.startsWith('http') ? '_blank' : undefined}
+                      rel={banner.ctaLink.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      // Mały przycisk w ramce dla mobile / standardowy duży dla desktopu
+                      className="border border-white/30 text-white text-xs md:text-base font-bold md:font-semibold px-4 py-2 md:px-8 md:py-4 rounded-lg bg-white/10 backdrop-blur-xs active:bg-white/20 md:bg-[var(--accent)] md:text-white md:border-none md:hover:bg-[#b39050] transition-colors min-h-[36px] inline-flex items-center justify-center no-underline"
+                    >
+                      {banner.ctaText}
+                    </a>
+                  </div>
+                </div>
               </div>
 
             </div>
@@ -100,10 +163,32 @@ export function BannerSlider() {
       </Slider>
 
       <style>{`
-        .banner-slider .slick-dots { display: flex !important; justify-content: center; gap: 5px; padding: 0; margin: 0; }
-        .banner-slider .slick-dots li { margin: 0; width: auto; height: auto; }
-        .banner-slider .slick-dots li button { padding: 0; }
-        .banner-slider .slick-dots li button:before { display: none; }
+        .banner-slider .slick-dots {
+          display: flex !important;
+          justify-content: center;
+          gap: 5px;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .banner-slider .slick-dots li {
+          margin: 0;
+          width: auto;
+          height: auto;
+          display: flex;
+          align-items: center;
+        }
+        
+        .banner-slider .slick-dots li button {
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .banner-slider .slick-dots li button:before {
+          display: none;
+        }
       `}</style>
     </div>
   );
