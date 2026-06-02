@@ -1,16 +1,17 @@
+import { Link } from 'react-router';
 import { useState, useEffect } from 'react';
 import { Wrench, Timer, User, Building2, ShieldCheck, Cpu, Monitor, ShieldAlert, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Offer {
   title: string;
-  desc: JSX.Element | string; // Pozwalamy na użycie JSX dla tiered pricin
+  desc: JSX.Element | string; // Pozwalamy na użycie JSX dla tiered pricing
   price: string;
   oldPrice?: string;
   omnibus?: string;
   badge: string;
   icon: any;
   actionText: string;
-  isSpecialPriceStructure?: boolean; // Nowe pole flagujące specjalną strukturę cen
+  isSpecialPriceStructure?: boolean; // Pole flagujące specjalną strukturę cen dla chłodzenia
 }
 
 export function HitService() {
@@ -74,7 +75,6 @@ export function HitService() {
       1: {
         detal: {
           title: "Konserwacja i czyszczenie układu chłodzenia",
-          // ZMODYFIKOWANO: Szczegółowy opis z podziałem na gaming/standard
           desc: (
             <div className="space-y-1">
               <p>Profesjonalna wymiana past termoprzewodzących oraz czyszczenie z kurzu.</p>
@@ -84,13 +84,12 @@ export function HitService() {
               </div>
             </div>
           ),
-          // ZMODYFIKOWANO: Dynamiczne ceny zależne od struktury
-          price: "Wycena", // Używamy "Wycena" lub głównej ceny
+          price: "Wycena",
           oldPrice: "199 zł", 
-          omnibus: "199 zł / 249 zł", // Zgodność z Omnibusem dla obu stawek
+          omnibus: "199 zł / 249 zł",
           badge: "Oszczędzasz 50 zł", 
           icon: Wrench, actionText: "Zarezerwuj termin",
-          isSpecialPriceStructure: true // Oznaczamy, że opis zawiera strukturę cen
+          isSpecialPriceStructure: true
         },
         firma: {
           title: "Audyt bezpieczeństwa sieci LAN/WLAN w firmie",
@@ -198,7 +197,6 @@ export function HitService() {
       },
       5: {
         detal: {
-          // ZMODYFIKOWANO: Czyszczenie (tiered) również na koniec tygodnia B
           title: "Konserwacja i czyszczenie układu chłodzenia",
           desc: (
             <div className="space-y-1">
@@ -285,6 +283,14 @@ export function HitService() {
                   Najniższa cena z 30 dni: <span className="font-medium text-slate-400">{offer.omnibus}</span>
                 </span>
               )}
+
+              {/* IMPLEMENTACJA LINKU: Prawny odnośnik do routera */}
+              <Link 
+                to="/regulamin-okazji" 
+                className="text-[9px] text-slate-500 hover:text-[var(--accent)] transition-colors underline block mt-2 no-underline"
+              >
+                Regulamin akcji promocyjnej
+              </Link>
             </div>
 
             {/* Licznik czasu */}
@@ -342,7 +348,7 @@ export function HitService() {
                     <>
                       <span className="bg-slate-900 px-2 py-1 rounded border border-slate-800">{timeLeft.days}d</span>
                       <span className="text-slate-700 self-center">:</span>
-                    </    >
+                    </>
                   )}
                   <span className="bg-slate-900 px-2 py-1 rounded border border-slate-800">{formatNum(timeLeft.hours)}h</span>
                   <span className="text-slate-700 self-center">:</span>
@@ -355,6 +361,7 @@ export function HitService() {
           </div>
         ) : (
           <>
+            {/* WIDOK MOBILNY */}
             <div className="block md:hidden relative group">
               <div className="min-h-[380px]">
                 {mobileIndex === 0 
@@ -384,6 +391,7 @@ export function HitService() {
               </div>
             </div>
 
+            {/* WIDOK DESKTOPOWY */}
             <div className="hidden md:grid grid-cols-2 gap-6 items-stretch">
               <div className="h-full">
                 {renderCard(currentOfferPair.detal, 'detal')}
