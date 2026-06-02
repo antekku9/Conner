@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Wrench, Timer } from 'lucide-react';
 
 export function HitService() {
-  const [timeLeft, setTimeLeft] = useState({ hours: 12, minutes: 45, seconds: 20 });
+  const [timeLeft, setTimeLeft] = useState({ hours: 60, minutes: 1, seconds: 0 });
 
   useEffect(() => {
     const interval = setInterval(() => {
