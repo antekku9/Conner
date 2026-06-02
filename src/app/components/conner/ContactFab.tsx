@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MessageSquare, X } from 'lucide-react';
-import { ContactForm } from '../home/ContactForm'; // Dostosuj ścieżkę do Twojego ContactForm
+import { ContactForm } from './ContactForm';
 
 export function ContactFab() {
   const [isOpen, setIsOpen] = useState(false);
