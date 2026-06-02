@@ -107,7 +107,6 @@ export function Navbar() {
 
   return (
     <>
-      {/* ZMIENIONO z-50 na z-[1000], aby pasek i ikona X zawsze były na samym wierzchu */}
       <nav style={{ backgroundColor: 'var(--navbar-bg)', borderBottomColor: 'var(--navbar-border)' }} className="py-4 md:py-5 border-b sticky top-0 z-[1000] overflow-hidden backdrop-blur-sm">
         {/* Circuit Board Decoration - Full Width Background */}
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
@@ -131,9 +130,8 @@ export function Navbar() {
               />
             </Link>
             
-            {/* Desktop Menu */}
-            <ul className="hidden md:flex gap-8 items-center list-none">
-              {"..." /* Zachowanie oryginalnych linków desktopowych */}
+            {/* Desktop Menu - PEŁNA I OCZYSZCZONA LISTA LINKÓW */}
+            <ul className="hidden md:flex gap-8 items-center list-none p-0 m-0">
               <li>
                 <button 
                   onClick={() => handleScrollTo('serwis')}
@@ -228,7 +226,7 @@ export function Navbar() {
                     borderColor: 'var(--navbar-border)',
                     backgroundColor: isDarkMode ? 'rgba(212, 169, 96, 0.08)' : 'transparent'
                   }}
-                  className="p-2 rounded-md hover:bg-[var(--bg-light)] transition-all border"
+                  className="p-2 rounded-md hover:bg-[var(--bg-light)] transition-all border flex items-center justify-center cursor-pointer"
                   aria-label="Przełącz motyw"
                 >
                   {isDarkMode ? <Sun className="w-5 h-5" style={{ color: 'var(--accent)' }} /> : <Moon className="w-5 h-5" />}
@@ -236,21 +234,20 @@ export function Navbar() {
               </li>
             </ul>
 
-            {/* Mobile Menu Button - Zwiększona powierzchnia kliku do 44px */}
+            {/* Mobile Menu Button */}
             <button
               style={{ color: 'var(--navbar-text)' }}
               className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer select-none active:scale-95 transition-transform"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 animate-none" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </nav>
 
       {/* Nowe Mobilne Menu Pełnoekranowe (App-style Overaly) */}
-      {/* ZMIENIONO: Dodano klasę z-[999] oraz bg-white dark:bg-slate-950 jako twarde odcięcie dla filtrów w tle */}
       <div 
         style={{ backgroundColor: 'var(--navbar-bg)' }}
         className={`fixed inset-0 top-[73px] z-[999] md:hidden flex flex-col justify-between bg-white dark:bg-slate-950 transition-all duration-300 ease-in-out border-t border-slate-100 dark:border-slate-900 ${
@@ -259,9 +256,8 @@ export function Navbar() {
             : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}
       >
-        {/* Przewijana lista linków w stylu systemowych ustawień iOS/Android */}
         <div className="overflow-y-auto px-6 py-6 flex-1">
-          <ul className="flex flex-col list-none p-0 m-0 split-y divide-y divide-slate-100 dark:divide-slate-900">
+          <ul className="flex flex-col list-none p-0 m-0 divide-y divide-slate-100 dark:divide-slate-900">
             <li className="py-1">
               <button 
                 onClick={() => handleScrollTo('serwis')}
@@ -329,7 +325,6 @@ export function Navbar() {
           </ul>
         </div>
 
-        {/* Dolna sekcja stała (Footer menu) – Przyciski akcji na wyciągnięcie kciuka */}
         <div className="p-6 border-t bg-slate-50/50 dark:bg-slate-900/20 flex flex-col gap-3" style={{ borderTopColor: 'var(--navbar-border)' }}>
           <a 
             href="https://allegro.pl/uzytkownik/ConnerMedia" 
