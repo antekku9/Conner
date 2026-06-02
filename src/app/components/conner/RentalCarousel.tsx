@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 
@@ -50,8 +50,8 @@ const rentalDevices: RentalDevice[] = [
 
 export function RentalCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [itemsPerView, setItemsPerView] = useState(3);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const updateItemsPerView = () => {
@@ -66,19 +66,42 @@ export function RentalCarousel() {
 
   const maxIndex = Math.max(0, rentalDevices.length - itemsPerView);
 
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  }, [maxIndex]);
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  // Funkcja obsługująca fizyczne przewijanie kontenera
+  const scrollToCard = (index: number) => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const cards = container.children;
+    if (cards[index]) {
+      const card = cards[index] as HTMLElement;
+      container.scrollTo({
+        left: card.offsetLeft - (index === 0 ? 0 : 12), // Kompensacja dla ładnego wyrównania
+        behavior: 'smooth'
+      });
+      setCurrentIndex(index);
+    }
   };
 
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const interval = setInterval(nextSlide, 4000);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, nextSlide]);
+  // Nasłuchiwanie na scroll (przydatne przy swipowaniu palcem na telefonie)
+  const handleScroll = () => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const scrollLeft = container.scrollLeft;
+    const cardWidth = container.clientWidth / itemsPerView;
+    const newIndex = Math.round(scrollLeft / cardWidth);
+    if (newIndex !== currentIndex && newIndex <= maxIndex && newIndex >= 0) {
+      setCurrentIndex(newIndex);
+    }
+  };
+
+  const nextSlide = () => {
+    const nextIdx = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+    scrollToCard(nextIdx);
+  };
+
+  const prevSlide = () => {
+    const prevIdx = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+    scrollToCard(prevIdx);
+  };
 
   return (
     <section className="py-24" style={{ backgroundColor: 'var(--background)' }}>
@@ -94,9 +117,8 @@ export function RentalCarousel() {
           </p>
         </div>
 
-        <div className="relative md:px-12 px-0" onMouseEnter={() => setIsAutoPlaying(false)} onMouseLeave={() => setIsAutoPlaying(true)}>
+        <div className="relative md:px-12 px-0">
           
-          {/* Strzałki ukryte na mobile dla lepszego UX (jest paginacja niżej), widoczne od md */}
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
@@ -113,69 +135,70 @@ export function RentalCarousel() {
             <ChevronRight style={{ color: 'var(--foreground)' }} className="w-6 h-6" />
           </button>
 
-          <div className="overflow-hidden rounded-xl">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ 
-                transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-                gap: '24px' // Stały gap zarządzany przez flexbox
-              }}
-            >
-              {rentalDevices.map((device) => (
-                <div 
-                  key={device.id}
-                  style={{ 
-                    // Dokładne wyliczenie szerokości uwzględniające odstępy flexa
-                    width: `calc(${100 / itemsPerView}% - ${(itemsPerView - 1) * 24 / itemsPerView}px)`,
-                    backgroundColor: 'var(--card)',
-                    borderColor: 'var(--border)'
-                  }}
-                  className="flex-shrink-0 rounded-xl shadow-lg overflow-hidden border w-full"
-                >
-                  <div className="relative h-64 overflow-hidden bg-white p-4 flex items-center justify-center">
-                    <ImageWithFallback
-                      src={device.imageUrl}
-                      alt={device.name}
-                      className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--foreground)' }}>{device.name}</h3>
-                    <p style={{ color: 'var(--text-muted)' }} className="text-sm mb-4">{device.description}</p>
-                    
-                    {device.specs && (
-                      <ul className="space-y-1 mb-4 p-0 list-none">
-                        {device.specs.map((spec, idx) => (
-                          <li key={idx} style={{ color: 'var(--text-muted)' }} className="text-xs flex items-center gap-2">
-                            <span style={{ color: 'var(--accent)' }}>✓</span> {spec}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    
-                    <a href="#kontakt" className="inline-block border border-[var(--accent)] text-[var(--accent)] px-4 py-2 rounded-md text-sm font-semibold hover:bg-[var(--accent)] hover:text-white transition-all no-underline">
-                      Zapytaj o wynajem
-                    </a>
-                  </div>
+          {/* Kontener ze Scroll Snap do perfekcyjnego wyrównywania elementów */}
+          <div 
+            ref={scrollContainerRef}
+            onScroll={handleScroll}
+            style={{ 
+              gap: '24px',
+              scrollSnapType: 'x mandatory',
+              scrollbarWidth: 'none' // Ukrywa pasek przewijania na Firefoxie
+            }}
+            className="flex overflow-x-auto rounded-xl no-scrollbar scroll-smooth"
+          >
+            {rentalDevices.map((device) => (
+              <div 
+                key={device.id}
+                style={{ 
+                  width: `calc(${100 / itemsPerView}% - ${(itemsPerView - 1) * 24 / itemsPerView}px)`,
+                  backgroundColor: 'var(--card)',
+                  borderColor: 'var(--border)',
+                  scrollSnapAlign: 'start' // Wymusza przyciąganie karty do lewej krawędzi
+                }}
+                className="flex-shrink-0 rounded-xl shadow-lg overflow-hidden border"
+              >
+                <div className="relative h-64 overflow-hidden bg-white p-4 flex items-center justify-center">
+                  <ImageWithFallback
+                    src={device.imageUrl}
+                    alt={device.name}
+                    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-              ))}
-            </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--foreground)' }}>{device.name}</h3>
+                  <p style={{ color: 'var(--text-muted)' }} className="text-sm mb-4">{device.description}</p>
+                  
+                  {device.specs && (
+                    <ul className="space-y-1 mb-4 p-0 list-none">
+                      {device.specs.map((spec, idx) => (
+                        <li key={idx} style={{ color: 'var(--text-muted)' }} className="text-xs flex items-center gap-2">
+                          <span style={{ color: 'var(--accent)' }}>✓</span> {spec}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  
+                  <a href="#kontakt" className="inline-block border border-[var(--accent)] text-[var(--accent)] px-4 py-2 rounded-md text-sm font-semibold hover:bg-[var(--accent)] hover:text-white transition-all no-underline">
+                    Zapytaj o wynajem
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Kropeczki na dole */}
+        {/* Kropeczki sterujące podpięte pod bezpieczną funkcję scrollToCard */}
         <div className="flex justify-center gap-2 mt-8">
           {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => scrollToCard(index)}
               className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentIndex ? 'bg-[#c5a059] w-8' : 'bg-[#e5e7eb]'}`}
             />
           ))}
         </div>
 
-        {/* Sekcja kontaktowa na dole sekcji (Poprawiony Mail i Telefon pod oba motywy) */}
         <div className="text-center mt-12">
           <p style={{ color: 'var(--text-muted)' }} className="mb-4">Zainteresowany wynajmem? Skontaktuj się z nami!</p>
           <div className="flex gap-4 justify-center flex-wrap">
