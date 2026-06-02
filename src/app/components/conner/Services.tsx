@@ -47,11 +47,11 @@ export function Services() {
   ];
 
   return (
-    <section id="obsluga" className="py-12 md:py-20" style={{ backgroundColor: 'var(--background)' }}>
+    <section id="obsluga" className="py-12 md:py-24" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-[1200px] mx-auto px-5">
         
-        {/* Układ nagłówka - responsywne marginesy */}
-        <div className="text-center mb-8 md:mb-12">
+        {/* Nagłówek sekcji */}
+        <div className="text-center mb-10 md:mb-16">
           <span style={{ color: 'var(--accent)' }} className="uppercase text-[10px] md:text-xs font-bold tracking-[2px]">
             Nasze usługi
           </span>
@@ -63,7 +63,9 @@ export function Services() {
           </p>
         </div>
         
-        {/* 1. WIDOK MOBILNY (A'la x-kom: 3 kolumny, ikona na górze, bez opisu) */}
+        {/* ====================================================================== */}
+        {/* 1. WIDOK MOBILNY (A'la x-kom: 3 kolumny, ikona na górze, bez opisu, bez tła) */}
+        {/* ====================================================================== */}
         <div className="grid grid-cols-3 gap-2.5 md:hidden">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -87,7 +89,9 @@ export function Services() {
           })}
         </div>
 
-        {/* 2. WIDOK DESKTOP (Przywrócony oryginalny, szeroki profesjonalny grid z opisami) */}
+        {/* ====================================================================== */}
+        {/* 2. WIDOK DESKTOP (Oryginalny, szeroki siatkowy grid z pełnymi opisami)     */}
+        {/* ====================================================================== */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
