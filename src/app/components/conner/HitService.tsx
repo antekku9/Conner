@@ -4,14 +4,14 @@ import { Wrench, Timer, User, Building2, ShieldCheck, Cpu, Monitor, ShieldAlert,
 
 interface Offer {
   title: string;
-  desc: JSX.Element | string; // Pozwalamy na użycie JSX dla tiered pricing
+  desc: JSX.Element | string;
   price: string;
   oldPrice?: string;
   omnibus?: string;
   badge: string;
   icon: any;
   actionText: string;
-  isSpecialPriceStructure?: boolean; // Pole flagujące specjalną strukturę cen dla chłodzenia
+  isSpecialPriceStructure?: boolean;
 }
 
 export function HitService() {
@@ -20,6 +20,10 @@ export function HitService() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [currentDayIndex, setCurrentDayIndex] = useState(1);
   const [currentWeekType, setCurrentWeekType] = useState<'A' | 'B'>('A');
+
+  // Stan do obsługi gestów swipe
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   useEffect(() => {
     const updateComponentState = () => {
@@ -70,6 +74,28 @@ export function HitService() {
     return () => clearInterval(interval);
   }, []);
 
+  // Obsługa swipe na urządzeniach mobilnych
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe || isRightSwipe) {
+      setMobileIndex(mobileIndex === 0 ? 1 : 0);
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   const offersData: Record<'A' | 'B', Record<number, { detal: Offer; firma: Offer }>> = {
     A: {
       1: {
@@ -84,12 +110,7 @@ export function HitService() {
               </div>
             </div>
           ),
-          price: "Wycena",
-          oldPrice: "199 zł", 
-          omnibus: "199 zł / 249 zł",
-          badge: "Oszczędzasz 50 zł", 
-          icon: Wrench, actionText: "Zarezerwuj termin",
-          isSpecialPriceStructure: true
+          price: "Wycena", oldPrice: "199 zł", omnibus: "199 zł / 249 zł", badge: "Oszczędzasz 50 zł", icon: Wrench, actionText: "Zarezerwuj termin", isSpecialPriceStructure: true
         },
         firma: {
           title: "Audyt bezpieczeństwa sieci LAN/WLAN w firmie",
@@ -117,7 +138,7 @@ export function HitService() {
         },
         firma: {
           title: "Zarządzany system backupu danych w chmurze / NAS",
-          desc: "Projekt i konfiguracja automatycznych kopii zapasowych dla kluczowych stanowisk roboczych i serwerów.",
+          desc: "Projekt i '../../../' konfiguracja automatycznych kopii zapasowych dla kluczowych stanowisk roboczych i serwerów.",
           price: "Wycena", badge: "Bezpieczeństwo danych", icon: ShieldCheck, actionText: "Zabezpiecz dane firmy"
         }
       },
@@ -207,8 +228,7 @@ export function HitService() {
               </div>
             </div>
           ),
-          price: "Wycena", oldPrice: "199 zł", omnibus: "199 zł / 249 zł", badge: "Oszczędzasz 50 zł", icon: Wrench, actionText: "Zarezerwuj termin",
-          isSpecialPriceStructure: true
+          price: "Wycena", oldPrice: "199 zł", omnibus: "199 zł / 249 zł", badge: "Oszczędzasz 50 zł", icon: Wrench, actionText: "Zarezerwuj termin", isSpecialPriceStructure: true
         },
         firma: {
           title: "Analiza infrastruktury pod kątem systemów zasilania awaryjnego",
@@ -225,9 +245,8 @@ export function HitService() {
   const renderCard = (offer: Offer, type: 'detal' | 'firma') => {
     const Icon = offer.icon;
     return (
-      <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-950 text-white p-5 overflow-hidden shadow-sm flex flex-col justify-between h-full">
+      <div className="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-950 text-white p-5 overflow-hidden shadow-sm flex flex-col justify-between h-full select-none">
         <div>
-          {/* Góra karty */}
           <div className="flex justify-between items-center mb-3 relative z-10">
             <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[var(--accent)] uppercase tracking-wider bg-slate-900 border border-slate-800 px-2 py-1 rounded-md">
               {type === 'detal' ? <User className="w-3 h-3" /> : <Building2 className="w-3 h-3" />}
@@ -238,7 +257,6 @@ export function HitService() {
             </div>
           </div>
 
-          {/* Środek karty */}
           <div className="flex items-start justify-between gap-4 my-2 relative z-10">
             <div className="flex-1">
               <h4 className="text-base md:text-lg font-extrabold text-white leading-tight">
@@ -254,7 +272,6 @@ export function HitService() {
           </div>
         </div>
 
-        {/* Dół karty */}
         <div className="mt-5 relative z-10">
           <div className="pt-4 border-t border-slate-900 flex justify-between items-end mb-4">
             <div className="flex flex-col gap-0.5">
@@ -262,7 +279,6 @@ export function HitService() {
                 {type === 'detal' ? 'Cena (paragon lub FV)' : 'Pakiet / Wycena'}
               </span>
               
-              {/* Dynamiczne renderowanie cen: Standard lub Tiered */}
               {offer.isSpecialPriceStructure ? (
                  <div className="flex items-baseline gap-1.5 mt-0.5">
                     <span className="text-[11px] text-slate-300 font-bold">Standard: 149 zł</span>
@@ -284,7 +300,6 @@ export function HitService() {
                 </span>
               )}
 
-              {/* IMPLEMENTACJA LINKU: Prawny odnośnik do routera */}
               <Link 
                 to="/regulamin-okazji" 
                 className="text-[9px] text-slate-500 hover:text-[var(--accent)] transition-colors underline block mt-2 no-underline"
@@ -293,7 +308,6 @@ export function HitService() {
               </Link>
             </div>
 
-            {/* Licznik czasu */}
             <div className="flex flex-col items-end">
               <span className="text-[9px] text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1 mb-1">
                 <Timer className="w-3 h-3" /> Kończy się za
@@ -361,8 +375,13 @@ export function HitService() {
           </div>
         ) : (
           <>
-            {/* WIDOK MOBILNY */}
-            <div className="block md:hidden relative group">
+            {/* WIDOK MOBILNY (Wzbogacony o obsługę gestów touch-swipe) */}
+            <div 
+              className="block md:hidden relative group touch-pan-y"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               <div className="min-h-[380px]">
                 {mobileIndex === 0 
                   ? renderCard(currentOfferPair.detal, 'detal') 
