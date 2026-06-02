@@ -7,7 +7,7 @@ export function Services() {
       title: 'Serwis sprzętu',
       fullTitle: 'Serwis Komputerowy',
       description: 'Profesjonalne naprawy komputerów, laptopów i serwerów. Szybka diagnoza, naprawa sprzętu oraz opieka pogwarancyjna. Obsługa w siedzibie klienta lub w naszym serwisie.',
-      featured: true, // Zachowujemy flagę, jeśli jest potrzebna gdzieś indziej, ale zmieniamy jej wpływ na style ikonki
+      featured: true,
     },
     {
       icon: Building2,
@@ -90,7 +90,7 @@ export function Services() {
         </div>
 
         {/* ====================================================================== */}
-        {/* 2. WIDOK DESKTOP (Poprawione style tła i koloru ikonki dla spójności) */}
+        {/* 2. WIDOK DESKTOP */}
         {/* ====================================================================== */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
@@ -106,7 +106,6 @@ export function Services() {
               >
                 <div 
                   style={{ 
-                    // Usunięto warunek service.featured – teraz wszystkie ikony mają ten sam styl bazowy
                     backgroundColor: 'var(--bg-light)',
                     color: 'var(--accent)'
                   }}
@@ -182,4 +181,73 @@ export function ServiceDetails() {
               </ul>
               
               <a 
-                href
+                href="tel:426319420" 
+                style={{ 
+                  backgroundColor: 'var(--accent)',
+                  color: 'var(--accent-foreground)'
+                }}
+                className="w-full md:w-auto text-center px-7 py-3.5 rounded-xl md:rounded-lg no-underline font-semibold inline-flex items-center justify-center min-h-[48px] hover:opacity-90 transition-opacity text-sm md:text-base"
+              >
+                Umów wizytę serwisową
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Wynajem Section */}
+      <section id="wynajem" className="py-12 md:py-24" style={{ backgroundColor: 'var(--bg-light)' }}>
+        <div className="max-w-[1200px] mx-auto px-5">
+          <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-16">
+            {/* Text Content */}
+            <div className="w-full md:flex-1">
+              <span style={{ color: 'var(--accent)' }} className="uppercase text-[10px] md:text-xs font-bold tracking-[2px]">
+                Elastyczne rozwiązania
+              </span>
+              <h2 className="text-2xl md:text-4xl font-bold mt-1 mb-3 md:mb-4" style={{ color: 'var(--foreground)' }}>
+                Wynajem Sprzętu IT
+              </h2>
+              <p style={{ color: 'var(--text-muted)' }} className="leading-relaxed text-sm md:text-base mb-4 md:mb-6">
+                Oferujemy wynajem profesjonalnego sprzętu IT i urządzeń biurowych na dogodnych warunkach. Idealne rozwiązanie dla firm, szkół oraz organizatorów wydarzeń i szkoleń.
+              </p>
+              <ul className="list-none my-4 md:my-6 space-y-2.5 md:space-y-3">
+                <li className="flex items-start gap-2.5 text-sm md:text-base font-medium" style={{ color: 'var(--foreground)' }}>
+                  <CheckCircle style={{ color: 'var(--accent)' }} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" />
+                  <span>Wynajem drukarek i kserokopiarek wielofunkcyjnych</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-sm md:text-base font-medium" style={{ color: 'var(--foreground)' }}>
+                  <CheckCircle style={{ color: 'var(--accent)' }} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" />
+                  <span>Wynajem laptopów i komputerów</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-sm md:text-base font-medium" style={{ color: 'var(--foreground)' }}>
+                  <CheckCircle style={{ color: 'var(--accent)' }} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" />
+                  <span>Pełne wsparcie techniczne w czasie najmu</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-sm md:text-base font-medium" style={{ color: 'var(--foreground)' }}>
+                  <CheckCircle style={{ color: 'var(--accent)' }} className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" />
+                  <span>Elastyczne okresy wynajmu - krótko i długoterminowe</span>
+                </li>
+              </ul>
+              
+              <a 
+                href="#kontakt" 
+                className="w-full md:w-auto text-center bg-[#c5a059] text-white px-7 py-3.5 rounded-xl md:rounded-lg no-underline font-semibold inline-flex items-center justify-center min-h-[48px] hover:bg-[#b39050] transition-colors text-sm md:text-base"
+              >
+                Zapytaj o wynajem
+              </a>
+            </div>
+
+            {/* Image */}
+            <div className="w-full md:flex-1">
+              <ImageWithFallback
+                src="https://images.unsplash.com/photo-1646153114001-495dfb56506d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjB0ZWNobm9sb2d5JTIwd29ya2luZ3xlbnwxfHx8fDE3NzMwNDk3ODN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Wynajem sprzętu biurowego"
+                className="w-full aspect-video md:aspect-auto object-cover rounded-2xl md:rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
