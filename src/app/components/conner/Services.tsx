@@ -64,7 +64,7 @@ export function Services() {
         </div>
         
         {/* ====================================================================== */}
-        {/* 1. WIDOK MOBILNY */}
+        {/* 1. WIDOK MOBILNY (Nienaruszona, kompaktowa siatka) */}
         {/* ====================================================================== */}
         <div className="grid grid-cols-3 gap-2.5 md:hidden">
           {services.map((service, index) => {
@@ -90,7 +90,7 @@ export function Services() {
         </div>
 
         {/* ====================================================================== */}
-        {/* 2. WIDOK DESKTOP */}
+        {/* 2. WIDOK DESKTOP (Wyrównano tekst tytułowy do poziomu ikonki) */}
         {/* ====================================================================== */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
@@ -102,20 +102,25 @@ export function Services() {
                   backgroundColor: 'var(--card)',
                   borderColor: 'var(--border)'
                 }}
-                className="p-8 rounded-lg border hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                className="p-8 rounded-lg border hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col"
               >
-                <div 
-                  style={{ 
-                    backgroundColor: 'var(--bg-light)',
-                    color: 'var(--accent)'
-                  }}
-                  className="w-14 h-14 rounded-lg flex items-center justify-center mb-5 transition-all group-hover:scale-105"
-                >
-                  <Icon className="w-7 h-7" />
+                {/* Górny wiersz: Ikonka obok tytułu na tym samym poziomie */}
+                <div className="flex items-center gap-4 mb-4">
+                  <div 
+                    style={{ 
+                      backgroundColor: 'var(--bg-light)',
+                      color: 'var(--accent)'
+                    }}
+                    className="w-12 h-12 rounded-lg flex items-center justify-center transition-all group-hover:scale-105 shrink-0"
+                  >
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg lg:text-xl font-bold leading-tight" style={{ color: 'var(--foreground)' }}>
+                    {service.fullTitle}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--foreground)' }}>
-                  {service.fullTitle}
-                </h3>
+
+                {/* Opis poniżej */}
                 <p style={{ color: 'var(--text-muted)' }} className="leading-relaxed text-sm">
                   {service.description}
                 </p>
