@@ -1,6 +1,6 @@
 import { Hero } from '../components/conner/Hero';
-import { Services } from '../components/conner/Services';
-import { HitService } from '../components/conner/HitService';
+import { HitService } from '../components/conner/HitService'; // Wyciągnięty wyżej
+import { Services } from '../components/conner/Services'; // Przesunięty niżej
 import { ServiceDetails } from '../components/conner/ServiceDetails';
 import { RentalCarousel } from '../components/conner/RentalCarousel';
 import { Printers } from '../components/conner/Printers';
@@ -14,14 +14,14 @@ import { ContactFab } from '../components/conner/ContactFab';
 export default function HomePage() {
   return (
     <>
-      {/* 1. SEKCJA BANERÓW */}
+      {/* 1. SEKCJA BANERÓW (Hasło: Zaufany Partner IT od 1996 Roku) */}
       <Hero />
       
-      {/* 2. KAFLI KATEGORII USŁUG */}
-      <Services />
-      
-      {/* 3. PROMO: GORĄCA USŁUGA (Wzorowane bezpośrednio na układzie sekcji x-kom) */}
+      {/* 2. PROMO: OFERTA DNIA (Szybki, konkretny impuls zakupowy zaraz po wejściu) */}
       <HitService />
+      
+      {/* 3. KAFLI KATEGORII USŁUG (Pełny przegląd oferty) */}
+      <Services />
       
       {/* 4. DETALE OFERTY */}
       <ServiceDetails />
@@ -41,7 +41,7 @@ export default function HomePage() {
       <Contact />
       <Trust />
       
-      {/* NATYWNY SYSTEM KONWERSJI (Mobilny pływający dymek kontaktu) */}
+      {/* NATYWNY SYSTEM KONWERSJI (Mobilny pływający dymek kontaktu pod kciukiem) */}
       <ContactFab />
     </>
   );
