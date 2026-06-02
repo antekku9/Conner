@@ -94,12 +94,13 @@ export function RentalCarousel() {
           </p>
         </div>
 
-        <div className="relative px-12" onMouseEnter={() => setIsAutoPlaying(false)} onMouseLeave={() => setIsAutoPlaying(true)}>
+        <div className="relative md:px-12 px-0" onMouseEnter={() => setIsAutoPlaying(false)} onMouseLeave={() => setIsAutoPlaying(true)}>
           
+          {/* Strzałki ukryte na mobile dla lepszego UX (jest paginacja niżej), widoczne od md */}
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 rounded-full p-3 shadow-lg hover:opacity-80 transition-opacity disabled:opacity-50 border bg-[var(--card)] border-[var(--border)]"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 rounded-full p-3 shadow-lg hover:opacity-80 transition-opacity disabled:opacity-50 border bg-[var(--card)] border-[var(--border)]"
           >
             <ChevronLeft style={{ color: 'var(--foreground)' }} className="w-6 h-6" />
           </button>
@@ -107,25 +108,29 @@ export function RentalCarousel() {
           <button
             onClick={nextSlide}
             disabled={currentIndex >= maxIndex}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 rounded-full p-3 shadow-lg hover:opacity-80 transition-opacity disabled:opacity-50 border bg-[var(--card)] border-[var(--border)]"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 rounded-full p-3 shadow-lg hover:opacity-80 transition-opacity disabled:opacity-50 border bg-[var(--card)] border-[var(--border)]"
           >
             <ChevronRight style={{ color: 'var(--foreground)' }} className="w-6 h-6" />
           </button>
 
-          <div className="overflow-hidden">
+          <div className="overflow-hidden rounded-xl">
             <div 
-              className="flex gap-6 transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * (100 / itemsPerView + 2)}%)` }}
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ 
+                transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+                gap: '24px' // Stały gap zarządzany przez flexbox
+              }}
             >
               {rentalDevices.map((device) => (
                 <div 
                   key={device.id}
                   style={{ 
+                    // Dokładne wyliczenie szerokości uwzględniające odstępy flexa
                     width: `calc(${100 / itemsPerView}% - ${(itemsPerView - 1) * 24 / itemsPerView}px)`,
                     backgroundColor: 'var(--card)',
                     borderColor: 'var(--border)'
                   }}
-                  className="flex-shrink-0 rounded-xl shadow-lg overflow-hidden border"
+                  className="flex-shrink-0 rounded-xl shadow-lg overflow-hidden border w-full"
                 >
                   <div className="relative h-64 overflow-hidden bg-white p-4 flex items-center justify-center">
                     <ImageWithFallback
@@ -140,7 +145,7 @@ export function RentalCarousel() {
                     <p style={{ color: 'var(--text-muted)' }} className="text-sm mb-4">{device.description}</p>
                     
                     {device.specs && (
-                      <ul className="space-y-1 mb-4">
+                      <ul className="space-y-1 mb-4 p-0 list-none">
                         {device.specs.map((spec, idx) => (
                           <li key={idx} style={{ color: 'var(--text-muted)' }} className="text-xs flex items-center gap-2">
                             <span style={{ color: 'var(--accent)' }}>✓</span> {spec}
@@ -159,6 +164,7 @@ export function RentalCarousel() {
           </div>
         </div>
 
+        {/* Kropeczki na dole */}
         <div className="flex justify-center gap-2 mt-8">
           {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
@@ -169,13 +175,22 @@ export function RentalCarousel() {
           ))}
         </div>
 
+        {/* Sekcja kontaktowa na dole sekcji (Poprawiony Mail i Telefon pod oba motywy) */}
         <div className="text-center mt-12">
-          <p className="text-[#6b7280] mb-4">Zainteresowany wynajmem? Skontaktuj się z nami!</p>
+          <p style={{ color: 'var(--text-muted)' }} className="mb-4">Zainteresowany wynajmem? Skontaktuj się z nami!</p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a href="tel:426319420" className="bg-[#1a1c20] text-white px-7 py-3.5 rounded-lg font-semibold hover:bg-[#2a2c30] no-underline">
+            <a 
+              href="tel:426319420" 
+              style={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)', color: 'var(--foreground)' }}
+              className="border px-7 py-3.5 rounded-lg font-semibold hover:opacity-80 transition-opacity no-underline shadow-sm"
+            >
               📞 42 631 94 20
             </a>
-            <a href="mailto:sklep@conner.pl" className="border-2 border-[#1a1c20] text-[#1a1c20] px-7 py-3.5 rounded-lg font-semibold hover:bg-[#1a1c20] hover:text-white no-underline">
+            <a 
+              href="mailto:sklep@conner.pl" 
+              style={{ borderColor: 'var(--border)', color: 'var(--foreground)' }}
+              className="border-2 px-7 py-3.5 rounded-lg font-semibold hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors no-underline shadow-sm"
+            >
               ✉️ sklep@conner.pl
             </a>
           </div>
